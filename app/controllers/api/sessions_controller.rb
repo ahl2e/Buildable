@@ -14,8 +14,8 @@ class Api::SessionsController < ApplicationController
   def destroy
     if current_user
       logout
-      render json: {}
+      render json: ["good json"]
     else
-      render json: {}, status 404
+      render json: ["bad session"], status: 404
   end
 end
