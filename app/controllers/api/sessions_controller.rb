@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
      login(@user)
      render json: @user
    else
-     render json: ["No Such User"], status: 422
+     render json: @user.errors.full_messages, status: 422
    end
   end
 
