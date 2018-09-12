@@ -5,9 +5,9 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
-export const login = (user) => dispatch => (
-  ApiSessionUtil.login(user).then(user => dispatch(receiveCurrentUser(user)))
-);
+export const login = (user) => dispatch => {
+  return ApiSessionUtil.login(user).then(user => dispatch(receiveCurrentUser(user)));
+};
 
 export const signup = (user) => dispatch => (
   ApiSessionUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)))
@@ -17,10 +17,10 @@ export const logout = () => dispatch => (
   ApiSessionUtil.logout().then(userId => dispatch(logoutCurrentUser()))
 );
 
-export const receiveCurrentUser = ()=> {
+export const receiveCurrentUser = (user) => {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    currentUser: user
   };
 };
 
