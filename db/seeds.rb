@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
-user1 = User.create!({ username: 'Adam615', password: 'password' })
-user2 = User.create!({ username: 'BVila', password: 'oldhouse' })
+user1 = User.create!({ username: 'Adam615', password: 'password', email: 'adamlong1066@gmail.com' })
+user2 = User.create!({ username: 'BVila', password: 'oldhouse', email: 'bvilla@thisoldhouse.com' })
