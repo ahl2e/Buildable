@@ -1,13 +1,12 @@
-import { merge } from 'lodash-merge';
-import {RECEIVE_CURRENT_USER, RECEIVE_ERRORS} from '../actions/session_actions'
+import { merge } from 'lodash/merge';
+import {RECEIVE_CURRENT_USER, RECEIVE_ERRORS} from '../actions/session_actions';
 
-const SessionErrorsReducer = () => {
+const SessionErrorsReducer = (oldState = {}, action) => {
   switch (action.type) {
-    case expression:
-
-      break;
+    case RECEIVE_ERRORS:
+  return action.errors;
     default:
-
+  return oldState;  
   }
 };
 
