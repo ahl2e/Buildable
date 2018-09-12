@@ -1,0 +1,32 @@
+import * as ApiSessionUtil from './util/session_api_util';
+
+const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
+const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+
+
+export const login = (user) => dispatch => (
+  ApiSessionUtil.login(user).then(user => dispatch(receiveCurrentUser(user)))
+);
+
+export const signup = (user) => dispatch => (
+  ApiSessionUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)))
+);
+
+export const logout = () => dispatch => (
+  ApiSessionUtil.logout().then(userId => dispatch(logoutCurrentUser()))
+);
+
+export const receiveCurrentUser = ()=> {
+  return {
+    type: RECEIVE_CURRENT_USER,
+    currentUser
+  };
+};
+
+export const logoutCurrentUser = ()=> {
+  return {
+    type: LOGOUT_CURRENT_USER,
+    currentUser
+  };
+};
