@@ -34,31 +34,28 @@ handleSubmit(e) {
 
  if ( isSignUp ==="SIGN UP") {
    emailField =
-   <label>Email
    <input
      type="text"
      value={this.state.email}
+     placeholder="email"
      onChange={this.update('email')}
-     />
- </label>;
+     />;
  } else {
    emailField = <div className="no-show"></div>
  }
     return(
-      <div>
-        <div>{this.props.formType} or {this.props.navLink}</div>
-        <form onSubmit={this.handleSubmit.bind(this)} >
-          <label>Username
-          <input type="text" value={this.state.username} onChange={this.update('username').bind(this)} />
-        </label>
+      <div className='session-form-page'>
+        <form onSubmit={this.handleSubmit.bind(this)} className="session-form" >
+          <input type="text" placeholder="username" value={this.state.username} onChange={this.update('username').bind(this)} />
       <br/>
-        <label>Password
-          <input type="password" value={this.state.password} onChange={this.update('password')} />
-        </label>
+          <input type="password" placeholder="password" value={this.state.password} onChange={this.update('password')} />
         <br/>
         {emailField}
-        <input type="submit" value ={this.props.formType}></input>
+        <input className="session-submit" type="submit" value ={this.props.formType}></input>
         </form>
+        <div className="session-form-headings">{this.props.navLink}</div>
+        <div className='session-form-blur'>
+        </div>
       </div>
     );
   }

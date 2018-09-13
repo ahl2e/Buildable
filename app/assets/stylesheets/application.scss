@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.main-header {
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-around;
+  /* position: relative; */
+  font-family: sans-serif;
+  height:80px;
+}
+
+.greeting-container {
+  padding: 30px;
+  font-size: 13px;
+}
+
+.session-form-page {
+  background-image: asset-url('blacksmithing.jpg');
+  background-position: 50px;
+  background-position: left;
+
+  height: 940px;
+  width: 100%;
+}
+
+.session-form {
+  height: 25%;
+  width: 375px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  margin: 15px;
+  /* margin */
+  padding: 15px;
+  background: none;
+}
+
+.session-form input {
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  z-index: 35;
+}
+
+.session-submit {
+  height: 50px;
+  border-radius: 10px;
+  background-color: #DD6607;
+  color: white;
+}
+
+.session-form-headings:link {
+  color: white;
+}
+.session-form-headings:visited {
+  color: white;
+}
+
+.session-form-blur {
+    -webkit-filter: blur(13px);
+    height: 100%;
+    width: 400px;
+    margin-left: 50px;
+    background-color: #eee;
+    opacity: .5;
+    z-index: 2;
+}
+
+
+.nav-bar {
+  height: 27px;
+  width: 100%;
+  background-color: white;
+}
