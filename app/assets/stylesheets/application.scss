@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ main {
+   font-family: sans-serif;
+ }
+
 .main-header {
   background-color: #eee;
   display: flex;
@@ -23,6 +27,7 @@
   /* position: relative; */
   font-family: sans-serif;
   height:80px;
+  width: 100%;
 }
 
 .greeting-container {
@@ -34,54 +39,103 @@
   background-image: asset-url('blacksmithing.jpg');
   background-position: 50px;
   background-position: left;
-
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   height: 940px;
   width: 100%;
 }
+.session-form-wrapper {
+  background: inherit;
+  position: absolute;
+  display: flex;
+  padding-top: 200px;
+  // justify-content: center;
+  flex-direction: column;
+  width: 450px;
+  height: 100%;
+  margin-left: 50px;
+  background: transparent;
+  // box-shadow: inset 0 0 0 3000px rgba(255,255,255,0.3);
+  // filter: blur(10px);
+  overflow: hidden;
+}
+.session-form-wrapper:before{
+ content: ‘’;
+ width: 300px;
+ height: 400px;
+ background: inherit;
+ position: absolute;
+ left: -25px;  //giving minus -25px left position
+ right: 0;
+ top: -25px;   //giving minus -25px top position
+ bottom: 0;
+ box-shadow: inset 0 0 0 200px rgba(255,255,255,0.3);
+ filter: blur(10px);
+ overflow: hidden;
+}
 
 .session-form {
+  position: absolute;
   height: 25%;
   width: 375px;
   margin-left: 50px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  // justify-content: space-between;
   margin: 15px;
-  /* margin */
   padding: 15px;
-  background: none;
+  background: transparent;
 }
 
-.session-form input {
+.session-email {
   height: 28px;
+  width: 94%;
   border-radius: 4px;
   border: 1px solid #ccc;
   margin: 5px;
   z-index: 35;
+  font-size: 16px;
 }
+.session-input input {
+  height: 28px;
+  width: 45%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  z-index: 35;
+  font-size: 16px;
+}
+
 
 .session-submit {
   height: 50px;
   border-radius: 10px;
   background-color: #DD6607;
   color: white;
+  font-size: 25px;
 }
 
-.session-form-headings:link {
-  color: white;
-}
-.session-form-headings:visited {
-  color: white;
-}
+
 
 .session-form-blur {
-    -webkit-filter: blur(13px);
-    height: 100%;
-    width: 400px;
-    margin-left: 50px;
-    background-color: #eee;
-    opacity: .5;
-    z-index: 2;
+  position: absolute;
+  background: transparent;
+  box-shadow: inset 0 0 0 4000px rgba(255,255,255,0.3);
+  filter: blur(10px);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+}
+.session-form-headings:hover {
+  color: white;
+}
+.session-form a {
+  color: white;
+  text-align: center;
+  margin: 5px;
+  text-decoration: none;
 }
 
 

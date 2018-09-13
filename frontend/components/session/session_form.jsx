@@ -32,12 +32,13 @@ handleSubmit(e) {
     const isSignUp = this.props.formType;
  let emailField;
 
- if ( isSignUp ==="SIGN UP") {
+ if ( isSignUp ==="Sign Up") {
    emailField =
    <input
+     className="session-email"
      type="text"
      value={this.state.email}
-     placeholder="email"
+     placeholder="Email"
      onChange={this.update('email')}
      />;
  } else {
@@ -45,17 +46,30 @@ handleSubmit(e) {
  }
     return(
       <div className='session-form-page'>
+        <div className="session-form-wrapper">
+          <div className='session-form-blur'>
+          </div>
         <form onSubmit={this.handleSubmit.bind(this)} className="session-form" >
-          <input type="text" placeholder="username" value={this.state.username} onChange={this.update('username').bind(this)} />
-      <br/>
-          <input type="password" placeholder="password" value={this.state.password} onChange={this.update('password')} />
-        <br/>
-        {emailField}
-        <input className="session-submit" type="submit" value ={this.props.formType}></input>
-        </form>
-        <div className="session-form-headings">{this.props.navLink}</div>
-        <div className='session-form-blur'>
+          {emailField}
+          <div className='session-input'>
+          <input
+             type="text"
+             placeholder="Username"
+             value={this.state.username}
+             onChange={this.update('username').bind(this)}
+             />
+          <input
+            type="password"
+            placeholder="Password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            />
         </div>
+        <br/>
+        <input className="session-submit" type="submit" value ={this.props.formType}></input>
+        {this.props.navLink}
+        </form>
+      </div>
       </div>
     );
   }
