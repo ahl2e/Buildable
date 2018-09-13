@@ -3,7 +3,6 @@ import {RECEIVE_CURRENT_USER,LOGOUT_CURRENT_USER} from '../actions/session_actio
 
 const sessionReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  // debugger
     switch (action.type) {
       case RECEIVE_CURRENT_USER:
         return {id: action.currentUser.id};

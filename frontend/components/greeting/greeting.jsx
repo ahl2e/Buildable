@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Greeting = (props) => {
   const signin = () =>(
     <div>
-    <h3>Sign up dummy</h3>
+    <h3>Sign in and build something</h3>
   </div>
   );
 
@@ -12,6 +12,7 @@ const Greeting = (props) => {
     <div className="welcome">
       <h4>
         Hey, {props.currentUser.username}
+        <button onClick={props.logout}>Log Out</button>
       </h4>
     </div>
   )

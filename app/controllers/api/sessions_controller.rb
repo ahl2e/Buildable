@@ -19,7 +19,6 @@ class Api::SessionsController < ApplicationController
       render json: ["good json"]
     else
       render json: ["bad session"], status: 404
-      # debugger
     end
   end
 

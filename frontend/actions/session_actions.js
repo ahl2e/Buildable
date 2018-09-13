@@ -13,9 +13,9 @@ export const signup = (user) => dispatch => (
   ApiSessionUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)))
 );
 
-export const logout = () => dispatch => (
-  ApiSessionUtil.logout().then(userId => dispatch(logoutCurrentUser()))
-);
+export const logout = () => dispatch => {
+  return ApiSessionUtil.logout().then(userId => dispatch(logoutCurrentUser()));
+};
 
 export const receiveCurrentUser = (user) => {
   return {
@@ -27,6 +27,5 @@ export const receiveCurrentUser = (user) => {
 export const logoutCurrentUser = ()=> {
   return {
     type: LOGOUT_CURRENT_USER,
-    currentUser
   };
 };
