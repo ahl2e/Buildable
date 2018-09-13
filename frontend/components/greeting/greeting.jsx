@@ -5,6 +5,10 @@ const Greeting = (props) => {
   const signin = () =>(
     <div>
     <h3>Sign in and build something</h3>
+    <Link to={'/signup'}>Sign Up</Link>
+    <br/>
+    <Link to={'/login'}>Log In</Link>
+
   </div>
   );
 

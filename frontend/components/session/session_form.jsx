@@ -10,17 +10,12 @@ class SessionForm extends React.Component {
     };
   }
 
-  updateUsername(e){
-    return this.setState({
-      username: e.target.value
-    });
-  }
-
-updatePassword(e){
-  return this.setState({
-    password: e.target.value
+update(field) {
+  return e => this.setState({
+    [field]: e.currentTarget.value
   });
 }
+
 
 handleSubmit(e) {
   e.preventDefault();
@@ -30,16 +25,17 @@ handleSubmit(e) {
 
   render(){
     return(
+      <div>
         <div>{this.props.formType} or {this.props.navLink}</div>
-        <form onSubmit={this.handleSubmit} >
-        <br/>
+        <form onSubmit={this.handleSubmit.bind(this)} >
           <label>Username
-          <input type="text" value={this.state.username} onChange={updateUsername()} />
+          <input type="text" value={this.state.username} onChange={this.update('username').bind(this)} />
         </label>
       <br/>
           <label>Password
-          <input type="password" value={this.state.password} onChange={updatePassword()} />
+          <input type="password" value={this.state.password} onChange={this.update('password')} />
         </label>
+        <input type="submit" value ={this.props.formType}></input>
         </form>
       </div>
     );
