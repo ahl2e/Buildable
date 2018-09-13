@@ -3,20 +3,17 @@ import { Link } from 'react-router-dom';
 
 const Greeting = (props) => {
   const signin = () =>(
-    <div>
+    <div className="greeting-container">
     <h3>Sign in and build something</h3>
-    <Link to={'/signup'}>Sign Up</Link>
-    <br/>
-    <Link to={'/login'}>Log In</Link>
-
-  </div>
+    <Link to={'/signup'}>Sign Up</Link>  |  <Link to={'/login'}>Log In</Link>
+    </div>
   );
 
   const welcome = () => (
     <div className="welcome">
       <h4>
         Hey, {props.currentUser.username}
-        <button onClick={props.logout}>Log Out</button>
+        <button onClick={props.logout}>LOG OUT</button>
       </h4>
     </div>
   )

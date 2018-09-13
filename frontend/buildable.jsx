@@ -8,7 +8,19 @@ import {login, logout, signup} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
+  let store;
+  if(window.currentUser){
+    const preloadedState ={
+      entities: {
+        users: {[window.currentUser.id]: window.currentUser}
+      },
+        session: {id: window.currentUser.id}
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
 
   // TESTING_START
   window.login = login;
