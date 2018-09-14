@@ -9,12 +9,22 @@ import AuthRoute from '../util/route_util';
 const App = () => (
   <main className="app-container">
 <header className="main-header">
-    <h3>buildable</h3>
+  <a className="icon-button" href="/">
+  </a>
     <div className="Greeting-container">
     <GreetingContainer/>
   </div>
 </header>
-<div className = "nav-bar"></div>
+<div className = "nav-bar">
+  <div className="nav-left">
+    <ul>
+      <li>Projects</li>
+      <li>Commenting</li>
+      <li>Add Photos</li>
+      <li>Search</li>
+    </ul>
+  </div>
+</div>
     <Switch>
     <Route path="/login" component={LoginFormContainer} />
     <Route path="/signup" component={SignupFormContainer} />

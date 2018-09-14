@@ -37,15 +37,45 @@
   font-family: sans-serif;
   height:80px;
   width: 100%;
+  border-bottom: 0.5px solid #dbdbdb;
+}
+.main-header .icon-button {
+  height: 100%;
+  width: 17%;
+  background-image: asset-url('instructables-logo.png');
+  background-size:contain;
+  background-repeat: no-repeat;
+  margin-left: 85px;
 }
 
 .main-header h3 {
   padding-left: 10px
 }
 
+.nav-bar {
+  height: 27px;
+  width: 100%;
+  background-color: white;
+}
+
+.nav-left {
+  width: 25%;
+  height: inherit;
+}
+
+.nav-left ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  font-size: 14px;
+  color: #939393;
+}
+
 .greeting-container {
   padding: 30px;
   font-size: 13px;
+  margin-right: 15px;
 }
 
 .session-form-page {
@@ -142,11 +172,4 @@
   text-align: center;
   margin: 5px;
   text-decoration: none;
-}
-
-
-.nav-bar {
-  height: 27px;
-  width: 100%;
-  background-color: white;
 }
