@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import {login, logout, signup} from './actions/session_actions';
 import * as ApiProjectUtil from './util/project_api_util';
+import {fetchProject} from './actions/project_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.signup = signup;
   // window.logout = ApiSessionUtil.logout;
   // window.signup = ApiSessionUtil.signup;
-  window.fetchProjects = ApiProjectUtil.fetchAllProjects;
+  window.apifetchProject = ApiProjectUtil.fetchProject;
   window.fetchProject = ApiProjectUtil.fetchProject;
+  window.fetchProject = fetchProject;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // TESTING_END

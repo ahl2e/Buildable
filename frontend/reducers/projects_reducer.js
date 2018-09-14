@@ -1,5 +1,4 @@
 import merge from 'lodash/merge';
-import {combineReducers} from 'redux';
 import {RECEIVE_PROJECT, RECEIVE_ALL_PROJECTS} from '../actions/project_actions';
 
 const ProjectsReducer = (oldState = {}, action) => {
@@ -7,8 +6,10 @@ const ProjectsReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_PROJECTS:
       return action.projects;
     case RECEIVE_PROJECT:
-      return merge({},oldState, {[action.project.id]: action.project});
+      return merge({}, oldState, {[action.project.id]: action.project});
     default:
       return oldState;
   }
 };
+
+export default ProjectsReducer;
