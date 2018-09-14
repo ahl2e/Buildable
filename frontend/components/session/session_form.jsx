@@ -28,6 +28,17 @@ handleSubmit(e) {
   });
 }
 
+renderErrors() {
+  return(
+    <ul>
+      {this.props.errors.map((error, i) => (
+        <li key={`error-${i}`}>
+          {error}
+        </li>
+      ))}
+    </ul>
+  );
+}
   render(){
     const isSignUp = this.props.formType;
  let emailField;
@@ -44,6 +55,7 @@ handleSubmit(e) {
  } else {
    emailField = <div className="no-show"></div>
  }
+
     return(
       <div className='session-form-page'>
         <div className="session-form-wrapper">
@@ -67,8 +79,10 @@ handleSubmit(e) {
         </div>
         <br/>
         <input className="session-submit" type="submit" value ={this.props.formType}></input>
+        {this.props.errors}
         {this.props.navLink}
         </form>
+        {this.renderErrors()}
       </div>
       </div>
     );

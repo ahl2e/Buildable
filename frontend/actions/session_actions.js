@@ -6,15 +6,24 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
 export const login = (user) => dispatch => {
-  return ApiSessionUtil.login(user).then(user => dispatch(receiveCurrentUser(user)));
+  return ApiSessionUtil.login(user).then(user => dispatch(receiveCurrentUser(user))),
+  errors => dispatch(receiveErrors(error.responseJSON));
 };
 
 export const signup = (user) => dispatch => (
-  ApiSessionUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)))
+  ApiSessionUtil.signup(user).then(user => dispatch(receiveCurrentUser(user))),
+  error => dispatch(receiveErrors(error.responseJSON))
 );
 
 export const logout = () => dispatch => {
   return ApiSessionUtil.logout().then(userId => dispatch(logoutCurrentUser()));
+};
+
+export const receiveErrors = () => {
+  return {
+    type:RECEIVE_ERRORS,
+    errors
+  };
 };
 
 export const receiveCurrentUser = (user) => {
