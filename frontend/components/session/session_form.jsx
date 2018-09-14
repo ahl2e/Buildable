@@ -28,17 +28,6 @@ handleSubmit(e) {
   });
 }
 
-// renderErrors() {
-//   return(
-//     <ul>
-//       {this.props.errors.map((error, i) => (
-//         <li key={`error-${i}`}>
-//           {error}
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// }
   render(){
     const isSignUp = this.props.formType;
  let emailField;
@@ -104,7 +93,7 @@ if (!this.props.errors){
         <br/>
           {errorRenders}
         <input className="session-submit" type="submit" value ={this.props.formType}></input>
-      
+
         {this.props.navLink}
         </form>
       </div>
