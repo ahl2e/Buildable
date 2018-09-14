@@ -34,4 +34,6 @@ has_many :comments, as: :comentable
 # foreign_key: :project_id,
 # class_name: :Comment
 
+
+
 end

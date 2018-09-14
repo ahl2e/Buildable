@@ -9,3 +9,10 @@
 User.delete_all
 user1 = User.create!({ username: 'Adam615', password: 'password', email: 'adamlong1066@gmail.com' })
 user2 = User.create!({ username: 'BVila', password: 'oldhouse', email: 'bvilla@thisoldhouse.com' })
+
+Project.delete_all
+bookshelf = Project.create!({
+  title: 'Brooklyn Bookshelf',
+  description: 'A wood and metal bookshelf I built before moving to Brooklyn',
+  user_id: User.find_by(username: 'Adam615').id
+   })
