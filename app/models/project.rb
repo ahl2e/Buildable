@@ -21,17 +21,17 @@ class_name: :User
 
 has_many :steps,
 primary_key: :id,
-foreign_key: :step_id,
+foreign_key: :project_id,
 class_name: :Step
 
-has_many :photos,
-primary_key: :id,
-foreign_key: :photo_id,
-class_name: :Photo
+has_many :photos, as: :imageable
+# primary_key: :id,
+# foreign_key: :project_id,
+# class_name: :Photo
 
-has_many :comments,
-primary_key: :id,
-foreign_key: :comment_id,
-class_name: :Comment
+has_many :comments, as: :comentable
+# primary_key: :id,
+# foreign_key: :project_id,
+# class_name: :Comment
 
 end

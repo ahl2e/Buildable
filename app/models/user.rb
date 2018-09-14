@@ -10,6 +10,7 @@
 #  timestamps      :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  thumbnail_id    :integer
 #
 
 class User < ApplicationRecord
@@ -17,11 +18,17 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
+  has_many :comments, as: :commentable
+
+  has_many :projects,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :Project
+
   attr_reader :password
 
   after_initialize :ensure_session_token
 
-  # figvaper
 
   def self.find_by_credentials(username, password)
      @user = User.find_by(username: username)
