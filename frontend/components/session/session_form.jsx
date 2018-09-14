@@ -28,17 +28,17 @@ handleSubmit(e) {
   });
 }
 
-renderErrors() {
-  return(
-    <ul>
-      {this.props.errors.map((error, i) => (
-        <li key={`error-${i}`}>
-          {error}
-        </li>
-      ))}
-    </ul>
-  );
-}
+// renderErrors() {
+//   return(
+//     <ul>
+//       {this.props.errors.map((error, i) => (
+//         <li key={`error-${i}`}>
+//           {error}
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// }
   render(){
     const isSignUp = this.props.formType;
  let emailField;
@@ -55,6 +55,30 @@ renderErrors() {
  } else {
    emailField = <div className="no-show"></div>
  }
+
+    const sessionErrs = this.props.errors;
+ let errorRenders;
+
+ if (sessionErrs.length > 0) {
+   errorRenders =
+   <div className="session-errors">
+   <ul>
+     {this.props.errors.map((error, i) => (
+       <li key={`error-${i}`}>
+         {error}
+       </li>
+     ))}
+   </ul>
+ </div>
+ } else {
+   errorRenders = <div className="no-show"></div>
+ }
+
+
+if (!this.props.errors){
+ document.getElementById("session-errors").className.add('no-show');
+}
+
 
     return(
       <div className='session-form-page'>
@@ -78,13 +102,11 @@ renderErrors() {
             />
         </div>
         <br/>
+          {errorRenders}
         <input className="session-submit" type="submit" value ={this.props.formType}></input>
-        {this.props.errors}
+      
         {this.props.navLink}
         </form>
-        <div className="session-errors">
-        {this.renderErrors()}
-      </div>
       </div>
       </div>
     );

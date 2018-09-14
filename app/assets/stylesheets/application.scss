@@ -18,6 +18,10 @@
    font-family: sans-serif;
  }
 
+ .no-show {
+   display: none;
+ }
+
 .main-header {
   background-color: #eee;
   display: flex;
@@ -103,6 +107,12 @@
   font-size: 25px;
 }
 
+.session-errors {
+  background-color: #B74548;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: white
+}
 
 
 .session-form-blur {
