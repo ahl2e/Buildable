@@ -1,5 +1,5 @@
 import {merge} from 'lodash/merge';
-import {RECEIVE_CURRENT_USER,LOGOUT_CURRENT_USER} from '../actions/session_actions';
+import {RECEIVE_CURRENT_USER,LOGOUT_CURRENT_USER, RECEIVE_ERRORS} from '../actions/session_actions';
 
 const sessionReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -8,6 +8,8 @@ const sessionReducer = (oldState = {}, action) => {
         return {id: action.currentUser.id};
       case LOGOUT_CURRENT_USER:
         return {};
+      case RECEIVE_ERRORS:
+        return oldState;
       default:
         return oldState;
     }

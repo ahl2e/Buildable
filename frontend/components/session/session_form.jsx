@@ -82,7 +82,9 @@ renderErrors() {
         {this.props.errors}
         {this.props.navLink}
         </form>
+        <div className="session-errors">
         {this.renderErrors()}
+      </div>
       </div>
       </div>
     );
