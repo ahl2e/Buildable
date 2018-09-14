@@ -17,6 +17,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
+    @projects = Project.all
 
   end
 
