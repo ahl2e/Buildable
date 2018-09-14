@@ -1,4 +1,4 @@
-class ProojectsController < ApplicationController
+class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
       if @project.save
@@ -14,6 +14,14 @@ class ProojectsController < ApplicationController
 
   def destroy
 
+  end
+
+  def index
+
+  end
+
+  def show
+    @project = Project.find(params[:id])
   end
 
 

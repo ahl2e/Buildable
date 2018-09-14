@@ -1,14 +1,13 @@
 export const fetchAllProjects = () => {
-  return$.ajax({
+  return $.ajax({
     method: "GET",
     url: 'api/projects'
   });
 };
 
 export const fetchProject = (id) => {
-  return$.ajax({
+  return $.ajax({
     method: "GET",
-    url: `api/projects/${id}`,
-    error: console.log(error)
+    url: `api/projects/${id}`
   });
 };
