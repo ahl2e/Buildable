@@ -14,6 +14,29 @@
  *= require_self
  */
 
+.projects-index-container {
+  height: 100%;
+  width: 90%;
+}
+
+.projects-index-list {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  list-style: none
+}
+
+.project-index-item {
+  width: 20%;
+  height: 20%;
+  color: black;
+}
+.project-index-item a {
+  width: 20%;
+  height: 20%;
+  color: black;
+}
+
  .app-container {
    font-family: sans-serif;
    margin: 0;
@@ -41,7 +64,7 @@
 }
 .main-header .icon-button {
   height: 100%;
-  width: 17%;
+  width: 220px;
   background-image: asset-url('instructables-logo.png');
   background-size:contain;
   background-repeat: no-repeat;

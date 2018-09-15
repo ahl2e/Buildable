@@ -4,14 +4,13 @@ export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
 
 
-export const fetchProject = (id) => {
+export const fetchProject = (id)=> dispatch => {
   return ApiProjectUtil.fetchProject(id).then(project => dispatch(
     receiveProject(project)));
 };
 
-export const fetchProjects = () => {
-  return ApiProjectUtil.fetchAllProjects().then(projects => dispatch(
-    receiveAllProjects(projects)));
+export const fetchProjects = () => dispatch => {
+  return ApiProjectUtil.fetchAllProjects().then(projects => dispatch(receiveAllProjects(projects)));
 };
 
 

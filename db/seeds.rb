@@ -16,8 +16,21 @@ bookshelf = Project.create!({
   description: 'A wood and metal bookshelf I built before moving to Brooklyn',
   user_id: User.find_by(username: 'Adam615').id
    })
-test = Project.create!({
+  test = Project.create!({
   title: 'Dummy seed',
   description: 'A stupid seed I used to test',
   user_id: User.find_by(username: 'Adam615').id
    })
+
+
+Step.delete_all
+  bookshelf1 = Step.create!({
+    heading: "Cut and mill wood for shelves",
+    body: "Decide which parts of your wood will be each shelf and mark them on the back.
+    After that, I used a floor-sander instead of a planer which I don't have "
+    })
+  bookshelf2 = Step.create!({
+    heading: "Cut all your framing",
+    body: "I used a cutoff wheel on an angle grinder.  It's not as exact as a band saw,
+    but you can grind down to the right size, so cut a little fat."
+    })
