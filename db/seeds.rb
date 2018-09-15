@@ -16,9 +16,19 @@ bookshelf = Project.create!({
   description: 'A wood and metal bookshelf I built before moving to Brooklyn',
   user_id: User.find_by(username: 'Adam615').id
    })
-  test = Project.create!({
-  title: 'Dummy seed',
-  description: 'A stupid seed I used to test',
+dummy = Project.create!({
+  title: 'Live-edge Coffee Table',
+  description: 'kind of self-explanatory',
+  user_id: User.find_by(username: 'Adam615').id
+   })
+dummy = Project.create!({
+  title: 'Edison Lamps',
+  description: 'I totally stole this idea from a craft fair.',
+  user_id: User.find_by(username: 'Adam615').id
+   })
+dummy = Project.create!({
+  title: "dummy",
+  description: 'I really just need another to fill out the row.',
   user_id: User.find_by(username: 'Adam615').id
    })
 

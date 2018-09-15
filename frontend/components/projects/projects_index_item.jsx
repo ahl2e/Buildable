@@ -17,9 +17,13 @@ import {Link} from 'react-router-dom';
 const ProjectIndexItem = ({ projects }) => (
   <li className="project-index-item">
     <Link to={`/projects/${projects.id}`}>
+      <div className="test-photo">
+      </div>
       // <img src={projects.image_url} alt={projects.name} />
-      <span>{projects.title}</span>
-      <p>by:</p><span>{projects.username}</span>
+      <div className="index-item-footer">
+      <span className="title">{projects.title}</span>
+      <span className="author"> by: {projects.username}</span>
+      </div>
     </Link>
   </li>
 );
