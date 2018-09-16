@@ -14,7 +14,8 @@ import {Link} from 'react-router-dom';
 // );
 
 
-const ProjectIndexItem = ({ projects }) => (
+const ProjectIndexItem = ({ projects }) => {
+  return (
   <li className="project-index-item">
     <Link to={`/projects/${projects.id}`}>
       <div className="test-photo">
@@ -27,4 +28,5 @@ const ProjectIndexItem = ({ projects }) => (
     </Link>
   </li>
 );
+}
 export default ProjectIndexItem;

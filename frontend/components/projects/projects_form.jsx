@@ -1,10 +1,12 @@
 import React from 'react';
-import { withRouter} from 'react-router-dom';
+import {merge} from 'lodash';
+import { withRouter, Redirect} from 'react-router-dom';
 
 class ProjectsForm extends React.Component {
   constructor(props){
     super(props);
     this.state = this.props.project;
+    this.state = merge({}, this.state,{redirect:false});
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -17,12 +19,18 @@ class ProjectsForm extends React.Component {
 handleSubmit(e){
   debugger
   e.preventDefault();
-  this.props.action(this.state).then(() => this.props.history.push('/'));
+  this.props.action(this.state).then(() => this.props.history.push('/')).then(this.setState({redirect : true}));
 }
 
 
 
 render(){
+
+  if(this.state.redirect) {
+    return <Redirect to={'/'} />;
+  }
+
+
   return(
     <div>
       <form onSubmit={this.handleSubmit}>

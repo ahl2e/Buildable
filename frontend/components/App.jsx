@@ -6,7 +6,9 @@ import LoginFormContainer from './session/login_form_container';
 import ProjectsIndexContainer from './projects/projects_index_container';
 import CreateProjectsFormContainer from './projects/create_projects_form_container';
 import EditProjectsFormContainer from './projects/Edit_projects_form_container';
-import AuthRoute from '../util/route_util';
+import {AuthRoute} from '../util/route_util';
+import {ProtectedRoute} from '../util/route_util';
+import ProjectsShowContainer from './projects/projects_show/projects_show_container';
 
 
 const App = () => (
@@ -35,7 +37,8 @@ const App = () => (
     <Route path="/login" component={LoginFormContainer} />
     <Route path="/signup" component={SignupFormContainer} />
     <Route path="/create" component={CreateProjectsFormContainer} />
-    <Route path="/edit" component={EditProjectsFormContainer} />
+    <Route path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
+    <Route path="/projects/:projectId" component={ProjectsShowContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 
     </Switch>

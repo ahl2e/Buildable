@@ -5,9 +5,8 @@ import { fetchProject, updateProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const defaultProject = { title: '', description: '' };
-  const project = state.projects[ownProps.match.params.projectId] || defaultProject;
+  const project = state.entities.projects[ownProps.match.params.projectId] || defaultProject;
   const formType = 'Update Project';
-
   return { project, formType };
 };
 

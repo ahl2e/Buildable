@@ -14,7 +14,6 @@ export const fetchProjects = () => dispatch => {
 };
 
 export const createProject = (project) => dispatch => {
-  debugger
   return ApiProjectUtil.createProject(project).then(project => dispatch(receiveProject(project)));
 };
 
