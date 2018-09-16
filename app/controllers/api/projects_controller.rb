@@ -2,7 +2,7 @@ class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
       if @project.save
-        render json: project
+        render json: @project
       else
         render json: @project.errors.full_messages
       end
@@ -29,6 +29,6 @@ class Api::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:projects).permit(:user_id, :title, :description)
+    params.require(:project).permit(:user_id, :title, :description)
   end
 end

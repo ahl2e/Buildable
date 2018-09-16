@@ -4,6 +4,8 @@ import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import ProjectsIndexContainer from './projects/projects_index_container';
+import CreateProjectsFormContainer from './projects/create_projects_form_container';
+import EditProjectsFormContainer from './projects/Edit_projects_form_container';
 import AuthRoute from '../util/route_util';
 
 
@@ -20,7 +22,7 @@ const App = () => (
 <div className = "nav-bar">
   <div className="nav-left">
     <ul>
-      <li>Projects</li>
+      <li><Link to={'/create'}>Create</Link></li>
       <li>Commenting</li>
       <li>Add Photos</li>
       <li>Search</li>
@@ -32,6 +34,8 @@ const App = () => (
     <Switch>
     <Route path="/login" component={LoginFormContainer} />
     <Route path="/signup" component={SignupFormContainer} />
+    <Route path="/create" component={CreateProjectsFormContainer} />
+    <Route path="/edit" component={EditProjectsFormContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 
     </Switch>

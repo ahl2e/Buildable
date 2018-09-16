@@ -13,6 +13,16 @@ export const fetchProjects = () => dispatch => {
   return ApiProjectUtil.fetchAllProjects().then(projects => dispatch(receiveAllProjects(projects)));
 };
 
+export const createProject = (project) => dispatch => {
+  debugger
+  return ApiProjectUtil.createProject(project).then(project => dispatch(receiveProject(project)));
+};
+
+export const updateProject = (project) => dispatch => {
+  return ApiProjectUtil.updateProject(project).then(project => dispatch(receiveProject(project)));
+};
+
+
 
 const receiveProject = (project) => {
   return{
