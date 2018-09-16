@@ -18,7 +18,7 @@ export const createProject = (project) => dispatch => {
 };
 
 export const updateProject = (project) => dispatch => {
-  return ApiProjectUtil.updateProject(project).then(project => dispatch(receiveProject(project)));
+  return ApiProjectUtil.updateProject(project).then((project) => dispatch(receiveProject(project)));
 };
 
 
@@ -26,7 +26,7 @@ export const updateProject = (project) => dispatch => {
 const receiveProject = (project) => {
   return{
   type: RECEIVE_PROJECT,
-  project
+  project: project
 };
 };
 

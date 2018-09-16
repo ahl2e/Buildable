@@ -2,7 +2,6 @@ import merge from 'lodash/merge';
 import {RECEIVE_PROJECT, RECEIVE_ALL_PROJECTS} from '../actions/project_actions';
 
 const ProjectsReducer = (oldState = {}, action) => {
-  debugger
   switch (action.type) {
     case RECEIVE_ALL_PROJECTS:
       return action.projects;

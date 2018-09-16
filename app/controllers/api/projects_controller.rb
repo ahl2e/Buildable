@@ -9,6 +9,13 @@ class Api::ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:id])
+
+    if @project.update(project_params)
+      render :show
+    else
+      render json: @project.errors.full_messages, status: 422
+    end
 
   end
 
