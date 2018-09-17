@@ -236,9 +236,75 @@
 
 .project-show {
   color: black;
-
 }
 
 .project-show .title{
   font-size: 14px;
+}
+
+.projects-form {
+  background-color: #D2E1E8;
+  background-size: cover;
+  min-height: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: inset 0px 3px 7px #ccc;
+  padding-top: 50px;
+}
+
+.form-box {
+  width: 900px;
+  height: 500px;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.inner-form-box {
+  height: 450px;
+  width: 825px;
+  background-color: #eee;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.inner-form-box p {
+  text-align: center;
+  font-size: 19px;
+}
+
+.inner-form-box form {
+text-align: center;
+}
+
+.inner-form-box .project-title {
+height: 30px;
+border-radius: 7px;
+width: 300px;
+font-size: 18px;
+}
+
+.inner-form-box textarea {
+font-size: 18px;
+border-radius: 7px;
+}
+
+.button-container {
+  margin-top: 30px;
+  height: 45px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-container * {
+  height: 90%;
+  border-radius: 10px;
+  background-color: #DD6607;
+  color: white;
+  font-size: 18px;
 }
