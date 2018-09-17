@@ -3,15 +3,16 @@ import StepsForm from './steps_form';
 import {createStep} from '../../actions/step_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    const project = { title: '', description: '', user_id: state.session.id };
+  debugger
+    const step = { heading: '', body: '', project_id: parseInt(ownProps.match.params.projectId) };
     const formType  = "Add Step";
 
-  return {project, formType};
+  return {step, formType};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    action: (project) => dispatch(createProject(project)),
+    action: (step) => dispatch(createStep(step)),
   };
 };
 
