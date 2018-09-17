@@ -308,3 +308,16 @@ border-radius: 7px;
   color: white;
   font-size: 18px;
 }
+
+.show-header {
+  width: inherit;
+  text-align: center;
+}
+
+.show-header .title {
+  font-size: 30px;
+}
+
+.show-header .description{
+  font-size: 18px;
+}

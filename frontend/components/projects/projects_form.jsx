@@ -41,6 +41,7 @@ render(){
           value={this.state.title}
           onChange={this.update('title')}
           placeholder="Title"
+          className="project-title"
           />
         <br/>
         <p>Add a brief description of your project</p>
