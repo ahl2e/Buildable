@@ -43,6 +43,7 @@
   justify-content: space-around;
   padding: 10px;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .project-index-item {
@@ -320,4 +321,8 @@ border-radius: 7px;
 
 .show-header .description{
   font-size: 18px;
+}
+
+.projects-show-steps {
+  list-style: none;
 }

@@ -9,6 +9,7 @@ import EditProjectsFormContainer from './projects/edit_projects_form_container';
 import {AuthRoute} from '../util/route_util';
 import {ProtectedRoute} from '../util/route_util';
 import ProjectsShowContainer from './projects/projects_show/projects_show_container';
+import CreateStepsFormContainer from './steps/create_steps_form_container';
 
 
 const App = () => (
@@ -39,6 +40,7 @@ const App = () => (
     <Route path="/create" component={CreateProjectsFormContainer} />
     <Route path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
     <Route path="/projects/:projectId" component={ProjectsShowContainer} />
+    <Route path="/api/projects/:project_Id/steps" component={CreateStepsFormContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 
     </Switch>

@@ -37,10 +37,20 @@ Step.delete_all
   bookshelf1 = Step.create!({
     heading: "Cut and mill wood for shelves",
     body: "Decide which parts of your wood will be each shelf and mark them on the back.
-    After that, I used a floor-sander instead of a planer which I don't have "
+    After that, I used a floor-sander instead of a planer which I don't have",
+    project_id: Project.find_by(title: 'Brooklyn Bookshelf').id,
+    order_number: 1
     })
   bookshelf2 = Step.create!({
     heading: "Cut all your framing",
     body: "I used a cutoff wheel on an angle grinder.  It's not as exact as a band saw,
-    but you can grind down to the right size, so cut a little fat."
+    but you can grind down to the right size, so cut a little fat.",
+    project_id: Project.find_by(title: 'Brooklyn Bookshelf').id,
+    order_number: 2
+    })
+  bookshelf2 = Step.create!({
+    heading: "test step",
+    body: "You should be used to these tests by now.",
+    project_id: Project.find_by(title: 'Edison Lamps').id,
+    order_number: 2
     })
