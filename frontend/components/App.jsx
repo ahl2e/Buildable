@@ -5,7 +5,7 @@ import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import ProjectsIndexContainer from './projects/projects_index_container';
 import CreateProjectsFormContainer from './projects/create_projects_form_container';
-import EditProjectsFormContainer from './projects/Edit_projects_form_container';
+import EditProjectsFormContainer from './projects/edit_projects_form_container';
 import {AuthRoute} from '../util/route_util';
 import {ProtectedRoute} from '../util/route_util';
 import ProjectsShowContainer from './projects/projects_show/projects_show_container';
