@@ -23,7 +23,10 @@ const Greeting = (props) => {
         <button onClick={props.logout}>LOG OUT</button>
       </div>
       <div id="drop-down-bottom">
-      <Link to='/create'> Create a Project</Link>
+      <Link
+        to='/create'
+        onClick={showDropDown}> Create a Project  
+      </Link>
     </div>
     </div>
   </section>

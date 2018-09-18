@@ -34,7 +34,6 @@ handleSubmit(e){
     () => console.log("yay"),
     () => console.log("boo")
   );
-  debugger
   // this.props.action({data: formData, contentType: false, processData: false}).then(() => this.props.history.push('/')).then(this.setState({redirect : true}));
 }
 
