@@ -26,7 +26,7 @@ constructor(props){
         <StepsIndexContainer/>
       </div>
     </div>
-      <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>
+      <Link to={`/api/projects/${project.id}/steps`}>Add a Step</Link>
       <Link to={`/projects/${project.id}/edit/`}>Edit</Link>
       <br/>
       <Link to={"/"}>back to all projects</Link>

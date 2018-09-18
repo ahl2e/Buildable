@@ -15,8 +15,8 @@ export const updateStep  = (step) => dispatch => {
   return ApiStepUtil.updateStep(step).then((step) => dispatch(receiveStep(step)));
 };
 
-export const createStep = () => dispatch => {
-  return ApiStepUtil.createStep().then((step) => dispatch(receiveStep(step)));
+export const createStep = (step) => dispatch => {
+  return ApiStepUtil.createStep(step).then((step) => dispatch(receiveStep(step)));
 };
 
 

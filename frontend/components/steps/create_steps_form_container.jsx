@@ -1,10 +1,11 @@
 import {connect} from 'react-redux';
 import StepsForm from './steps_form';
+import {selectAllSteps} from '../../reducers/selectors';
 import {createStep} from '../../actions/step_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
-    const step = { heading: '', body: '', project_id: parseInt(ownProps.match.params.projectId) };
+    let stepCount =selectAllSteps(state).length
+    const step = { heading: '', body: '', project_id: parseInt(ownProps.match.params.project_Id), order_number: stepCount + 1 };
     const formType  = "Add Step";
 
   return {step, formType};

@@ -28,13 +28,13 @@ class Api::StepsController < ApplicationController
 
   def index
     @steps = Step.where(project_id: params[:project_id])
-    # @steps = @steps.select{|step| step.project_id == @project.id}
+    @steps = @steps.sort_by {|step| step.order_number}
   end
 
   private
 
   def step_params
-    params.require(:steps).permit(:project_id, :heading, :body)
+    params.require(:step).permit(:project_id, :heading, :body, :order_number)
   end
 
 

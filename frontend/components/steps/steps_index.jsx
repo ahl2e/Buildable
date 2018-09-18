@@ -13,7 +13,7 @@ render() {
       return (
         <div>
           <ul>
-            <StepsIndexItem key={step.id} steps={step}/>
+            <StepsIndexItem key={step.id} steps={step} />
           </ul>
         </div>
       )

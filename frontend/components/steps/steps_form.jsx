@@ -5,7 +5,7 @@ import { withRouter, Redirect} from 'react-router-dom';
 class StepsForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.project;
+    this.state = this.props.step;
     this.state = merge({}, this.state,{redirect:false});
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,6 +36,14 @@ render(){
         <div className="inner-form-box">
       <form onSubmit={this.handleSubmit}>
         <p>Add a step:</p>
+        <input
+          type="number"
+          value={this.state.order_number}
+          onChange={this.update("order_number")}
+          placeholder ="Step Number"
+          minimum = "1"
+          />
+        <br/>
         <input
           type="text"
           value={this.state.heading}
