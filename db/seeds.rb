@@ -31,6 +31,11 @@ dummy = Project.create!({
   description: 'I really just need another to fill out the row.',
   user_id: User.find_by(username: 'Adam615').id
    })
+recursion = Project.create!({
+  title: "Recursive Buildables Project",
+  description: 'This app builds itself',
+  user_id: User.find_by(username: 'Adam615').id
+   })
 
 
 Step.delete_all
@@ -52,5 +57,17 @@ Step.delete_all
     heading: "test step",
     body: "You should be used to these tests by now.",
     project_id: Project.find_by(title: 'Edison Lamps').id,
+    order_number: 2
+    })
+  buildable = Step.create!({
+    heading: "Set up your rails back-end",
+    body: "I followed the checlist provided in the curriculum",
+    project_id: Project.find_by(title: 'Recursive Buildables Project').id,
+    order_number: 1
+    })
+  buildable1 = Step.create!({
+    heading: "Do magic",
+    body: "That's the only way any of this should work",
+    project_id: Project.find_by(title: 'Recursive Buildables Project').id,
     order_number: 2
     })

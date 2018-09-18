@@ -21,7 +21,7 @@ update(field) {
 handleSubmit(e) {
   e.preventDefault();
   const user = Object.assign({}, this.state);
-  this.props.dispatchForm(user);
+  this.props.dispatchForm(user).then(() => this.props.history.push(`/`));
   this.setState({
     username: "",
     password: "",
