@@ -8,14 +8,27 @@ const Greeting = (props) => {
     </div>
   );
 
+  const showDropDown = () => {
+    $('#drop-down').toggleClass('no-show');
+  }
+
   const welcome = () => (
-    <div className="welcome">
-      <h4>
-        Hey, {props.currentUser.username}
-        <button onClick={props.logout}>LOG OUT</button>
-      </h4>
+    <section id="greeting-box">
+      <div className="welcome">
+        <button className="user-photo" onClick={showDropDown}>
+        </button>
     </div>
+    <div id="drop-down" class="no-show">
+      <div id="drop-down-top">
+        <button onClick={props.logout}>LOG OUT</button>
+      </div>
+      <div id="drop-down-bottom">
+      <Link to='/create'> Create a Project</Link>
+    </div>
+    </div>
+  </section>
   )
+
   if(props.currentUser){
     return welcome();
   }else{

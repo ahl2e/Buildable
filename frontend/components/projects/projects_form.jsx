@@ -18,9 +18,31 @@ class ProjectsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
-  this.props.action(this.state).then(() => this.props.history.push('/')).then(this.setState({redirect : true}));
+  const formData = new FormData();
+  formData.append('project[title]', this.state.title);
+  formData.append('project[picture]', this.state.photoFile);
+  formData.append('project[description]', this.state.description);
+  formData.append('project[user_id]', this.state.user_id);
+
+  $.ajax({
+    url: 'api/projects/',
+    method: 'POST',
+    data: formData,
+    contentType: false,
+    processData: false
+  }).then(
+    () => console.log("yay"),
+    () => console.log("boo")
+  );
+  debugger
+  // this.props.action({data: formData, contentType: false, processData: false}).then(() => this.props.history.push('/')).then(this.setState({redirect : true}));
 }
 
+handleFile(e) {
+  this.setState({
+    photoFile:e.currentTarget.files[0]
+  });
+}
 
 
 render(){
@@ -54,7 +76,10 @@ render(){
           />
         <br/>
         <div className="button-container">
-          <button> Dead button</button>
+          <input
+            type="file"
+            onChange={this.handleFile.bind(this)}
+            />
           <input className="submit" type="submit" value={this.props.formType}/>
         </div>
       </form>

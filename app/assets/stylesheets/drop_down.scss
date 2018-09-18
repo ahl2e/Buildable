@@ -1,0 +1,68 @@
+.user-photo {
+  background-image: asset-url('blacksmithing.jpg');
+  background-size:  contain;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-right: 100px;
+}
+
+.greeting-container {
+  padding: 30px;
+  font-size: 13px;
+  margin-right: 15px;
+}
+
+.GreetingContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#greeting-box {
+  position :relative;
+}
+
+#drop-down {
+  background-color: white;
+  height: 180px;
+  width: 160px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  text-align:right;
+  position: absolute;
+  left: -155px;
+  top: 50px;
+}
+
+#drop-down a {
+  height: 40px;
+  width: 100px;
+  background-color: #DD6607;
+  color: white;
+  border-radius: 5px;
+  border: .5px solid grey;
+  text-align: center;
+  margin: 10px;
+  text-decoration: none;
+}
+
+#drop-down-top {
+  height: 100px;
+  border-bottom: 2px solid #ddd;
+  // display: flex;
+  // justify-content: space-around;
+  // align-content: center;
+}
+
+#drop-down-top * {
+  height: 25px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+#drop-down-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}

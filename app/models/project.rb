@@ -24,6 +24,8 @@ primary_key: :id,
 foreign_key: :project_id,
 class_name: :Step
 
+has_one_attached :picture
+
 has_many :photos, as: :imageable
 # primary_key: :id,
 # foreign_key: :project_id,

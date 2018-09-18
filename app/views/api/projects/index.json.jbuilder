@@ -2,6 +2,7 @@
   json.set! project.id do
     json.partial! 'project', project: project do
       json.extract! @project.user, :username
+      json.photoUrl url_for(project.picture)
     end
     json.reviewIds []
   end
