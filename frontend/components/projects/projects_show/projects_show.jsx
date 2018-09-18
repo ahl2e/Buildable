@@ -22,14 +22,17 @@ constructor(props){
       <div className="show-header">
       <div className="title">{project.title}</div>
       <div className="description">{project.description}</div>
-      <div className="project-show-steps">
+      <div>
         <StepsIndexContainer/>
       </div>
     </div>
+    <div className="project-show-links">
       <Link to={`/api/projects/${project.id}/steps`}>Add a Step</Link>
+      <br/>
       <Link to={`/projects/${project.id}/edit/`}>Edit</Link>
       <br/>
       <Link to={"/"}>back to all projects</Link>
+    </div>
     </div>
   )
 }

@@ -19,6 +19,10 @@
   width: 90%;
 }
 
+ul {
+  list-style: none;
+}
+
 .landing-image{
   background-image: asset-url('woodworking_landing.jpg');
   background-size: cover;
@@ -74,6 +78,7 @@
    font-family: sans-serif;
    margin: 0;
  }
+
 
  body{
    margin: 0;
@@ -237,6 +242,9 @@
 
 .project-show {
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 .project-show .title{
@@ -323,6 +331,21 @@ border-radius: 7px;
   font-size: 18px;
 }
 
-.projects-show-steps {
-  list-style: none;
+.project-show-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 400px;
+  margin: auto;
+}
+
+.project-show-links a {
+  background-color: #ccc;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  color: black;
+  width: 50px;
+  text-align: center;
+  font-size: 10px;
+  text-decoration: none;
 }
