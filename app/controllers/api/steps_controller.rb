@@ -19,7 +19,9 @@ class Api::StepsController < ApplicationController
   end
 
   def destroy
-
+    @step = Step.find(params[:id])
+    @step.destroy
+    render :show
   end
 
   def show

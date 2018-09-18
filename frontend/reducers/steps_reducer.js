@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import {RECEIVE_STEP, RECEIVE_ALL_STEPS} from '../actions/step_actions';
+import {RECEIVE_STEP, RECEIVE_ALL_STEPS, REMOVE_STEP} from '../actions/step_actions';
 
 const StepsReducer = (oldState ={}, action) => {
   switch (action.type) {
@@ -7,6 +7,10 @@ const StepsReducer = (oldState ={}, action) => {
       return action.steps;
     case RECEIVE_STEP:
       return merge({}, oldState, { [action.step.id]: action.step });
+    case REMOVE_STEP:
+      const newState = Object.assign({}, oldState);
+      delete newState[action.step.id];
+      return newState;
     default:
       return oldState;
   }

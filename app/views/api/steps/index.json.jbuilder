@@ -9,6 +9,6 @@
 
 @steps.each do |step|
   json.set! step.id do
-    json.extract! step, :heading, :body, :project_id, :order_number
+    json.extract! step, :heading, :body, :project_id, :order_number, :id
   end
 end
