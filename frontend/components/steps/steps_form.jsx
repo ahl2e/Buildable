@@ -5,6 +5,7 @@ import { withRouter, Redirect} from 'react-router-dom';
 class StepsForm extends React.Component {
   constructor(props){
     super(props);
+    debugger
     this.state = this.props.step;
     this.state = merge({}, this.state,{redirect:false});
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,7 +19,7 @@ class StepsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
-  this.props.action(this.state).then(() => this.props.history.push('/')).then(this.setState({redirect : true}));
+  this.props.action(this.state).then(() => this.props.history.push(`/projects/${this.props.match.params.project_Id}`)).then(this.setState({redirect : true}));
 }
 
 
