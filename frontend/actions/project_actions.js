@@ -16,7 +16,7 @@ export const fetchProjects = () => dispatch => {
 };
 
 export const fetchSearchResults = (query) => dispatch => {
-  return ApiSearchUtil.search(query).the( result => dispatch(receiveSearchResults(results)));
+  return ApiSearchUtil.search(query).then( results => dispatch(receiveSearchResults(results)));
 };
 
 export const createProject = (project) => dispatch => {

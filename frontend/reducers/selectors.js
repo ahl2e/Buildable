@@ -8,6 +8,10 @@ export const selectAllSteps = (state) => {
   return values(state.entities.steps);
 };
 
+export const selectAllSearches = (state) => {
+  return values(state.entities.searches);
+};
+
 export const selectProject = (state, projectId) => {
   return state.entities.projects[projectId];
 };

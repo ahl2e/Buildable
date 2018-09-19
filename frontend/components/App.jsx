@@ -10,6 +10,8 @@ import {AuthRoute} from '../util/route_util';
 import {ProtectedRoute} from '../util/route_util';
 import ProjectsShowContainer from './projects/projects_show/projects_show_container';
 import CreateStepsFormContainer from './steps/create_steps_form_container';
+import SearchFormContainer from './search/search_form_container';
+import SearchIndexContainer from'./search/search_index_container';
 
 
 const App = () => (
@@ -17,6 +19,7 @@ const App = () => (
 <header className="main-header">
   <a className="icon-button" href="/">
   </a>
+  <SearchFormContainer/>
     <div className="Greeting-container">
     <GreetingContainer/>
   </div>
@@ -41,6 +44,7 @@ const App = () => (
     <Route path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
     <Route path="/projects/:projectId" component={ProjectsShowContainer} />
     <Route path="/api/projects/:project_Id/steps" component={CreateStepsFormContainer} />
+    <Route path="/api/projects/search" component={SearchIndexContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 
     </Switch>

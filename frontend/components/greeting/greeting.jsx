@@ -18,14 +18,14 @@ const Greeting = (props) => {
         <button className="user-photo" onClick={showDropDown}>
         </button>
     </div>
-    <div id="drop-down" class="no-show">
+    <div id="drop-down" className="no-show">
       <div id="drop-down-top">
         <button onClick={props.logout}>LOG OUT</button>
       </div>
       <div id="drop-down-bottom">
       <Link
         to='/create'
-        onClick={showDropDown}> Create a Project  
+        onClick={showDropDown}> Create a Project
       </Link>
     </div>
     </div>
