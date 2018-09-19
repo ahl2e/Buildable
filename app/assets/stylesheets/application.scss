@@ -16,14 +16,15 @@
 
 .projects-index-container {
   height: 100%;
-  width: 90%;
+  width: 94%;
+  margin: auto;
 }
 
 ul {
   list-style: none;
 }
 
-.landing-image{
+#landing-image{
   background-image: asset-url('woodworking_landing.jpg');
   background-size: cover;
   height: 700px;
@@ -31,21 +32,24 @@ ul {
 
 }
 
-.landing-text {
-  text-align: center;
+#landing-text {
   color: white;
-  // display: inline-block;
-  margin: 0 auto;
+  margin: 200px 320px;
+  position: absolute;
+  display: flex;
+  align-items: center;
 }
 
-.landing-image h1 {
+#landing-text h1 {
+  font-size: 68px;
+  margin: auto;
 }
 
 .projects-index-list {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 10px;
+  padding: 5px;
   list-style: none;
   flex-wrap: wrap;
 }
@@ -137,9 +141,6 @@ ul {
 .nav-left li {
   color: #939393;
 }
-
-
-
 
 .session-form-page {
   background-image: asset-url('blacksmithing.jpg');

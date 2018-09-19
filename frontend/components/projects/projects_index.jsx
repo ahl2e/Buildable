@@ -15,9 +15,9 @@ render(){
 
 return(
   <div>
-  <section className="landing-image">
-    <div className= "landing-text">
-    <h1>Let's Make Something</h1>
+  <section id="landing-image">
+    <div id="landing-text">
+    <h1>Let's Build a ________</h1>
     </div>
   </section>
   <section className="projects-index-container">
