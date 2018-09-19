@@ -24,15 +24,16 @@ handleSubmit(e){
 render(){
 
   return(
-    <div>
-      <form className="search-bar" onSubmit={this.handleSubmit.bind(this)}>
+    <div id="search-form">
+      <form onSubmit={this.handleSubmit.bind(this)}>
       <input
+        id="search-bar"
         type="text"
         value={this.state.query}
         onChange={this.update("query")}
-        placeholder="I want to build a..."
+        placeholder=" I want to build a..."
          />
-       <input className="search-submit" type="submit" value="Search" />
+       <input id="search-submit" type="submit" value="Search" />
      </form>
     </div>
   )
