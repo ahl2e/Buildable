@@ -355,3 +355,24 @@ border-radius: 7px;
   font-size: 10px;
   text-decoration: none;
 }
+
+.search-index-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.search-index-item {
+  width: 324px;
+  height: 324px;
+  border: 1px solid #eee;
+  position: relative;
+}
+.search-index-item a {
+  width: 18%;
+  height: 18%;
+  color: black;
+}

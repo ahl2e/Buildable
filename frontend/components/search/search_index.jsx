@@ -19,7 +19,7 @@ class SearchIndex extends React.Component {
 
   return(
     <div>
-      <ul>
+      <ul className="search-index-list">
         {this.props.searches.map((search) => <SearchIndexItem  search={search} />)}
       </ul>
     </div>
