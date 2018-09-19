@@ -1,5 +1,7 @@
 import * as ApiProjectUtil from '../util/project_api_util';
+import * as ApiSearchUtil from '../util/search_api_util';
 
+export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
 
@@ -11,6 +13,10 @@ export const fetchProject = (id)=> dispatch => {
 
 export const fetchProjects = () => dispatch => {
   return ApiProjectUtil.fetchAllProjects().then(projects => dispatch(receiveAllProjects(projects)));
+};
+
+export const fetchSearchResults = (query) => dispatch => {
+  return ApiSearchUtil.search(query).the( result => dispatch(receiveSearchResults(results)));
 };
 
 export const createProject = (project) => dispatch => {
@@ -35,4 +41,11 @@ const receiveAllProjects = (projects) => {
   type: RECEIVE_ALL_PROJECTS,
   projects: projects
 };
+};
+
+const receiveSearchResults = (results) => {
+  return{
+    type: RECEIVE_SEARCH_RESULTS,
+    results
+  };
 };
