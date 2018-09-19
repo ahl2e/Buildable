@@ -9,6 +9,7 @@
 User.delete_all
 user1 = User.create!({ username: 'Adam615', password: 'password', email: 'adamlong1066@gmail.com' })
 user2 = User.create!({ username: 'BVila', password: 'oldhouse', email: 'bvilla@thisoldhouse.com' })
+user3 = User.create!({ username: 'DemoUser', password: 'demopassword', email: 'demo@demo.com' })
 
 Project.delete_all
 bookshelf = Project.create!({

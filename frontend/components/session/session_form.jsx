@@ -17,6 +17,17 @@ update(field) {
   });
 }
 
+demoLogin(e) {
+  e.preventDefault();
+  const user = Object.assign({}, {username: "DemoUser", password: "demopassword"});
+  this.props.dispatchForm(user).then(() => this.props.history.push(`/`));
+  this.setState({
+    username: "",
+    password: "",
+    email:""
+  });
+}
+
 
 handleSubmit(e) {
   e.preventDefault();
@@ -69,7 +80,6 @@ if (!this.props.errors){
  document.getElementById("session-errors").className.add('no-show');
 }
 
-
     return(
       <div className='session-form-page'>
         <div className="session-form-wrapper">
@@ -93,8 +103,8 @@ if (!this.props.errors){
         </div>
         <br/>
           {errorRenders}
-        <input className="session-submit" type="submit" value ={this.props.formType}></input>
-
+          <input className="session-submit" type="submit" value ={this.props.formType}></input>
+          <button className="demo-button" onClick={this.demoLogin.bind(this)}> Demo Login </button>
         {this.props.navLink}
         </form>
       </div>
