@@ -15,6 +15,7 @@ class SearchIndex extends React.Component {
 
   render(){
     if(this.props.searches.length){
+      debugger
 
   return(
     <div>
