@@ -65,14 +65,19 @@ ul {
   height: 18%;
   color: black;
 }
+.project-index-item img {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+}
 
 .index-item-footer{
   display: flex;
   flex-direction: column;
+  text-decoration: none;
 }
 
-.test-photo {
-  background-image: asset-url('blacksmithing.jpg');
+.test-photo {;
   height: 270px;
   width: 100%;
   background-size: contain;
