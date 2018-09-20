@@ -40,10 +40,10 @@ const App = () => (
     <Switch>
     <Route path="/login" component={LoginFormContainer} />
     <Route path="/signup" component={SignupFormContainer} />
-    <Route path="/create" component={CreateProjectsFormContainer} />
-    <Route path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
+    <ProtectedRoute path="/create" component={CreateProjectsFormContainer} />
+    <ProtectedRoute path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
     <Route path="/projects/:projectId" component={ProjectsShowContainer} />
-    <Route path="/api/projects/:project_Id/steps" component={CreateStepsFormContainer} />
+    <ProtectedRoute path="/api/projects/:project_Id/steps" component={CreateStepsFormContainer} />
     <Route path="/api/projects/search" component={SearchIndexContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 
