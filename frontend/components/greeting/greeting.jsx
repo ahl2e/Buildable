@@ -20,6 +20,7 @@ const Greeting = (props) => {
     </div>
     <div id="drop-down" className="no-show">
       <div id="drop-down-top">
+        <p>{props.currentUser.username}</p>
         <button onClick={props.logout}>LOG OUT</button>
       </div>
       <div id="drop-down-bottom">

@@ -18,7 +18,7 @@ class StepsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
-  this.props.action(this.state).then(() => this.props.history.push(`/projects/${this.props.match.params.project_Id}`)).then(this.setState({redirect : true}));
+  this.props.action(this.state).then(() => this.props.history.push(`/projects/${this.props.match.params.project_Id}`));
 }
 
 

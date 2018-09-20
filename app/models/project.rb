@@ -13,6 +13,7 @@
 
 class Project < ApplicationRecord
 validates :title, :description, :user_id, presence: true
+validate :ensure_picture
 
 belongs_to :user,
 primary_key: :id,
@@ -36,6 +37,12 @@ has_many :comments, as: :comentable
 # foreign_key: :project_id,
 # class_name: :Comment
 
+
+def ensure_picture
+  unless self.picture.attached?
+    errors[:picture] << "must be atached."
+  end
+end
 
 
 end

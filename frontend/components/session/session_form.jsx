@@ -32,7 +32,7 @@ demoLogin(e) {
 handleSubmit(e) {
   e.preventDefault();
   const user = Object.assign({}, this.state);
-  this.props.dispatchForm(user).then(() => this.props.history.push(`/`));
+  this.props.dispatchForm(user).then(() => this.props.history.push(`/`), () => this.props.history.push(`/login`));
   this.setState({
     username: "",
     password: "",
