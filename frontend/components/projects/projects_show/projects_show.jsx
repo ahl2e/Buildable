@@ -16,6 +16,13 @@ constructor(props){
   render (){
     const project = this.props.project || {title: "", description: "", id: this.props.match.params.projectId}
 
+    let picture;
+    if (project.project){
+      if(project.project.imageUrl){
+        picture = <img src={`${project.project.imageUrl}`} />;
+      }
+  }
+
   return (
 
     <div className="project-show">
@@ -23,6 +30,9 @@ constructor(props){
       <div className="title">{project.title}</div>
       <div className="description">{project.description}</div>
       <div>
+        <div className="main-image-container">
+          {picture}
+        </div>
         <StepsIndexContainer/>
       </div>
     </div>

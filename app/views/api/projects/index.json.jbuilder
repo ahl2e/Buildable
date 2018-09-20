@@ -12,5 +12,6 @@ end
   json.set! project.id do
     json.extract! project, :title, :description
     json.extract! project.user, :username
+    # json.photoUrl url_for(project.picture)
   end
 end

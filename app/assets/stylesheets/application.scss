@@ -269,6 +269,22 @@ ul {
   padding-top: 50px;
 }
 
+.form-footer{
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.photo-preview-div {
+  max-width: 75px;
+  max-height: 100px
+}
+
+ img{
+  width: 100px;
+  image-orientation: from-image;
+}
+
 .form-box {
   width: 900px;
   height: 500px;
