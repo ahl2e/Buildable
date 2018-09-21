@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 
 # Buildable
 
@@ -37,11 +14,11 @@ Link to live app: (https://buildable.herokuapp.com)
 + jQuery Ajax - allows asynchronous calls to the backend database without interfering with the front end experience
 + React - Dynamically generates front-end experience allowing for fluid single-page apps.
 
-##Features
+## Features
 
-#### Projects 
+#### Projects
   Share projects you're proud of.  Once you've added the project, add step by step instructions for others to recreate them.
   Each step will soon be able to include pictures to illustrate your technique.
 
 #### Search
-  Search the database for projects matching your interest.  Search currently scans the title of a projects, but will soon look at descriptions to find even more possibilities.
+  Search the database for projects matching your interest.  Search currently scans the title of a project, but will soon look at descriptions to find even more possibilities.
