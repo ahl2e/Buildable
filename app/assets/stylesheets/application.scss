@@ -120,6 +120,17 @@ ul {
   margin-top: 5px;
 }
 
+#icon-text{
+  color: black;
+  text-decoration: none;
+  background-color: #eee;
+  position:absolute;
+  left: 154px;
+  top: 9px;
+  padding-right: 50px;
+  padding-left: 20px;
+}
+
 .main-header h3 {
   padding-left: 10px
 }
@@ -262,6 +273,11 @@ ul {
 
 .project-show .title{
   font-size: 14px;
+}
+
+.project-show .main-image-container{
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
 
 .projects-form {

@@ -18,6 +18,9 @@ const App = () => (
   <main className="app-container">
 <header className="main-header">
   <a className="icon-button" href="/">
+    <div id="icon-text">
+      <h2>buildable </h2>
+    </div>
   </a>
   <SearchFormContainer/>
     <div className="Greeting-container">

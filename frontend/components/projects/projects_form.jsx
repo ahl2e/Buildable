@@ -32,7 +32,7 @@ handleSubmit(e){
     data: formData,
     contentType: false,
     processData: false
-  }).then(() => this.props.history.push(`/`));;
+  }).then(() => this.props.history.push(`/`), () => this.props.history.push(`/create`));;
 
 }
 
@@ -88,6 +88,7 @@ render(){
               <div className="button-container">
                 <input className="submit" type="submit" value={this.props.formType}/>
               </div>
+              {this.props.errors}
             </div>
           </form>
         </div>

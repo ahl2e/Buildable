@@ -28,11 +28,13 @@ constructor(props){
     <div className="project-show">
       <div className="show-header">
       <div className="title">{project.title}</div>
+      <div className="main-image-container">
+        {picture}
+      </div>
+
+      <h3>About: {project.title}</h3>
       <div className="description">{project.description}</div>
       <div>
-        <div className="main-image-container">
-          {picture}
-        </div>
         <StepsIndexContainer/>
       </div>
     </div>
