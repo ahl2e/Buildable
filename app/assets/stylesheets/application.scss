@@ -280,6 +280,12 @@ ul {
 .project-show .main-image-container{
   margin-top: 35px;
   margin-bottom: 35px;
+  border-radius: 7px;
+}
+
+.project-show img {
+  border-radius: 9px;
+  border-radius: 1px solid #ddd
 }
 
 .projects-form {
