@@ -59,6 +59,7 @@ ul {
   height: 324px;
   border: 1px solid #eee;
   position: relative;
+  margin-top: 25px;
 }
 .project-index-item a {
   width: 18%;
@@ -380,7 +381,7 @@ border-radius: 7px;
 
 .search-index-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   padding: 10px;
   list-style: none;
@@ -389,7 +390,6 @@ border-radius: 7px;
 
 .search-index-item {
   width: 324px;
-  height: 324px;
   border: 1px solid #eee;
   position: relative;
 }

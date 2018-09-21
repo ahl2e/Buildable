@@ -29,9 +29,9 @@ const App = () => (
   <div className="nav-left">
     <ul>
       <li><Link to={'/create'}>Create</Link></li>
-      <li>Commenting</li>
       <li>Add Photos</li>
       <li>Search</li>
+      <li>Comments</li>
     </ul>
   </div>
 </div>
