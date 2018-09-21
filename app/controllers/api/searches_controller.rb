@@ -1,6 +1,6 @@
 class Api::SearchesController < ApplicationController
   def index
-    @projects = Project.where("title LIKE  ?", "%#{search_params[:query]}%");
+    @projects = Project.where("title ILIKE  ?", "%#{search_params[:query]}%");
     render :index
   end
 
