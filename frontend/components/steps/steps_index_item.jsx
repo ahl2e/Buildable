@@ -13,10 +13,12 @@ class StepsIndexItem extends React.Component {
 
 
   render() {
+    const pic = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;
+
     // debugger
   return(
     <li>
-      <img src={`${this.state.imageUrl}`} />
+      {pic}
       <h3>Step {this.state.order_number}: {this.state.heading}</h3>
       <p>{this.state.body}</p>
       <button value="Delete Step" onClick={this.delete.bind(this)}>Delete</button>
