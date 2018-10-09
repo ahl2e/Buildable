@@ -1,1 +1,1 @@
-json.extract! step, :heading, :body, :id
+json.extract! step, :heading, :body, :id, :picture

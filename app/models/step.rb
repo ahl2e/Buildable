@@ -11,6 +11,7 @@
 
 class Step < ApplicationRecord
   validates :heading,:body, presence: true
+  validate :ensure_picture
 
   belongs_to :project,
   primary_key: :id,
@@ -22,5 +23,11 @@ class Step < ApplicationRecord
   # foreign_key: :project_id,
   # class_name: :Comment
 
-  has_many :photos, as: :imageable
+  has_one_attached :picture
+
+  def ensure_picture
+    unless self.picture.attached?
+      errors[:picture] << "must be atached."
+    end
+  end
 end

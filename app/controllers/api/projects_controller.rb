@@ -24,7 +24,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.all.with_attached_picture
 
   end
 

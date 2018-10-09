@@ -19,6 +19,12 @@
   width: 94%;
   margin: auto;
 }
+.projects-index-container > ul :hover{
+  box-shadow: 1px 1px 1px black;
+}
+.projects-index-container > ul >li :hover{
+  box-shadow: none;
+}
 
 ul {
   list-style: none;
@@ -54,14 +60,27 @@ ul {
   flex-wrap: wrap;
 }
 
+// .projects-index-list > li :hover{
+//
+// }
+
 .project-index-item {
   width: 324px;
   height: 324px;
   border: 1px solid #eee;
   position: relative;
   margin-top: 25px;
+  box-shadow: 1px 1px 1px #ddd;
+  .title{
+    font-size: 20px;
+  }
+  .author {
+    color: grey;
+  }
 }
+
 .project-index-item a {
+  text-decoration: none;
   width: 18%;
   height: 18%;
   color: black;
@@ -360,6 +379,7 @@ border-radius: 7px;
   margin-top: 30px;
   height: 45px;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }
 
@@ -369,6 +389,15 @@ border-radius: 7px;
   background-color: #DD6607;
   color: white;
   font-size: 18px;
+}
+
+.fileinput{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
 
 .show-header {

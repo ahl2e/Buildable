@@ -27,12 +27,12 @@ class_name: :Step
 
 has_one_attached :picture
 
-has_many :photos, as: :imageable
+# has_many :photos, as: :imageable
 # primary_key: :id,
 # foreign_key: :project_id,
 # class_name: :Photo
 
-has_many :comments, as: :comentable
+# has_many :comments, as: :comentable
 # primary_key: :id,
 # foreign_key: :project_id,
 # class_name: :Comment

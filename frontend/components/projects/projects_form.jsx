@@ -79,8 +79,11 @@ render(){
               <div className="button-container">
                 <input
                   type="file"
+                  className="fileinput"
                   onChange={this.handleFile.bind(this)}
                   />
+                <label htmlFor="file">Upload a Picture</label>
+
               </div>
               <div className="photo-preview-div">
                 {preview}

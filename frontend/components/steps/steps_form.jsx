@@ -18,13 +18,42 @@ class StepsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
-  this.props.action(this.state).then(() => this.props.history.push(`/projects/${this.props.match.params.project_Id}`));
+  const formData = new FormData();
+  formData.append('step[heading]', this.state.heading);
+  formData.append('step[body]', this.state.body);
+  formData.append('step[project_id]', this.state.project_id);
+  formData.append('step[order_number]', this.state.order_number);
+  if (this.state.imageFile) {
+   formData.append('step[picture]', this.state.imageFile);
+ }
+ debugger
+ $.ajax({
+    url:`/api/projects/${this.props.match.params.project_Id}/steps`,
+    method: 'POST',
+    data: formData,
+    contentType: false,
+    processData: false
+  }).then(() => this.props.history.push(`/projects/${this.props.match.params.project_Id}`));
+
+}
+
+handleFile(e) {
+  const reader = new FileReader();
+  const file = e.currentTarget.files[0];
+  reader.onloadend = () =>
+    this.setState({ imageUrl: reader.result, imageFile: file});
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    this.setState({ imageUrl: "", imageFile: null });
+  }
 }
 
 
 
 render(){
-
+  const preview = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;
   if(this.state.redirect) {
     return <Redirect to={'/'} />;
   }
@@ -36,13 +65,7 @@ render(){
         <div className="inner-form-box">
       <form onSubmit={this.handleSubmit}>
         <p>Add a step:</p>
-        <input
-          type="number"
-          value={this.state.order_number}
-          onChange={this.update("order_number")}
-          placeholder ="Step Number"
-          minimum = "1"
-          />
+
         <br/>
         <input
           type="text"
@@ -61,10 +84,20 @@ render(){
           cols="80"
           />
         <br/>
-        <div className="button-container">
-          <button> Dead button</button>
-          <input className="submit" type="submit" value={this.props.formType}/>
-        </div>
+          <div className="button-container">
+            <label>Upload a Picture
+            <input
+              type="file"
+              className="fileinput"
+              onChange={this.handleFile.bind(this)}
+              />
+          </label>
+          <div className="photo-preview-div">
+            {preview}
+          </div>
+            <input className="submit" type="submit" value={this.props.formType}/>
+          </div>
+
       </form>
         </div>
       </section>

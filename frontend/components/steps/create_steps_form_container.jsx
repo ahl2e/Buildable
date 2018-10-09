@@ -4,8 +4,8 @@ import {selectAllSteps} from '../../reducers/selectors';
 import {createStep} from '../../actions/step_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    let stepCount =selectAllSteps(state).length
-    const step = { heading: '', body: '', project_id: parseInt(ownProps.match.params.project_Id), order_number: stepCount + 1 };
+    let stepCount = selectAllSteps(state).length || 0;
+    const step = { heading: '', body: '', project_id: parseInt(ownProps.match.params.project_Id), order_number: stepCount + 1,imageFile: null };
     const formType  = "Add Step";
 
   return {step, formType};
