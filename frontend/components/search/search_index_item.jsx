@@ -7,13 +7,11 @@ const SearchIndexItem = ({ search }) => {
   return (
   <li className="search-index-item">
     <Link to={`/projects/${search.id}`}>
+      <div className="test-photo">
+        <img src={`${search.imageUrl}`} />
+      </div>
       <div className="index-item-footer">
-
-      <img src={`${search.imageUrl}`} />
-      <span className="search-title">{search.title}</span>
-        <div className="search-description">
-          <p>{search.description}</p>
-        </div>
+        <span className="search-title">{search.title}</span>
       </div>
     </Link>
 

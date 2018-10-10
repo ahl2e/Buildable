@@ -1,0 +1,45 @@
+.search-index-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+// .search-index-list > li :hover{
+//   box-shadow: 1px 1px 1px black;
+// }
+.search-index-item > div :hover{
+  box-shadow: none;
+}
+
+
+
+.search-index-item {
+  width: 324px;
+  height: 324px;
+  border: 1px solid #eee;
+  position: relative;
+  margin-top: 25px;
+  box-shadow: 1px 1px 1px #ddd;
+  .search-title{
+    font-size: 20px;
+    color: grey;
+  }
+}
+
+.search-index-item :hover{
+  box-shadow: 1px 1px 1px black;
+}
+
+.search-index-item a {
+  text-decoration: none;
+  width: 18%;
+  height: 18%;
+  color: black;
+}
+.search-index-item img {
+  height: 270px;
+  width: 100%;
+  background-size: contain;
+}
