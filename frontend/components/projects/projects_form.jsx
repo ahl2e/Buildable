@@ -76,6 +76,7 @@ render(){
               />
             <br/>
             <div className="form-footer">
+              
               <div className="button-container">
                 <label>Upload a Picture
                 <input
@@ -84,14 +85,16 @@ render(){
                   onChange={this.handleFile.bind(this)}
                   />
               </label>
-
               </div>
+
               <div className="photo-preview-div">
                 {preview}
               </div>
+
               <div className="button-container">
                 <input className="submit" type="submit" value={this.props.formType}/>
               </div>
+
               {this.props.errors}
             </div>
           </form>

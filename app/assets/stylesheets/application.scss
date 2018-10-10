@@ -329,9 +329,14 @@ ul {
   max-height: 100px
 }
 
- img{
+.photo-preview-div > img {
   width: 100px;
   image-orientation: from-image;
+}
+
+ img{
+   width: 100px;
+   image-orientation: from-image;
 }
 
 .form-box {
@@ -389,6 +394,10 @@ border-radius: 7px;
   background-color: #DD6607;
   color: white;
   font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  vertical-align: middle;
+  justify-content: space-around;
 }
 
 .fileinput{
