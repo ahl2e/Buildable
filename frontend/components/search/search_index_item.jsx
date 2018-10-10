@@ -9,8 +9,9 @@ const SearchIndexItem = ({ search }) => {
     <Link to={`/projects/${search.id}`}>
       <div className="index-item-footer">
 
+      <img src={`${search.imageUrl}`} />
       <span className="search-title">{search.title}</span>
-        <div ClassName="search-description">
+        <div className="search-description">
           <p>{search.description}</p>
         </div>
       </div>

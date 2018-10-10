@@ -31,10 +31,10 @@ const App = () => (
 <div className = "nav-bar">
   <div className="nav-left">
     <ul>
-      <li><Link to={'/create'}>Create</Link></li>
-      <li>Add Photos</li>
-      <li>Search</li>
-      <li>Comments</li>
+      <li><Link to={'/create'}>Build</Link></li>
+      <li>Share</li>
+      <li>Learn</li>
+      <li>Repeat</li>
     </ul>
   </div>
 </div>

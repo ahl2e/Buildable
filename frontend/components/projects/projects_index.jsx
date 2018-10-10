@@ -17,7 +17,10 @@ return(
   <div>
   <section id="landing-image">
     <div id="landing-text">
-    <h1>Let's Build a ________</h1>
+    <h1 id="changing-text">Let's Build a ________</h1>
+    <script>
+      document.getElementById("changing-text").innerHTML = "test";
+    </script>
     </div>
   </section>
   <section className="projects-index-container">
