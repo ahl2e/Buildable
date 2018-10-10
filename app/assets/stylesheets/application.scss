@@ -208,7 +208,7 @@ ul {
 
 .session-form {
   position: absolute;
-  height: 25%;
+  height: 50%;
   width: 400px;
   margin-left: 50px;
   display: flex;
@@ -329,14 +329,14 @@ ul {
   max-height: 100px
 }
 
-.photo-preview-div > img {
-  width: 100px;
-  image-orientation: from-image;
-}
+// .photo-preview-div > img {
+//   width: 100px;
+//   image-orientation: from-image;
+// }
 
  img{
    width: 100px;
-   image-orientation: from-image;
+   // image-orientation: from-image;
 }
 
 .form-box {

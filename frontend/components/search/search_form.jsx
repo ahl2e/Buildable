@@ -18,7 +18,7 @@ update(field) {
 
 handleSubmit(e){
   e.preventDefault();
-  this.props.fetchSearchResults(this.state).then(() => this.props.history.push(`/api/projects/search`));
+  this.props.fetchSearchResults(this.state).then(() => this.props.history.push(`/projects/search`));
 }
 
 render(){

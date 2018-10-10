@@ -41,13 +41,13 @@ const App = () => (
 
 
     <Switch>
-    <Route path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute path="/create" component={CreateProjectsFormContainer} />
-    <ProtectedRoute path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
-    <Route path="/projects/:projectId" component={ProjectsShowContainer} />
-    <ProtectedRoute path="/api/projects/:project_Id/steps" component={CreateStepsFormContainer} />
-    <Route path="/api/projects/search" component={SearchIndexContainer} />
+    <Route exact path="/login" component={LoginFormContainer} />
+    <Route exact path="/signup" component={SignupFormContainer} />
+    <Route exact path="/projects/search" component={SearchIndexContainer} />
+    <ProtectedRoute exact path="/create" component={CreateProjectsFormContainer} />
+    <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
+    <Route exact path="/projects/:projectId" component={ProjectsShowContainer} />
+    <ProtectedRoute exact path="/projects/:project_Id/steps" component={CreateStepsFormContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 
     </Switch>

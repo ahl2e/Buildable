@@ -39,7 +39,7 @@ constructor(props){
       </div>
     </div>
     <div className="project-show-links">
-      <Link to={`/api/projects/${project.id}/steps`}>Add a Step</Link>
+      <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>
       <br/>
       <Link to={`/projects/${project.id}/edit/`}>Edit</Link>
       <br/>

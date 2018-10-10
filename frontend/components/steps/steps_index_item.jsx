@@ -8,6 +8,7 @@ class StepsIndexItem extends React.Component {
   }
 
   delete(e){
+    debugger
     this.props.delete(this.props.step);
   }
 
