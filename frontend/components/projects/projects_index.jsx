@@ -4,31 +4,40 @@ import ProjectIndexItem from './projects_index_item';
 class ProjectsIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {projects:null};
+    this.state = {projects: null};
   }
 
   componentWillMount() {
     localStorage.getItem('projects') && this.setState({
       projects: JSON.parse(localStorage.getItem('projects'))
-    })
+    });
   }
 
   componentDidMount() {
-    if (!localStorage.getItem("projects")){
-      this.props.fetchProjects(),this.setState({projects: JSON.parse(localStorage.getItem('projects'))});
+    const cachedProjects = localStorage.getItem("projects");
+    if (!cachedProjects || cachedProjects.length == 0){
+      this.props.fetchProjects();
+    }else{
+      this.setState({projects: JSON.parse(localStorage.getItem('projects'))});
     }
   }
 
   componentWillUpdate(nextProps, nextState){
-    localStorage.setItem('projects', JSON.stringify(nextProps.projects));
+    if (nextState.projects){
+      // debugger
+      localStorage.setItem('projects', JSON.stringify(nextState.projects));
+    } else {
+      localStorage.setItem('projects', JSON.stringify(nextProps.projects));
+    }
   }
 
 
 render(){
-    // if (this.state.projects){
-    //   const proj = this.state.projects.map((project) => <ProjectIndexItem key={project.id}  projects={project} />);
-    // }
-
+    if (this.state.projects && this.state.projects.length != 0){
+      var proj = this.state.projects.map((project) => <ProjectIndexItem key={project.id}  projects={project} />);
+    } else{
+      var proj = this.props.projects.map((project) => <ProjectIndexItem key={project.id}  projects={project} />);
+    }
 return(
   <div>
   <section id="landing-image">
@@ -41,7 +50,7 @@ return(
   </section>
   <section className="projects-index-container">
     <ul className="projects-index-list">
-      {this.state.projects.map((project) => <ProjectIndexItem key={project.id}  projects={project} />)}
+      {proj}
     </ul>
   </section>
 </div>
