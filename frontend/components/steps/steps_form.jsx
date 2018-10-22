@@ -26,9 +26,10 @@ handleSubmit(e){
   if (this.state.imageFile) {
    formData.append('step[picture]', this.state.imageFile);
  }
+ debugger
  $.ajax({
     url:`/api/projects/${this.props.match.params.project_Id}/steps`,
-    method: 'POST',
+    method: `${this.props.method}`,
     data: formData,
     contentType: false,
     processData: false

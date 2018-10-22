@@ -66,7 +66,7 @@ ul {
 
 .project-index-item {
   width: 324px;
-  height: 324px;
+  height: 374px;
   border: 1px solid #eee;
   position: relative;
   margin-top: 25px;
@@ -93,6 +93,8 @@ ul {
 }
 
 .index-item-footer{
+  height: 50px;
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -322,6 +324,11 @@ ul {
 .form-footer{
   height: 120px;
   display: flex;
+  justify-content: space-around;
+}
+.form-footer label{
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
 

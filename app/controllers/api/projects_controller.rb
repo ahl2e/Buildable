@@ -8,7 +8,7 @@ class Api::ProjectsController < ApplicationController
       end
   end
 
-  def edit
+  def update
     @project = Project.find(params[:id])
 
     if @project.update(project_params)

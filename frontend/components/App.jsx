@@ -10,6 +10,7 @@ import {AuthRoute} from '../util/route_util';
 import {ProtectedRoute} from '../util/route_util';
 import ProjectsShowContainer from './projects/projects_show/projects_show_container';
 import CreateStepsFormContainer from './steps/create_steps_form_container';
+import EditStepsFormContainer from './steps/edit_steps_form_container';
 import SearchFormContainer from './search/search_form_container';
 import SearchIndexContainer from'./search/search_index_container';
 
@@ -48,6 +49,7 @@ const App = () => (
     <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
     <Route exact path="/projects/:projectId" component={ProjectsShowContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/steps" component={CreateStepsFormContainer} />
+    <ProtectedRoute exact path="/projects/:project_Id/:step/edit" component={EditStepsFormContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 
     </Switch>

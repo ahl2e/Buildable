@@ -18,6 +18,7 @@ class ProjectsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
+  debugger
   const formData = new FormData();
   formData.append('project[title]', this.state.title);
   formData.append('project[description]', this.state.description);
@@ -25,14 +26,28 @@ handleSubmit(e){
   if (this.state.imageFile) {
    formData.append('project[picture]', this.state.imageFile);
  }
+ if (this.props.formType == "Update Project"){
+   $.ajax({
+     url: `/api/projects/${this.state.id}`,
+     method: `${this.props.method}`,
+     data: formData,
+     contentType: false,
+     processData: false
+   }).then(() => this.props.history.push(`/`), () => this.props.history.push(`/projects/${this.props.match.params.projectId}`));;
+ } else {
 
- $.ajax({
-    url: '/api/projects',
-    method: 'POST',
-    data: formData,
-    contentType: false,
-    processData: false
-  }).then(() => this.props.history.push(`/`), () => this.props.history.push(`/create`));;
+   var existingProjects = JSON.parse(localStorage.getItem('projects'));
+   var newProjects = existingProjects.push(this.state);
+   localStorage.setItem('projects', JSON.stringify(existingProjects));
+
+   $.ajax({
+     url: '/api/projects',
+     method: `${this.props.method}`,
+     data: formData,
+     contentType: false,
+     processData: false
+   }).then(() => this.props.history.push(`/`), () => this.props.history.push(`/create`));;
+ }
 
 }
 
@@ -76,7 +91,7 @@ render(){
               />
             <br/>
             <div className="form-footer">
-              
+
               <div className="button-container">
                 <label>Upload a Picture
                 <input

@@ -7,8 +7,9 @@ const mapStateToProps = (state, ownProps) => {
     let stepCount = selectAllSteps(state).length || 0;
     const step = { heading: '', body: '', project_id: parseInt(ownProps.match.params.project_Id), order_number: stepCount + 1,imageFile: null };
     const formType  = "Add Step";
+    const method = "POST";
 
-  return {step, formType};
+  return {step, formType, method};
 };
 
 const mapDispatchToProps = (dispatch) => {

@@ -5,8 +5,9 @@ import {createProject} from '../../actions/project_actions';
 const mapStateToProps = (state, ownProps) => {
     const project = { title: '', description: '', user_id: state.session.id, imageFile: null };
     const formType  = "Create Project";
+    const method = "POST";
 
-  return {project, formType};
+  return {project, formType, method};
 };
 
 const mapDispatchToProps = (dispatch) => {
