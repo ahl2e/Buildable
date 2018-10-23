@@ -13,8 +13,14 @@ constructor(props){
     this.props.fetchAllSteps(projectId);
   }
 
+  delete(e){
+    localStorage.setItem('projects', []);
+    this.props.deleteProject(this.props.project),this.props.history.push(`/`);
+  }
+
   render (){
-    const project = this.props.project || {title: "", description: "", id: this.props.match.params.projectId}
+    const project = this.props.project || {title: "", description: "", id: this.props.match.params.projectId};
+    const deleteButton = <button value="Delete" onClick={this.delete.bind(this)}>Delete</button>;
 
     let picture;
     if (project.project){
@@ -42,6 +48,7 @@ constructor(props){
       <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>
       <br/>
       <Link to={`/projects/${project.id}/edit/`}>Edit</Link>
+      {deleteButton}
       <br/>
       <Link to={"/"}>back to all projects</Link>
     </div>

@@ -7,6 +7,7 @@ class ProjectsForm extends React.Component {
     super(props);
     this.state = this.props.project;
     this.state = merge({}, this.state,{redirect:false});
+    this.state.userId = this.props.userId;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -18,7 +19,6 @@ class ProjectsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
-  // debugger
   const formData = new FormData();
   formData.append('project[title]', this.state.title);
   formData.append('project[description]', this.state.description);
@@ -37,15 +37,16 @@ handleSubmit(e){
      data: formData,
      contentType: false,
      processData: false
-   }).then(() => this.props.history.push(`/`), () => this.props.history.push(`/projects/${this.props.match.params.projectId}`));;
+   }).then(() => this.props.history.push(`/`), () => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
+
  } else {
 
    var existingProjects = JSON.parse(localStorage.getItem('projects'));
-   debugger
    var lastProjectId = existingProjects[existingProjects.length -1 ].id;
    this.state = merge({}, this.state,{id:lastProjectId + 1});
    var newProjects = existingProjects.push(this.state);
-   localStorage.setItem('projects', JSON.stringify(existingProjects));
+   localStorage.setItem('projects', []);
+   // this.props.history.push(`/`);
 
    $.ajax({
      url: '/api/projects',
@@ -53,7 +54,7 @@ handleSubmit(e){
      data: formData,
      contentType: false,
      processData: false
-   }).then(() => this.props.history.push(`/`), () => this.props.history.push(`/create`));;
+   });
  }
 
 }
@@ -72,11 +73,9 @@ handleFile(e) {
 }
 
 render(){
-// debugger
   var preview = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;
   if (this.state.project){
-    debugger
-    preview =  <img src={this.state.project.imageUrl} />;
+    preview = <img src={this.state.project.imageUrl} />;
   }
   return(
     <div className="projects-form">

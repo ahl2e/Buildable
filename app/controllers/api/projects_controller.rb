@@ -12,15 +12,19 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project.update(project_params)
+      debugger
       render :show
     else
+      debugger
       render json: @project.errors.full_messages, status: 422
     end
 
   end
 
   def destroy
-
+    @project = Project.find(params[:id])
+    @project.destroy
+    render :show
   end
 
   def index
@@ -36,6 +40,6 @@ class Api::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:user_id, :title, :description, :picture)
+    params.require(:project).permit(:user_id, :title, :description, :picture, :id)
   end
 end

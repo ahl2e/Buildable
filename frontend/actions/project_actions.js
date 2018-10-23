@@ -4,6 +4,8 @@ import * as ApiSearchUtil from '../util/search_api_util';
 export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
+export const REMOVE_PROJECT = "REMOVE_PROJECT";
+
 
 
 export const fetchProject = (id)=> dispatch => {
@@ -27,6 +29,9 @@ export const updateProject = (project) => dispatch => {
   return ApiProjectUtil.updateProject(project).then((project) => dispatch(receiveProject(project)));
 };
 
+export const deleteProject = (project) => dispatch => {
+  return ApiProjectUtil.deleteProject(project).then(project => dispatch(removeProject(project)));
+};
 
 
 const receiveProject = (project) => {
@@ -47,5 +52,12 @@ const receiveSearchResults = (results) => {
   return{
     type: RECEIVE_SEARCH_RESULTS,
     results
+  };
+};
+
+const removeProject = (project) => {
+  return{
+    type: REMOVE_PROJECT,
+    project: project
   };
 };

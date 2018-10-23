@@ -5,11 +5,11 @@ import { fetchProject, updateProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const defaultProject = { title: '', description: '', user_id: state.session.id, imageFile: null };
-
+  const user_id = state.session.id;
   const project = state.entities.projects[ownProps.match.params.projectId] || defaultProject;
   const formType = 'Update Project';
   const method = "PATCH";
-  return { project, formType, method };
+  return { project, formType, method, user_id };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -31,14 +31,15 @@ class EditProjectForm extends React.Component {
   }
 
   render() {
-    const { action, formType, project, method } = this.props;
-    debugger
+    const { action, formType, project, method, user_id } = this.props;
     return (
       <ProjectForm
         action={action}
         formType={formType}
         project={project}
-        method = {method} />
+        method={method}
+        userId={user_id}
+         />
     );
   }
 }
