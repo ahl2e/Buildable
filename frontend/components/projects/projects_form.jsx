@@ -18,7 +18,7 @@ class ProjectsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
-  debugger
+  // debugger
   const formData = new FormData();
   formData.append('project[title]', this.state.title);
   formData.append('project[description]', this.state.description);
@@ -26,6 +26,10 @@ handleSubmit(e){
   if (this.state.imageFile) {
    formData.append('project[picture]', this.state.imageFile);
  }
+  if (this.state.id) {
+   formData.append('project[id]', this.state.id);
+ }
+
  if (this.props.formType == "Update Project"){
    $.ajax({
      url: `/api/projects/${this.state.id}`,
@@ -37,6 +41,9 @@ handleSubmit(e){
  } else {
 
    var existingProjects = JSON.parse(localStorage.getItem('projects'));
+   debugger
+   var lastProjectId = existingProjects[existingProjects.length -1 ].id;
+   this.state = merge({}, this.state,{id:lastProjectId + 1});
    var newProjects = existingProjects.push(this.state);
    localStorage.setItem('projects', JSON.stringify(existingProjects));
 
@@ -65,8 +72,12 @@ handleFile(e) {
 }
 
 render(){
-
-  const preview = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;
+// debugger
+  var preview = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;
+  if (this.state.project){
+    debugger
+    preview =  <img src={this.state.project.imageUrl} />;
+  }
   return(
     <div className="projects-form">
       <section className="form-box">

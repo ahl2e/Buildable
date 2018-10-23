@@ -24,7 +24,6 @@ class ProjectsIndex extends React.Component {
 
   componentWillUpdate(nextProps, nextState){
     if (nextState.projects){
-      debugger
       localStorage.setItem('projects', JSON.stringify(nextState.projects));
     } else {
       localStorage.setItem('projects', JSON.stringify(nextProps.projects));

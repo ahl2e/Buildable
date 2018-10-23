@@ -32,6 +32,7 @@ class EditProjectForm extends React.Component {
 
   render() {
     const { action, formType, project, method } = this.props;
+    debugger
     return (
       <ProjectForm
         action={action}
