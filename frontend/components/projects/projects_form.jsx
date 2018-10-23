@@ -46,7 +46,8 @@ handleSubmit(e){
    this.state = merge({}, this.state,{id:lastProjectId + 1});
    var newProjects = existingProjects.push(this.state);
    localStorage.setItem('projects', []);
-   // this.props.history.push(`/`);
+
+
 
    $.ajax({
      url: '/api/projects',
@@ -54,7 +55,7 @@ handleSubmit(e){
      data: formData,
      contentType: false,
      processData: false
-   });
+   }).then(() => this.props.history.push(`/`));
  }
 
 }

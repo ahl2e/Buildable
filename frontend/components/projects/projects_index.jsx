@@ -15,7 +15,7 @@ class ProjectsIndex extends React.Component {
 
   componentDidMount() {
     const cachedProjects = localStorage.getItem("projects");
-    if (!cachedProjects || cachedProjects.length == 0){
+    if (!cachedProjects || cachedProjects.length < 2){
       this.props.fetchProjects();
     }else{
       this.setState({projects: JSON.parse(localStorage.getItem('projects'))});
