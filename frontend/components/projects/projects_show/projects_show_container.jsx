@@ -8,10 +8,19 @@ import ProjectShow from './projects_show';
 const mapStateToProps = (state, {match}) => {
       const projectId = parseInt(match.params.projectId);
       const project = selectProject(state, projectId);
-      return {
-        projectId,
-        project
-  };
+        if (state.session.id){
+          const user = state.entities.users[state.session.id].username;
+          return{
+            projectId,
+            project,
+            user
+          };
+        } else {
+            return {
+              projectId,
+              project
+            };
+        }
 };
 
 

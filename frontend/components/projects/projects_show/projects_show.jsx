@@ -20,7 +20,16 @@ constructor(props){
 
   render (){
     const project = this.props.project || {title: "", description: "", id: this.props.match.params.projectId};
-    const deleteButton = <button value="Delete" onClick={this.delete.bind(this)}>Delete</button>;
+    let deleteButton;
+    let editLink;
+    let addLink;
+    if (project.project){
+      if(this.props.user === project.project.username){
+         deleteButton = <button value="Delete" onClick={this.delete.bind(this)}>Delete</button>;
+         editLink = <Link to={`/projects/${project.id}/edit/`}>Edit</Link>;
+         addLink = <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>;
+      }
+    }
 
     let picture;
     if (project.project){
@@ -45,12 +54,14 @@ constructor(props){
       </div>
     </div>
     <div className="project-show-links">
-      <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>
-      <br/>
-      <Link to={`/projects/${project.id}/edit/`}>Edit</Link>
-      {deleteButton}
-      <br/>
+
       <Link to={"/"}>back to all projects</Link>
+      <br/>
+      {addLink}
+      <br/>
+      {editLink}
+      <br/>
+      {deleteButton}
     </div>
     </div>
   )
