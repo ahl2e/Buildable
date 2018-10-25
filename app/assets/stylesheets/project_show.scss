@@ -6,3 +6,40 @@
 .main-image-container {
   max-height: 400px;
 }
+
+.edit-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  width: 400px;
+}
+
+.edit-container * {
+  color: black;
+  width: 50px;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+.edit-container :hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#all-projects{
+  margin: auto;
+  background-color: #ccc;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  color: black;
+  width: 50px;
+  text-align: center;
+  font-size: 10px;
+  text-decoration: none;
+}

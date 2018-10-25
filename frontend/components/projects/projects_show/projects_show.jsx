@@ -41,28 +41,29 @@ constructor(props){
   return (
 
     <div className="project-show">
-      <div className="show-header">
-      <div className="title">{project.title}</div>
-      <div className="main-image-container">
-        {picture}
-      </div>
+        <div className="show-header">
+        <div className="title">{project.title}</div>
+          <div className="main-image-container">
+            {picture}
+          </div>
 
-      <h3>About: {project.title}</h3>
-      <div className="description">{project.description}</div>
-      <div>
-        <StepsIndexContainer/>
+        <h3>About: {project.title}</h3>
+          <div className="description">{project.description}</div>
+            <div>
+              <StepsIndexContainer/>
+            </div>
+          </div>
+      <div className="project-show-links">
+        <Link to={"/"} id="all-projects">back to all projects </Link>
+        <br/>
       </div>
-    </div>
-    <div className="project-show-links">
-
-      <Link to={"/"}>back to all projects</Link>
-      <br/>
-      {addLink}
-      <br/>
-      {editLink}
-      <br/>
-      {deleteButton}
-    </div>
+      <div className="edit-container">
+        {addLink}
+        <br/>
+        {editLink}
+        <br/>
+        {deleteButton}
+      </div>
     </div>
   )
 }

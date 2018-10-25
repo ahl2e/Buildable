@@ -420,6 +420,7 @@ border-radius: 7px;
 .show-header {
   width: inherit;
   text-align: center;
+  margin: auto;
 }
 
 .show-header .title {
@@ -432,21 +433,9 @@ border-radius: 7px;
 
 .project-show-links{
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 400px;
+  margin-left: auto;
+  // width: 400px;
   margin: auto;
-}
-
-.project-show-links a {
-  background-color: #ccc;
-  border-radius: 5px;
-  border: 1px solid #eee;
-  color: black;
-  width: 50px;
-  text-align: center;
-  font-size: 10px;
-  text-decoration: none;
 }
 
 .search-index-item {
