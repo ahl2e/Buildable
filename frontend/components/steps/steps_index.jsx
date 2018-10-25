@@ -9,11 +9,11 @@ class StepsIndex extends React.Component {
 render() {
 
   if (this.props.steps.length > 0){
-    return this.props.steps.map((step) => {
+    return this.props.steps.map((step,idx) => {
       return (
         <div>
           <ul>
-            <StepsIndexItem key={step.id} step={step} delete={this.props.delete} />
+            <StepsIndexItem key={idx} step={step} delete={this.props.delete} />
           </ul>
         </div>
       )

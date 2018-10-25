@@ -8,6 +8,14 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.find(params[:id])
+  end
+
+  def index
+    @comments = Step.where(project_id: params[:project_id])
+  end
+
   def edit
     @comment = Comment.find(params[:id])
 

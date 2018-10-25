@@ -15,3 +15,7 @@ export const selectAllSearches = (state) => {
 export const selectProject = (state, projectId) => {
   return state.entities.projects[projectId];
 };
+
+export const selectAllComments = (state) => {
+  return values(state.entities.comments);
+};
