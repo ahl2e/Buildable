@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import StepsIndexContainer from '../../steps/steps_index_container';
+import CommentsIndexContainer from '../../comments/comments_index_container';
 
 class ProjectShow extends React.Component {
 constructor(props){
@@ -55,6 +56,7 @@ constructor(props){
           </div>
       <div className="project-show-links">
         <Link to={"/"} id="all-projects">back to all projects </Link>
+        <Link to={`/projects/${project.id}/comment`} id="comment-form-link">Comment on this project</Link>
         <br/>
       </div>
       <div className="edit-container">

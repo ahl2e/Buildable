@@ -7,7 +7,7 @@ export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 const receiveComment = (comment) => {
   return{
-    type: RECEIVE_STEP,
+    type: RECEIVE_COMMENT,
     comment: comment
   };
 };
@@ -27,21 +27,21 @@ const removeComment = (comment) => {
 };
 
 export const fetchComment = (id) => dispatch => {
-  return ApiStepUtil.fetchComment(id).then((id)=> dispatch(receiveComment(step)));
+  return ApiCommentUtil.fetchComment(id).then((id)=> dispatch(receiveComment(step)));
 };
 
 export const fetchAllComments = (project_id) => dispatch => {
-  return ApiStepUtil.fetchAllComments(project_id).then(comments => dispatch(receiveAllComments(comments)));
+  return ApiCommentUtil.fetchAllComments(project_id).then(comments => dispatch(receiveAllComments(comments)));
 };
 
 export const updateComment  = (comment) => dispatch => {
-  return ApiStepUtil.updateComment(comment).then((comment) => dispatch(receiveComment(comment)));
+  return ApiCommentUtil.updateComment(comment).then((comment) => dispatch(receiveComment(comment)));
 };
 
 export const createComment = (comment) => dispatch => {
-  return ApiStepUtil.createComment(comment).then((comment) => dispatch(receiveComment(comment)));
+  return ApiCommentUtil.createComment(comment).then((comment) => dispatch(receiveComment(comment)));
 };
 
 export const deleteComment = (comment) => dispatch => {
-  return ApiStepUtil.deleteComment(comment).then(comment => dispatch(removeComment(comment)));
+  return ApiCommentUtil.deleteComment(comment).then(comment => dispatch(removeComment(comment)));
 };

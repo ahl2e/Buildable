@@ -1,21 +1,21 @@
 export const fetchAllComments = () => {
   return $.ajax({
     method: "GET",
-    url: `/api/comments/`
+    url: `/api/projects/:project_id/comments`
   });
 };
 
 export const fetchComment = (comment_id) => {
   return $.ajax({
     method: "GET",
-    url: `/api/comments/${comment_id}`
+    url: `/api/projects/:project_id/comments/${comment_id}`
   });
 };
 
 export const createComment = (comment) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/comments/`,
+    url: `/api/projects/:project_id/comments`,
     data: {comment}
   });
 };
@@ -23,7 +23,7 @@ export const createComment = (comment) => {
 export const updateComment = (comment) => {
   return $.ajax({
     method: "PATCH",
-    url: `/api/comments/${comment_id}`,
+    url: `/api/projects/:project_id/comments/${comment_id}/edit`,
     data: { comment }
   });
 };
@@ -31,6 +31,6 @@ export const updateComment = (comment) => {
 export const deleteComment = (comment) => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/comments/${comment_id}`
+    url: `/api/projects/:project_id/comments/${comment_id}`
   });
 };

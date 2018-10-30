@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import { selectAllComments } from '../../reducers/selectors';
-import {deleteComments} from '../../actions/comment_actions';
+import {deleteComment} from '../../actions/comment_actions';
 import {withRouter} from 'react-router';
 import CommentsIndex from './comments_index';
 
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteComments: dispatch(deleteComments(comment))
+    deleteComment: (comment) => dispatch(deleteComment(comment))
   };
 };
 

@@ -31,4 +31,8 @@ class Api::CommentsController < ApplicationController
     @comment.destroy
     render :show
   end
+
+  def comment_params
+    params.require(:comment).permit(:title, :body, :commentable_id)
+  end
 end
