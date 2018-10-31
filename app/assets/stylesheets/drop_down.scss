@@ -8,6 +8,15 @@
   margin-top: 15px;
 }
 
+.user-photo:hover{
+  cursor: pointer;
+}
+
+
+#drop-down:hover{
+  display: block;
+}
+
 .greeting-container {
   padding: 30px;
   font-size: 13px;
@@ -31,8 +40,12 @@
   border: 1px solid #ddd;
   text-align:right;
   position: absolute;
-  left: -155px;
-  top: 50px;
+  left: -117px;
+  top: 10px;
+  // display: none;
+}
+.user-photo:focus + .drop-down {
+  display: block;
 }
 
 #drop-down a {
@@ -50,9 +63,7 @@
 #drop-down-top {
   height: 100px;
   border-bottom: 2px solid #ddd;
-  // display: flex;
-  // justify-content: space-around;
-  // align-content: center;
+
 }
 
 #drop-down-top * {
@@ -60,6 +71,17 @@
   margin: 10px;
   border-radius: 5px;
   background-color: #eee;
+
+}
+
+#drop-down-top p {
+  text-align: center;
+  padding-top: 8px;
+  cursor: default;
+}
+
+#logout-button:hover{
+  cursor: pointer;
 }
 
 #drop-down-bottom {

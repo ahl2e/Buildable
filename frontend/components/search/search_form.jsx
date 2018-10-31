@@ -31,9 +31,14 @@ render(){
         type="text"
         value={this.state.query}
         onChange={this.update("query")}
-        placeholder=" I want to build a..."
+        placeholder=" I want to build a...     ex: table"
          />
-       <input id="search-submit" type="submit" value="Search" />
+       <button
+         onClick={this.handleSubmit.bind(this)}
+         id="search-submit"
+          >
+         <i className="fa fa-search" aria-hidden="true"></i>
+       </button>
      </form>
     </div>
   )
