@@ -24,12 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  $("root").on("click",function(event){
-    debugger
-    if(!$(event.target).closest(".drop-down").length){
-      $('#drop-down').addClass('no-show');
-   }
-});
+
 
   // TESTING_START
   // window.login = login;

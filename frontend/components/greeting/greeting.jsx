@@ -19,9 +19,6 @@ const Greeting = (props) => {
     $('#drop-down').addClass('no-show');
   }
 
-
-
-
   const welcome = () => (
     <section id="greeting-box">
       <div className="welcome">

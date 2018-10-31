@@ -1,22 +1,31 @@
 #search-form {
   margin: 22px;
+  outline: none
 }
 
 #search-bar {
-  width: 200px;
+  width: 187px;
   height: 25px;
   border-radius: 5px;
   border: .5px solid #ddd;
   font-size: 13px;
+  outline: none
+}
+
+#search-form {
   position: relative;
+}
+
+#search-form:focus {
+  outline: none
 }
 
 #search-submit {
   height: 28px;
   background-color: #c8c8c8;
   border-radius: 0 5px 5px 0;
-  // position: absolute;
-  // left: 950px;
+  position: absolute;
+  left: 185px;
 }
 
 
