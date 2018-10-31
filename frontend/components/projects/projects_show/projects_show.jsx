@@ -38,11 +38,17 @@ constructor(props){
       }
   }
 
+let username;
+  if (project.project){
+    username = project.project.username;
+  }
+// debugger
   return (
 
     <div className="project-show">
         <div className="show-header">
         <div className="title">{project.title}</div>
+        <p className="author"> by: {username}</p>
           <div className="main-image-container">
             {picture}
           </div>
