@@ -94,5 +94,3 @@ Comment.delete_all
     body: "Damn, do you really suck" ,
     project_id: Project.find_by(title: 'Brooklyn Bookshelf').id
     })
-
-    })
