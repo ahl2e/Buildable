@@ -25,7 +25,7 @@ const App = () => (
   </a>
   <SearchFormContainer/>
     <div className="Greeting-container">
-    <GreetingContainer/>
+      <GreetingContainer/>
   </div>
 </header>
 
@@ -33,7 +33,7 @@ const App = () => (
   <div className="nav-left">
     <ul>
       <li><Link to={'/create'}>Build</Link></li>
-    
+
     </ul>
   </div>
 </div>

@@ -66,16 +66,17 @@ ul {
 
 .project-index-item {
   width: 324px;
-  height: 374px;
+  height: 344px;
   border: 1px solid #eee;
   position: relative;
   margin-top: 25px;
   box-shadow: 1px 1px 1px #ddd;
   .title{
-    font-size: 20px;
+    font-size: 15px;
   }
   .author {
     color: grey;
+    font-size: 13px;
   }
 }
 
@@ -93,7 +94,7 @@ ul {
 }
 
 .index-item-footer{
-  height: 50px;
+  height: 42px;
   padding: 20px 10px;
   display: flex;
   flex-direction: column;

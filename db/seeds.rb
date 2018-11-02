@@ -86,3 +86,13 @@ Step.delete_all
   #   project_id: Project.find_by(title: 'Recursive Buildables Project').id,
   #   order_number: 2
   #   })
+
+Comment.delete_all
+  comment1 = Comment.create!({
+    user_id: User.find_by(username: 'Adam615').id,
+    title: "You suck",
+    body: "Damn, do you really suck" ,
+    project_id: Project.find_by(title: 'Brooklyn Bookshelf').id
+    })
+
+    })
