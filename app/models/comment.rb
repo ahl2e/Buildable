@@ -11,8 +11,11 @@
 #
 
 class Comment < ApplicationRecord
-  validates :title, :body, :user_id, presence: true
+  validates :project_id, :title, :body, :user_id, presence: true
 
-  belongs_to :commentable, polymorphic: true
+  belongs_to :project,
+  primary_key: :id,
+  foreign_key: :project_id,
+  class_name: :Project
 
 end

@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     body: '',
     project_id: parseInt(ownProps.match.params.project_Id),
   };
-  return{step};
+  const currentUserId = state.session.id;
+  return{step, currentUserId};
 };
 
 const mapDispatchToProps = (dispatch) => {

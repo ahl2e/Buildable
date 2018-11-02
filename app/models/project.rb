@@ -25,17 +25,12 @@ primary_key: :id,
 foreign_key: :project_id,
 class_name: :Step
 
+has_many :comments,
+primary_key: :id,
+foreign_key: :project_id,
+class_name: :Comment
+
 has_one_attached :picture
-
-# has_many :photos, as: :imageable
-# primary_key: :id,
-# foreign_key: :project_id,
-# class_name: :Photo
-
-has_many :comments, as: :comentable
-# primary_key: :id,
-# foreign_key: :project_id,
-# class_name: :Comment
 
 
 def ensure_picture

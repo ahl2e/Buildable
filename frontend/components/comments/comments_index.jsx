@@ -9,13 +9,16 @@ class CommentsIndex extends React.Component{
   }
 
   render(){
-    if (this.props.comments){
-      <ul>
-        <CommentsIndexItem comments={this.props.comments}/>
-      </ul>
-    } else {
-      return null;
-    }
+      if (this.props.comments){
+        debugger
+        return(
+        <ul>
+          <CommentsIndexItem comments={this.props.comments}/>
+        </ul>
+      )
+      }else{
+        return null;
+      }
   }
 }
 

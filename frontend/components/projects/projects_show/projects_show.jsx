@@ -52,6 +52,7 @@ constructor(props){
           <div className="description">{project.description}</div>
             <div>
               <StepsIndexContainer/>
+              <CommentsIndexContainer/>
             </div>
           </div>
       <div className="project-show-links">
