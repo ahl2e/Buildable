@@ -92,5 +92,5 @@ Comment.delete_all
     body: "This looks stupid.  Do better.",
     title: "You suck!",
     user_id: User.find_by(username: 'Adam615').id }),
-    commentable_id: Project.find_by(title: 'Brooklyn Bookshelf').id,
+    project_id: Project.find_by(title: 'Brooklyn Bookshelf').id
     })

@@ -4,10 +4,11 @@ import {selectAllComments} from '../../reducers/selectors';
 import {createComment} from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   const step = {
     heading: '',
     body: '',
-    project_id: parseInt(ownProps.match.params.project_Id),
+    // project_id: parseInt(ownProps.match.params.project_Id),
   };
   const currentUserId = state.session.id;
   return{step, currentUserId};

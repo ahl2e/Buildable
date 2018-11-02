@@ -1,6 +1,7 @@
 #comment-item {
 border-top: 1px solid ;
 border-bottom: 1px solid grey;
+width: 70%;
 }
 #comment-item p{
   color: #555;
@@ -11,4 +12,9 @@ border-bottom: 1px solid grey;
 
 #comment-title{
   font-weight: bold;
+}
+
+.comments-form{
+  height: 200px;
+  width: 800 px;
 }

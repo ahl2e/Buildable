@@ -17,9 +17,10 @@ class CommentsForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    const comment = Object.assign({}, {title: this.state.title, body: this.state.body, user_id: this.state.currentUserId, project_id: this.state.match.params.project_Id});
-    const project_id = this.state.match.params.project_Id;
-    this.props.create(comment).then(() => this.props.history.push(`/`));
+    const comment = Object.assign({}, {title: this.state.title, body: this.state.body, user_id: this.state.currentUserId, project_id: parseInt(this.state.match.params.projectId)});
+    debugger
+    // const project_id = this.state.match.params.project_Id;
+    this.props.create(comment).then(() => this.props.history.push(`/projects/${project_id}`));
     this.setState({
       title: "",
       body: ""
@@ -29,7 +30,7 @@ class CommentsForm extends React.Component{
 
   render(){
     return(
-      <div className="projects-form">
+      <div className="coments-form">
         <section className="form-box">
           <div className="inner-form-box">
         <form onSubmit={this.handleSubmit}>
