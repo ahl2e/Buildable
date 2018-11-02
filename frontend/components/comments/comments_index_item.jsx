@@ -1,13 +1,12 @@
 import React from 'react';
 
 const CommentsIndexItem = (comment) => {
-  debugger
-  return
-      <li>
-        <p>{comment.title}</p>
-        <p>{comment.body}</p>
-        <p>{comment.user_id}</p>
-      </li>
-    };
+  return(
+    <li id='comment-item'>
+      <p id='comment-title'>{comment.comment.title} by:  {comment.comment.username}</p>
+      <p id='comment-body'>{comment.comment.body}</p>
+    </li>
+  )
+};
 
 export default CommentsIndexItem;
