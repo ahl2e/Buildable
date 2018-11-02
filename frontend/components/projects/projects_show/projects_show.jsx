@@ -9,9 +9,10 @@ constructor(props){
 }
 
   componentDidMount(){
-    const projectId = this.props.match.params.projectId
+    const projectId = parseInt(this.props.match.params.projectId);
     this.props.fetchProject(this.props.match.params.projectId);
     this.props.fetchAllSteps(projectId);
+    this.props.fetchAllComments(projectId);
   }
 
   delete(e){
@@ -58,6 +59,8 @@ constructor(props){
       <div className="project-show-links">
         <Link to={"/"} id="all-projects">back to all projects </Link>
         <Link to={`/projects/${project.id}/comment`} id="comment-form-link">Comment on this project</Link>
+        <br/>
+        <Link to={`/projects/${project.id}/comments`} id="comment-read-link">See all comments</Link>
         <br/>
       </div>
       <div className="edit-container">

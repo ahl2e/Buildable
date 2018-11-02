@@ -18,7 +18,7 @@ class CommentsForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const comment = Object.assign({}, {title: this.state.title, body: this.state.body, user_id: this.state.currentUserId, project_id: this.state.match.params.project_Id});
-    // const project_id = this.state.match.params.project_Id;
+    const project_id = this.state.match.params.project_Id;
     this.props.create(comment).then(() => this.props.history.push(`/`));
     this.setState({
       title: "",

@@ -30,7 +30,6 @@ class Api::StepsController < ApplicationController
 
   def index
     @steps = Step.where(project_id: params[:project_id])
-    @steps = @steps.sort_by {|step| step.order_number}
     @steps
   end
 

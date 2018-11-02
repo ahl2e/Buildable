@@ -17,6 +17,5 @@ export const selectProject = (state, projectId) => {
 };
 
 export const selectAllComments = (state) => {
-  debugger
   return values(state.entities.comments);
 };

@@ -14,6 +14,7 @@ import EditStepsFormContainer from './steps/edit_steps_form_container';
 import SearchFormContainer from './search/search_form_container';
 import SearchIndexContainer from'./search/search_index_container';
 import CreateCommentsFormContainer from './comments/create_comments_form_container';
+import CommentsIndexContainer from './comments/comments_index_container';
 
 
 const App = () => (
@@ -51,6 +52,7 @@ const App = () => (
     <Route exact path="/projects/:projectId" component={ProjectsShowContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/steps" component={CreateStepsFormContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:step/edit" component={EditStepsFormContainer} />
+    <ProtectedRoute exact path="/projects/:project_Id/:comments" component={CommentsIndexContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:comment" component={CreateCommentsFormContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 

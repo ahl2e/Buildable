@@ -5,20 +5,21 @@ class CommentsIndex extends React.Component{
 
   constructor(props){
     super(props);
-    // debugger
   }
 
-  render(){
-      if (this.props.comments){
-        debugger
-        return(
-        <ul>
-          <CommentsIndexItem comments={this.props.comments}/>
-        </ul>
-      )
-      }else{
-        return null;
-      }
+  render() {
+
+    if (this.props.comments.length > 0){
+      return this.props.comments.map((comment,idx) => {
+          <div>
+            <ul>
+              <CommentsIndexItem key={idx} comment={comment} />
+            </ul>
+          </div>
+      });
+    } else {
+      return null;
+    }
   }
 }
 

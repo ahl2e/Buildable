@@ -13,7 +13,9 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @comments = Step.where(project_id: params[:project_id])
+    # debugger
+    @comments = Comment.where(project_id: params[:project_id])
+
   end
 
   def edit
