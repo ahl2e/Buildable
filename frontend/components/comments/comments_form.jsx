@@ -18,7 +18,6 @@ class CommentsForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const comment = Object.assign({}, {title: this.state.title, body: this.state.body, user_id: this.state.currentUserId, project_id: parseInt(this.state.match.params.projectId)});
-    debugger
     // const project_id = this.state.match.params.project_Id;
     this.props.create(comment).then(() => this.props.history.push(`/projects/${project_id}`));
     this.setState({
@@ -31,33 +30,32 @@ class CommentsForm extends React.Component{
   render(){
     return(
       <div className="coments-form">
-        <section className="form-box">
-          <div className="inner-form-box">
+        <section className="comments-form-box">
+          <div className="comments-inner-form-box">
         <form onSubmit={this.handleSubmit}>
-          <p>Comment:</p>
-
-          <br/>
           <input
             type="text"
             value={this.state.title}
             onChange={this.update('title')}
-            placeholder="Comment Title"
+            placeholder="     Comment Title"
             className="comment-title"
             />
           <br/>
-          <p>Comment</p>
           <textarea
             value={this.state.body}
             onChange={this.update('body')}
-            placeholder="Body"
+            placeholder="    Post a Comment..."
             rows="7"
             cols="80"
             />
           <br/>
-          <div className="form-footer">
-
-            <div className="button-container">
-              <input className="submit" type="submit" value="submit"/>
+          <div className="comments-form-footer">
+            <div>
+              <p>We have a be nice policy.</p>
+              <p>Please be positive and constructive.</p>
+            </div>
+            <div id="comments-button-container">
+              <input className="submit" type="submit" value="post"/>
             </div>
           </div>
 

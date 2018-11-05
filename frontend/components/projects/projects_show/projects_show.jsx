@@ -54,14 +54,12 @@ constructor(props){
           <div className="description">{project.description}</div>
             <div>
               <StepsIndexContainer/>
-              <Link to={`/projects/${project.id}/comment`} id="comment-form-link">Comment on this project</Link>
             </div>
             <CreateCommentsFormContainer/>
             <CommentsIndexContainer/>
           </div>
       <div className="project-show-links">
         <Link to={"/"} id="all-projects">back to all projects </Link>
-        <Link to={`/projects/${project.id}/comments`} id="comment-read-link">See all comments</Link>
         <br/>
       </div>
       <div className="edit-container">
