@@ -41,6 +41,12 @@ constructor(props){
       }
   }
 
+  let commentForm;
+  if (this.props.user){
+    debugger
+    commentForm = <CreateCommentsFormContainer/>;
+  }
+
 let username;
   if (project.project){
     username = project.project.username;
@@ -61,7 +67,7 @@ let username;
             <div>
               <StepsIndexContainer/>
             </div>
-            <CreateCommentsFormContainer/>
+            {commentForm}
             <CommentsIndexContainer/>
           </div>
       <div className="project-show-links">

@@ -37,7 +37,7 @@ border: none;
 
 .comments-inner-form-box {
 height: 200px;
-width: 700px;
+width: 690px;
 background-color: #eee;
 border-radius: 15px;
 border: 1px solid #ccc;
@@ -48,6 +48,7 @@ align-content: center;
     height: 5em;
     width: 40em;
     font-size: 16px;
+    resize: none;
   }
 }
 
@@ -58,6 +59,11 @@ align-content: center;
   border-radius: 4px;
   color: white;
   font-size: 18px;
+  transition: box-shadow .5s;
+}
+#comments-button-container *:hover{
+  box-shadow: 2px 2px #888888;
+  cursor: pointer;
 }
 
 .comments-form-footer{

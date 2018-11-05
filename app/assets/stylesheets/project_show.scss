@@ -23,23 +23,35 @@
   text-align: center;
   font-size: 12px;
   text-decoration: none;
-  background: none;
+  background-color: none;
   border: none;
+  transition: background-color .5s;
 }
 
 .edit-container :hover {
   cursor: pointer;
   text-decoration: underline;
+  // border: 1px solid #DD6607;
+  background-color: #ccc;
+  border-radius: 2px;
 }
 
 #all-projects{
   margin: auto;
+  margin-top: 20px;
   background-color: #ccc;
   border-radius: 5px;
-  border: 1px solid #eee;
   color: black;
   width: 50px;
   text-align: center;
   font-size: 10px;
   text-decoration: none;
+  padding: 5px;
+  border: 1px solid #DD6607;
+  transition: box-shadow .5s;
+}
+
+#all-projects:hover {
+  box-shadow: 2px 3px #888888;
+
 }
