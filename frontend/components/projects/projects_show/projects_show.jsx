@@ -66,19 +66,19 @@ let username;
             <div>
               <StepsIndexContainer/>
             </div>
+            <div className="edit-container">
+              {addLink}
+              <br/>
+              {editLink}
+              <br/>
+              {deleteButton}
+            </div>
             {commentForm}
             <CommentsIndexContainer/>
           </div>
       <div className="project-show-links">
         <Link to={"/"} id="all-projects">back to all projects </Link>
         <br/>
-      </div>
-      <div className="edit-container">
-        {addLink}
-        <br/>
-        {editLink}
-        <br/>
-        {deleteButton}
       </div>
     </div>
   )
