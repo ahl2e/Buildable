@@ -1,0 +1,73 @@
+#comment-item {
+border-top: 1px solid ;
+border-bottom: 1px solid grey;
+width: 70%;
+}
+#comment-item p{
+  color: #555;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#comment-title{
+  font-weight: bold;
+}
+
+.comments-form{
+  height: 200px;
+  width: 760px;
+}
+
+.comments-form-box{
+// width: 700px;
+// height: 200px;
+background-color: white;
+border-radius: 20px;
+border: 1px solid #ccc;
+display: flex;
+justify-content: center;
+padding-top: 40px;
+border: none;
+  form {
+    text-align: left;
+    margin: 10px;
+  }
+}
+
+.comments-inner-form-box {
+height: 200px;
+width: 700px;
+background-color: #eee;
+border-radius: 15px;
+border: 1px solid #ccc;
+display: flex;
+flex-direction: column;
+align-content: center;
+  textarea{
+    height: 5em;
+    width: 40em;
+    font-size: 16px;
+  }
+}
+
+#comments-button-container *{
+  background-color: #DD6607;
+  height: 40px;
+  width: 80px;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+}
+
+.comments-form-footer{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  margin-right: 34px;
+}
+
+.comments-form-footer p {
+  color: #333;
+  font-size: 12px;
+}

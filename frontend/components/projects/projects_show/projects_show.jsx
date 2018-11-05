@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import StepsIndexContainer from '../../steps/steps_index_container';
+import CommentsIndexContainer from '../../comments/comments_index_container';
+import CreateCommentsFormContainer from '../../comments/create_comments_form_container';
 
 class ProjectShow extends React.Component {
 constructor(props){
@@ -8,9 +10,10 @@ constructor(props){
 }
 
   componentDidMount(){
-    const projectId = this.props.match.params.projectId
+    const projectId = parseInt(this.props.match.params.projectId);
     this.props.fetchProject(this.props.match.params.projectId);
     this.props.fetchAllSteps(projectId);
+    this.props.fetchAllComments(projectId);
   }
 
   delete(e){
@@ -58,6 +61,8 @@ let username;
             <div>
               <StepsIndexContainer/>
             </div>
+            <CreateCommentsFormContainer/>
+            <CommentsIndexContainer/>
           </div>
       <div className="project-show-links">
         <Link to={"/"} id="all-projects">back to all projects </Link>

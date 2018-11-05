@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchProject } from '../../../actions/project_actions';
 import { deleteProject } from '../../../actions/project_actions';
 import {fetchAllSteps} from '../../../actions/step_actions';
+import {fetchAllComments} from '../../../actions/comment_actions';
 import { selectProject } from '../../../reducers/selectors';
 import ProjectShow from './projects_show';
 
@@ -28,7 +29,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchProject: (id) => dispatch(fetchProject(id)),
     deleteProject: (project) =>dispatch(deleteProject(project)),
-    fetchAllSteps: (projectId) => dispatch(fetchAllSteps(projectId))
+    fetchAllSteps: (projectId) => dispatch(fetchAllSteps(projectId)),
+    fetchAllComments: (projectId) => dispatch(fetchAllComments(projectId))
   };
 };
 

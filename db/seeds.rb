@@ -89,8 +89,14 @@ Step.delete_all
 
 Comment.delete_all
   comment1 = Comment.create!({
+<<<<<<< HEAD
     user_id: User.find_by(username: 'Adam615').id,
     title: "You suck",
     body: "Damn, do you really suck" ,
+=======
+    body: "This looks stupid.  Do better.",
+    title: "You suck!",
+    user_id: User.find_by(username: 'Adam615').id }),
+>>>>>>> comments
     project_id: Project.find_by(title: 'Brooklyn Bookshelf').id
     })

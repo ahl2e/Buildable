@@ -37,7 +37,7 @@ handleSubmit(e){
      data: formData,
      contentType: false,
      processData: false
-   }).then(() => this.props.history.push(`/`), () => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
+   }).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
 
  } else {
 
