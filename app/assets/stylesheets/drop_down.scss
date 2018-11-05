@@ -23,6 +23,14 @@
   margin-right: 15px;
 }
 
+.greeting-container a{
+  text-decoration: none;
+  color: #777;
+}
+.greeting-container a:hover{
+  color: black;
+}
+
 .GreetingContainer {
   display: flex;
   flex-direction: column;

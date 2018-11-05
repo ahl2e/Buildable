@@ -26,9 +26,11 @@
   border-radius: 0 5px 5px 0;
   position: absolute;
   left: 185px;
+  transition: background-color .5s;
 }
 
 
 #search-submit:hover {
   cursor: pointer;
+  background-color: #adadad;
 }
