@@ -5,9 +5,10 @@ import {deleteStep} from '../../actions/step_actions';
 import {withRouter} from 'react-router';
 
 const mapStateToProps = (state, ownProps) =>{
-  return {
-    steps: selectAllSteps(state)
-  };
+  const steps= selectAllSteps(state);
+  const currentUserId= state.entities.users;
+  
+  return {steps, currentUserId};
 };
 
 const mapDispatchToProps = (dispatch) => {

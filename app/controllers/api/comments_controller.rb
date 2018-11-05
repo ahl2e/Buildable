@@ -1,9 +1,7 @@
 class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    debugger
     if @comment.save!
-      debugger
       render json:@comment
     else
       render json: @comment.errors.full_messages

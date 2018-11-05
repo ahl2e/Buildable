@@ -43,7 +43,6 @@ constructor(props){
 
   let commentForm;
   if (this.props.user){
-    debugger
     commentForm = <CreateCommentsFormContainer/>;
   }
 

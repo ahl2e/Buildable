@@ -13,7 +13,7 @@ render() {
       return (
         <div>
           <ul>
-            <StepsIndexItem key={idx} step={step} delete={this.props.delete} />
+            <StepsIndexItem key={idx} step={step} delete={this.props.delete} currentUserId = {this.props.currentUserId} />
           </ul>
         </div>
       )

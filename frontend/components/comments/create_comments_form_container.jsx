@@ -4,7 +4,6 @@ import {selectAllComments} from '../../reducers/selectors';
 import {createComment} from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   const step = {
     heading: '',
     body: '',
