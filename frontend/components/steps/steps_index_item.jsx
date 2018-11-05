@@ -15,7 +15,7 @@ class StepsIndexItem extends React.Component {
   render() {
     let deleteButton;
       if (this.state.user.id == Object.values(this.props.currentUserId)[0].id){
-        deleteButton = <button value="Delete Step" onClick={this.delete.bind(this)}>Delete</button>;
+        deleteButton = <button value="Delete Step" className="delete-button" onClick={this.delete.bind(this)}>Delete Step</button>;
       }
 
     const pic = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;

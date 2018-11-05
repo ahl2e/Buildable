@@ -58,5 +58,19 @@
 
 #all-projects:hover {
   box-shadow: 2px 3px #888888;
+}
 
+.delete-button {
+  background-color: #dadada;
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 1px 1px #888888;
+  transition: box-shadow .3s;
+}
+.delete-button:hover {
+  background-color: #dadada;
+  padding: 7px;
+  box-shadow: 3px 3px #888888;
+  cursor: pointer;
 }
