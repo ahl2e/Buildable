@@ -104,6 +104,7 @@ if (!this.props.errors){
         <br/>
           {errorRenders}
           <input className="session-submit" type="submit" value ={this.props.formType}></input>
+          <br/>
           <button className="demo-button" onClick={this.demoLogin.bind(this)}> Demo Login </button>
         {this.props.navLink}
         </form>

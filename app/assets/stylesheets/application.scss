@@ -250,6 +250,14 @@ ul {
   background-color: #DD6607;
   color: white;
   font-size: 25px;
+  transition: box-shadow .5s;
+  transition: border .5s;
+}
+
+.session-submit:hover{
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
 }
 .demo-button{
   height: 50px;
@@ -257,13 +265,19 @@ ul {
   background-color: #ea7f27;
   color: white;
   font-size: 25px;
+  transition: box-shadow .5s;
+  transition: border .5s;
+}
+.demo-button:hover{
+border: 1px solid black;
+box-shadow: 2px 2px black;
 }
 
 .session-errors {
   background-color: #B74548;
   border-radius: 10px;
   border: 1px solid white;
-  color: white
+  color: white;
 }
 
 
@@ -285,6 +299,10 @@ ul {
   text-align: center;
   margin: 5px;
   text-decoration: none;
+  transition: text-decoration .5s;
+}
+.session-form a:hover {
+  text-decoration: underline;
 }
 
 .project-show {
