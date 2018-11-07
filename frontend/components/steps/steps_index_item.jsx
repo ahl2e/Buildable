@@ -14,7 +14,7 @@ class StepsIndexItem extends React.Component {
 
   render() {
     let deleteButton;
-      if (this.state.user.id == Object.values(this.props.currentUserId)[0].id){
+      if (this.props.currentUserId.length > 0 && Object.values(this.props.currentUserId)[0].id == this.state.user.id){
         deleteButton = <button value="Delete Step" className="delete-button" onClick={this.delete.bind(this)}>Delete Step</button>;
       }
 
