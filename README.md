@@ -1,6 +1,6 @@
 # README
 
-
+![alt text](https://github.com/Buildable/app/assets/images/icon48.png "Logo Image")
 # Buildable
 
 Inspired by Instructables, Buildable is a fuul stack web applicaition that allows makers to share their personal DIY projects and the steps they took to complete them.  Other users can then browse the growing catalogue of projects and learn from the community of makkers.
@@ -17,7 +17,23 @@ Link to live app: (https://buildable.herokuapp.com)
 
 #### Projects
 
-Each Project includes a photo of the finished project, the steps required to reach that final stage, and corresponding photos for each step in the project.  Photos are stored using AWS S3 cloud storage allowing for easy uploads and simple, reliable access.  All projects are associated with a user using user_id as the foreign key.
+Each Project includes a photo of the finished project, the steps required to reach that final stage, and corresponding photos for each step in the project.  Photos are stored using AWS S3 cloud storage and Rails Active Storage allowing for easy uploads and simple, reliable access.  All projects are associated with a user using user_id as the foreign key.
+
+'''javscript
+handleFile(e) {
+  const reader = new FileReader();
+  const file = e.currentTarget.files[0];
+  reader.onloadend = () =>
+    this.setState({ imageUrl: reader.result, imageFile: file});
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    this.setState({ imageUrl: "", imageFile: null });
+  }
+}
+'''
+
+
 
 #### Comments
 Users have the ability to leave comments on projects saved to the site.  Comments allow users to create a community of makers by asking questions, offering advice, or giving compliments.  Compliments belong to both the project and the user who authored them.  All users can comment on any project.
