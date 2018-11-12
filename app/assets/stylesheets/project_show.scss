@@ -31,6 +31,7 @@
   border: none;
   background-color: #eee;
   transition: background-color .5s;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .edit-container :hover {
@@ -59,6 +60,18 @@
 #all-projects:hover {
   box-shadow: 2px 3px #888888;
 }
+
+.steps-container li {
+  width: 50%;
+  margin-left:25%;
+  font-size: 19px;
+  font-family: 'Montserrat', sans-serif;
+}
+.steps-container p {
+  color: #555;
+  font-size: 18px;
+}
+
 
 .delete-button {
   background-color: #dadada;

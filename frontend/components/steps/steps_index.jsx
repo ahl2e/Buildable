@@ -12,7 +12,7 @@ render() {
     return this.props.steps.map((step,idx) => {
       return (
         <div>
-          <ul>
+          <ul className="steps-container">
             <StepsIndexItem key={idx} step={step} delete={this.props.delete} currentUserId = {this.props.currentUserId} />
           </ul>
         </div>
