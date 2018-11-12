@@ -3,6 +3,8 @@
 
 # Buildable
 
+![Buildable logo](https://github.com/ahl2e/Buildable/raw/master/app/assets/images/Screenshot.jpg)
+
 Inspired by Instructables, Buildable is a full stack web application that allows makers to share their personal DIY projects and the steps they took to complete them.  Other users can then browse the growing catalogue of projects and learn from the community of makers.
 
 Link to live app: (https://buildable.herokuapp.com)
@@ -19,7 +21,7 @@ Link to live app: (https://buildable.herokuapp.com)
 
 Each Project includes a photo of the finished project, the steps required to reach that final stage, and corresponding photos for each step in the project.  Photos are stored using AWS S3 cloud storage and Rails Active Storage allowing for easy uploads and simple, reliable access.  All projects are associated with a user using user_id as the foreign key.
 
-```javscript
+```javascript
 handleFile(e) {
   const reader = new FileReader();
   const file = e.currentTarget.files[0];
