@@ -43,6 +43,12 @@ Users have the ability to leave comments on projects saved to the site.  Comment
 #### Search
   Search the database for projects matching your interest.  Search currently scans the title of a project, but will soon look at descriptions to find even more possibilities.
 
+  ```Ruby
+  def index
+    @projects = Project.where("title ILIKE  ?", "%#{search_params[:query]}%").with_attached_picture
+  end
+  ```
+
 ## Planned Improvements
 
 #### Replies
