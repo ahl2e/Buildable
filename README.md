@@ -19,7 +19,7 @@ Link to live app: (https://buildable.herokuapp.com)
 
 Each Project includes a photo of the finished project, the steps required to reach that final stage, and corresponding photos for each step in the project.  Photos are stored using AWS S3 cloud storage and Rails Active Storage allowing for easy uploads and simple, reliable access.  All projects are associated with a user using user_id as the foreign key.
 
-'''javscript
+```javscript
 handleFile(e) {
   const reader = new FileReader();
   const file = e.currentTarget.files[0];
@@ -31,7 +31,7 @@ handleFile(e) {
     this.setState({ imageUrl: "", imageFile: null });
   }
 }
-'''
+```
 
 
 
