@@ -1,9 +1,9 @@
 
-![Buildable logo](https://github.com//ahl2e/Buildable/app/assets/images/instructables-logo.png "Logo Image")
+![Buildable logo](https://github.com/ahl2e/Buildable/app/assets/images/instructables-logo.png "Logo Image")
 
 # Buildable
 
-Inspired by Instructables, Buildable is a fuul stack web applicaition that allows makers to share their personal DIY projects and the steps they took to complete them.  Other users can then browse the growing catalogue of projects and learn from the community of makkers.
+Inspired by Instructables, Buildable is a full stack web application that allows makers to share their personal DIY projects and the steps they took to complete them.  Other users can then browse the growing catalogue of projects and learn from the community of makers.
 
 Link to live app: (https://buildable.herokuapp.com)
 
