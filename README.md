@@ -1,5 +1,5 @@
 
-![Buildable logo](https://github.com/ahl2e/Buildable/app/assets/images/instructables-logo.png)
+![Buildable logo](https://github.com/ahl2e/Buildable/raw/master/app/assets/images/instructables-logo.png)
 
 # Buildable
 
