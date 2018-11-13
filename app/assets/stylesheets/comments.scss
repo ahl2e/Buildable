@@ -3,6 +3,9 @@ border-top: 1px solid ;
 border-bottom: 1px solid grey;
 width: 70%;
 font-family: 'Montserrat', sans-serif;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
 }
 #comment-item p{
   color: #555;
@@ -77,4 +80,8 @@ align-content: center;
 .comments-form-footer p {
   color: #333;
   font-size: 12px;
+}
+
+#strong-side {
+  margin: 30px 20px 0 0;;
 }

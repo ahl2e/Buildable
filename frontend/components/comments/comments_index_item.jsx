@@ -19,9 +19,13 @@ class CommentsIndexItem extends React.Component{
 
     return(
       <li id='comment-item'>
-        <p id='comment-title'>{this.state.title} by:  {this.state.username}</p>
-        <p id='comment-body'>{this.state.body}</p>
-        {deleteButton}
+        <div id='left-side'>
+          <p id='comment-title'>{this.state.title} by:  {this.state.username}</p>
+          <p id='comment-body'>{this.state.body}</p>
+        </div>
+        <div id='strong-side'>
+          {deleteButton}
+        </div>
       </li>
     );
 }
