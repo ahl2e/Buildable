@@ -15,7 +15,7 @@ import SearchFormContainer from './search/search_form_container';
 import SearchIndexContainer from'./search/search_index_container';
 import CreateCommentsFormContainer from './comments/create_comments_form_container';
 import CommentsIndexContainer from './comments/comments_index_container';
-
+import Footer from './footer/footer';
 
 const App = () => (
   <main className="app-container">
@@ -54,6 +54,7 @@ const App = () => (
     <Route path="/" component={ProjectsIndexContainer} />
 
     </Switch>
+  <Footer/>
 </main>
 );
 

@@ -1,0 +1,54 @@
+#footer-box{
+  height: 250px;
+  width: 100%;
+  background-color: #404040;
+  font-family: 'Montserrat', sans-serif;
+  color: #c8c8c8
+}
+
+#footer-container{
+  display:flex;
+  justify-content: space-around;
+}
+
+.footer-icon{
+  margin-top: 30px;
+  background-image: asset-url('instructables-logo.png');
+  height: 120px;
+  width: 100px;
+  background-size: cover;
+}
+
+.bio-box{
+  margin-top: 30px;
+  margin: .5em;
+}
+
+.bio-box p {
+  margin: .3em;
+}
+
+#footer-links{
+}
+
+#footer-links * {
+  text-decoration: none;
+}
+
+#footer-links a {
+  margin-top: .5em;
+  color: #c8c8c8
+}
+
+#footer-links a:hover {
+  margin: 0;
+  color: #adadad
+}
+
+#line-box {
+  height: 3px;
+  width: 85%;
+  background-color: #333232;
+  margin-left: 10%;
+  box-shadow: .25px .5px #c8c8c8;
+}
