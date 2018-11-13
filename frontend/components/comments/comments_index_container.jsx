@@ -7,7 +7,8 @@ import CommentsIndex from './comments_index';
 
 const mapStateToProps = (state) => {
   return {
-    comments: selectAllComments(state)
+    comments: selectAllComments(state),
+    currentUserId: state.entities.users
   };
 };
 

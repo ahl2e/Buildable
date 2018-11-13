@@ -19,7 +19,7 @@ class CommentsIndex extends React.Component{
         return (
           <div>
             <ul>
-              <CommentsIndexItem key={idx} comment={comment} />
+              <CommentsIndexItem key={idx} comment={comment} delete={this.props.deleteComment} currentUser={this.props.currentUserId}/>
             </ul>
           </div>
         )
