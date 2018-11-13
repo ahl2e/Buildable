@@ -23,7 +23,7 @@ export const createComment = (comment) => {
 export const updateComment = (comment) => {
   return $.ajax({
     method: "PATCH",
-    url: `/api/projects/:project_id/comments/${comment_id}/edit`,
+    url: `/api/projects/:project_id/comments/${comment.id}/edit`,
     data: { comment }
   });
 };
@@ -31,6 +31,6 @@ export const updateComment = (comment) => {
 export const deleteComment = (comment) => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/projects/:project_id/comments/${comment_id}`
+    url: `/api/projects/:project_id/comments/${comment.id}`
   });
 };

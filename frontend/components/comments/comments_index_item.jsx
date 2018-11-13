@@ -8,14 +8,13 @@ class CommentsIndexItem extends React.Component{
   }
 
   delete(e){
-    debugger
-    this.props.delete(this.state.id);
+    this.props.delete(this.state);
   }
 
   render() {
     let deleteButton;
       if (Object.values(this.currentUser).length > 0 && Object.values(this.currentUser)[0].id == this.state.user_id){
-        deleteButton = <button className="delete-button" onClick={this.delete.bind(this)}>Delete Comment</button>;
+        deleteButton = <button className="delete-button" onClick={this.delete.bind(this)}>Delete Your Comment</button>;
       }
 
     return(
