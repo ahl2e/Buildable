@@ -44,6 +44,8 @@ constructor(props){
   let commentForm;
   if (this.props.user){
     commentForm = <CreateCommentsFormContainer/>;
+  } else {
+    commentForm = <p>Sign In to leave a Comment </p>;
   }
 
 let username;
@@ -75,6 +77,7 @@ let username;
             </div>
             {commentForm}
             <CommentsIndexContainer/>
+            <br/>
           </div>
       <div className="project-show-links">
         <Link to={"/"} id="all-projects">back to all projects </Link>
