@@ -12,10 +12,8 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project.update(project_params)
-      debugger
       render :show
     else
-      debugger
       render json: @project.errors.full_messages, status: 422
     end
 

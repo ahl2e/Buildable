@@ -13,7 +13,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    # debugger
     @comments = Comment.where(project_id: params[:project_id])
 
   end

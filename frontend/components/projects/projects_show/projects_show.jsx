@@ -45,14 +45,13 @@ constructor(props){
   if (this.props.user){
     commentForm = <CreateCommentsFormContainer/>;
   } else {
-    commentForm = <p>Sign In to leave a Comment </p>;
+    commentForm = <p>Sign In to Leave a Comment </p>;
   }
 
 let username;
   if (project.project){
     username = project.project.username;
   }
-// debugger
   return (
 
     <div className="project-show">
@@ -70,8 +69,6 @@ let username;
             </div>
             <div className="edit-container">
               {addLink}
-              <br/>
-              {editLink}
               <br/>
               {deleteButton}
             </div>
