@@ -17,7 +17,7 @@ class CommentsIndex extends React.Component{
   }
 
   componentWillUpdate(nextProps){
-    if(this.props.comments.length != nextProps.comments.length){
+    if(this.props.comments.length !== nextProps.comments.length){
       this.setState({comments: nextProps.comments})
     }
   }
@@ -31,7 +31,6 @@ class CommentsIndex extends React.Component{
 
   render() {
     if (this.state.comments.length > 0){
-      debugger
       return this.state.comments.map((comment,idx) => {
         return (
           <div>
