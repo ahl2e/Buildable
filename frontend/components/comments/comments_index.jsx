@@ -31,6 +31,7 @@ class CommentsIndex extends React.Component{
 
   render() {
     if (this.state.comments.length > 0){
+      debugger
       return this.state.comments.map((comment,idx) => {
         return (
           <div>
