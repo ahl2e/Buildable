@@ -5,6 +5,7 @@ class CommentsIndexItem extends React.Component{
     super(props);
     this.state = props.comment;
     this.currentUser = props.currentUser;
+    this.delete = this.delete.bind(this);
   }
 
   delete(e){

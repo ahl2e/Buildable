@@ -45,7 +45,7 @@ constructor(props){
   if (this.props.user){
     commentForm = <CreateCommentsFormContainer/>;
   } else {
-    commentForm = <p>Sign In to Leave a Comment </p>;
+    commentForm = <Link id="comment-sign-in" to ="/login">Sign In to Leave a Comment</Link>;
   }
 
 let username;

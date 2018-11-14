@@ -5,6 +5,10 @@ class CommentsIndex extends React.Component{
 
   constructor(props){
     super(props);
+    this.state = {
+      comments: props.comments,
+      projectId: parseInt(props.match.params.project_Id)
+    };
   }
 
   componentDidMount(){
@@ -12,10 +16,23 @@ class CommentsIndex extends React.Component{
     this.props.fetchAllComments(projectId);
   }
 
-  render() {
+  componentWillUpdate(nextProps){
+    if(this.props.comments.length != nextProps.comments.length){
+      this.setState({comments: nextProps.comments})
+    }
+  }
 
-    if (this.props.comments.length > 0){
-      return this.props.comments.map((comment,idx) => {
+//   componentWillUpdate(nextProps) {
+//     debugger
+//   if (this.props.comments.length !== nextProps.comments.length) {
+//     this.props.fetchAllComments(this.state.projectId);
+//   }
+// }
+
+  render() {
+    if (this.state.comments.length > 0){
+      debugger
+      return this.state.comments.map((comment,idx) => {
         return (
           <div>
             <ul>
