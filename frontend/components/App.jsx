@@ -20,12 +20,15 @@ import Footer from './footer/footer';
 const App = () => (
   <main className="app-container">
 <header className="main-header">
-  <a className="icon-button" href="/">
-    <div id="icon-text">
-      <h2>buildable </h2>
-    </div>
-  </a>
-  <SearchFormContainer/>
+  <div className="greeting-left">
+    <a className="icon-button" href="/">
+      <div id="icon-text">
+        <h2>buildable </h2>
+      </div>
+    </a>
+    <SearchFormContainer/>
+    <Link to="/create" id="heading-build-link">Build a Project</Link>
+</div>
     <div className="Greeting-container">
       <GreetingContainer/>
   </div>
@@ -33,10 +36,7 @@ const App = () => (
 
 <div className = "nav-bar">
   <div className="nav-left">
-    <ul>
-      <li><Link to={'/create'}>Build</Link></li>
-
-    </ul>
+    
   </div>
 </div>
 

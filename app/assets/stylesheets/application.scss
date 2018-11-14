@@ -135,6 +135,13 @@ ul {
   width: 100%;
   border-bottom: 0.5px solid #dbdbdb;
 }
+
+.greeting-left{
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
 .main-header .icon-button {
   height: 100%;
   width: 220px;
@@ -143,6 +150,24 @@ ul {
   background-repeat: no-repeat;
   margin-left: 85px;
   margin-top: 5px;
+}
+
+#heading-build-link {
+  box-sizing: content-box;
+  padding: 9px 12px 3px 12px;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  height: 24px;
+  margin: auto;
+  font-size: .9em;
+}
+#heading-build-link:hover {
+  background-color: #c8c8c8;
 }
 
 #icon-text{

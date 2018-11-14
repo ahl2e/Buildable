@@ -5,11 +5,12 @@
 
 #search-bar {
   width: 187px;
-  height: 25px;
+  height: 35px;
   border-radius: 5px;
   border: .5px solid #ddd;
   font-size: 13px;
-  outline: none
+  outline: none;
+  box-shadow: inset 0px 1px 9px .5px #ddd;
 }
 
 #search-form {
@@ -21,7 +22,7 @@
 }
 
 #search-submit {
-  height: 28px;
+  height: 38px;
   background-color: #c8c8c8;
   border-radius: 0 5px 5px 0;
   position: absolute;
