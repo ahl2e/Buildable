@@ -70,6 +70,8 @@ let username;
             <div className="edit-container">
               {addLink}
               <br/>
+              {editLink}
+              <br/>
               {deleteButton}
             </div>
             {commentForm}

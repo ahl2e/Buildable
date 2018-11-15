@@ -31,13 +31,16 @@ handleSubmit(e){
  }
 
  if (this.props.formType == "Update Project"){
-   $.ajax({
-     url: `/api/projects/${this.state.id}`,
-     method: `${this.props.method}`,
-     data: formData,
-     contentType: false,
-     processData: false
-   }).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
+   debugger
+   this.props.action(this.state);
+
+   // $.ajax({
+   //   url: `/api/projects/${this.state.id}`,
+   //   method: `${this.props.method}`,
+   //   data: this.state,
+   //   contentType: false,
+   //   processData: false
+   // }).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
 
  } else {
 
@@ -78,6 +81,21 @@ render(){
   if (this.state.project){
     preview = <img src={this.state.project.imageUrl} />;
   }
+
+  let uploadButton;
+    if (this.props.formType == "Create Project"){
+      uploadButton = <div className="button-container">
+                        <label>Upload a Picture
+                        <input
+                          type="file"
+                          className="fileinput"
+                          onChange={this.handleFile.bind(this)}
+                          />
+                      </label>
+                    </div>;
+    } else {
+      uploadButton = null;
+    }
   return(
     <div className="projects-form">
       <section className="form-box">
@@ -103,15 +121,7 @@ render(){
             <br/>
             <div className="form-footer">
 
-              <div className="button-container">
-                <label>Upload a Picture
-                <input
-                  type="file"
-                  className="fileinput"
-                  onChange={this.handleFile.bind(this)}
-                  />
-              </label>
-              </div>
+              {uploadButton}
 
               <div className="photo-preview-div">
                 {preview}

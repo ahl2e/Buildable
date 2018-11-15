@@ -16,22 +16,9 @@ class CommentsIndex extends React.Component{
     this.props.fetchAllComments(projectId);
   }
 
-  componentWillUpdate(nextProps){
-    if(this.props.comments.length !== nextProps.comments.length){
-      this.setState({comments: nextProps.comments})
-    }
-  }
-
-//   componentWillUpdate(nextProps) {
-//     debugger
-//   if (this.props.comments.length !== nextProps.comments.length) {
-//     this.props.fetchAllComments(this.state.projectId);
-//   }
-// }
-
   render() {
-    if (this.state.comments.length > 0){
-      return this.state.comments.map((comment,idx) => {
+    if (this.props.comments.length > 0){
+      return this.props.comments.map((comment,idx) => {
         return (
           <div>
             <ul>

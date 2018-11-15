@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import { selectAllComments } from '../../reducers/selectors';
 import {deleteComment} from '../../actions/comment_actions';
+import {updateComment} from '../../actions/comment_actions';
 import {fetchAllComments} from '../../actions/comment_actions';
 import {withRouter} from 'react-router';
 import CommentsIndex from './comments_index';
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteComment: (comment) => dispatch(deleteComment(comment)),
+    updateComment: (comment) => dispatch(updateComment(comment)),
     fetchAllComments: (projectId) => dispatch(fetchAllComments(projectId))
   };
 };
