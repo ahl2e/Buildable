@@ -26,6 +26,11 @@ handleSubmit(e){
   if (this.state.imageFile) {
    formData.append('step[picture]', this.state.imageFile);
  }
+
+ if (this.props.formType == "Edit Step") {
+   this.props.action(this.state);
+ } else {
+
  $.ajax({
     url:`/api/projects/${this.props.match.params.project_Id}/steps`,
     method: `${this.props.method}`,
@@ -34,6 +39,7 @@ handleSubmit(e){
     processData: false
   }).then(() => this.props.history.push(`/projects/${this.props.match.params.project_Id}`));
 
+  }
 }
 
 handleFile(e) {

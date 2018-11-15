@@ -4,9 +4,9 @@ import {selectAllSteps} from '../../reducers/selectors';
 import {updateStep} from '../../actions/step_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    let stepCount = selectAllSteps(state).length || 0;
     let stepId = parseInt(ownProps.match.params.step);
-    const step = { heading: '', body: '', project_id: parseInt(ownProps.match.params.project_Id), order_number: stepCount + 1,imageFile: null };
+    const defaultStep = { heading: '', body: '', project_id: parseInt(ownProps.match.params.project_Id),imageFile: null };
+    const step = state.entities.steps[ownProps.match.params.project_Id] || defaultStep;
     const formType  = "Edit Step";
     const method = "GET";
 
