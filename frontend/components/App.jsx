@@ -22,9 +22,7 @@ const App = () => (
 <header className="main-header">
   <div className="greeting-left">
     <a className="icon-button" href="/">
-      <div id="icon-text">
-        <h2>buildable </h2>
-      </div>
+
     </a>
     <SearchFormContainer/>
     <Link to="/create" id="heading-build-link">Build a Project</Link>
@@ -36,7 +34,7 @@ const App = () => (
 
 <div className = "nav-bar">
   <div className="nav-left">
-    
+
   </div>
 </div>
 

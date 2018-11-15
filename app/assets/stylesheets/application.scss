@@ -138,23 +138,24 @@ ul {
 
 .greeting-left{
   display: flex;
-  justify-content: space-between;
-  width: 40%;
+  justify-content: flex-start;
+  width: 50%;
 }
 
 .main-header .icon-button {
   height: 100%;
-  width: 220px;
-  background-image: asset-url('instructables-logo.png');
-  background-size:contain;
+  width: 200px;
+  background-image: asset-url('instructables-logo2.png');
+  background-size: cover;
   background-repeat: no-repeat;
   margin-left: 85px;
   margin-top: 5px;
+  position: relative;
 }
 
 #heading-build-link {
   box-sizing: content-box;
-  padding: 9px 12px 3px 12px;
+  padding: 10px 12px 3px 12px;
   text-align: center;
   vertical-align: middle;
   color: black;
@@ -163,9 +164,13 @@ ul {
   border-radius: 5px;
   border: 1px solid #ddd;
   height: 24px;
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   font-size: .9em;
+  white-space: nowrap;
+  overflow: hidden;
 }
+
 #heading-build-link:hover {
   background-color: #c8c8c8;
 }
