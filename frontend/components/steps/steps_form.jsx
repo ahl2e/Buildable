@@ -63,6 +63,20 @@ render(){
     return <Redirect to={'/'} />;
   }
 
+  let photoButton;
+    if (this.props.formType == "Add Step"){
+      photoButton = <div className="button-container">
+                      <label>Upload a Picture
+                      <input
+                        type="file"
+                        className="fileinput"
+                        onChange={this.handleFile.bind(this)}
+                        />
+                    </label>
+                  </div>;
+                }else{
+                  photoButton = null;
+                }
 
   return(
     <div className="projects-form">
@@ -90,15 +104,7 @@ render(){
           />
         <br/>
         <div className="form-footer">
-          <div className="button-container">
-            <label>Upload a Picture
-            <input
-              type="file"
-              className="fileinput"
-              onChange={this.handleFile.bind(this)}
-              />
-          </label>
-        </div>
+          {photoButton}
 
           <div className="photo-preview-div">
             {preview}
