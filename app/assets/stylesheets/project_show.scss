@@ -75,6 +75,24 @@
   font-size: 18px;
 }
 
+#step-edit{
+  background-color: #dadada;
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 1px 1px #888888;
+  transition: box-shadow .3s;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.step-index-buttons{
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
 
 .delete-button {
   background-color: #dadada;
