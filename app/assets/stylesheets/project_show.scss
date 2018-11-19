@@ -7,6 +7,11 @@
   max-height: 400px;
 }
 
+
+.step-no-show{
+  display: none;
+}
+
 .edit-container{
   display: flex;
   flex-direction: row;
@@ -36,16 +41,17 @@
   border-radius: 4px;
   border: 1px solid black;
 }
-.step-edit-container{
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-around;
+
+[id^="step-edit-container"]{
   margin: auto;
   margin-bottom: 40px;
   margin-top: 20px;
   width: 400px;
-  // background-color: #eee;
   padding: 10px;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-around;
+  // background-color: #eee;
   // border-radius: 4px;
   // border: 1px solid black;
 }
@@ -73,6 +79,7 @@
   background-color: #ccc;
   border-radius: 4px;
 }
+
 
 #all-projects{
   margin: auto;

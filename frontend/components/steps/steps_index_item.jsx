@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 class StepsIndexItem extends React.Component {
   constructor(props) {
+
     super(props);
     this.state = props.step;
   }
@@ -12,11 +13,11 @@ class StepsIndexItem extends React.Component {
   }
 
   toggleDropDown(e){
-    $('.step-edit-container').toggleClass('no-show');
+    $(`#step-edit-container-${e.target.id}`).toggleClass('step-no-show');
   }
 
   hideDropDown(e){
-    $('.step-edit-container').addClass('no-show');
+    $(`#step-edit-container-${e.target.id}`).addClass('step-no-show');
   }
 
   render() {
@@ -35,10 +36,10 @@ class StepsIndexItem extends React.Component {
       {pic}
       <h3>Step {this.state.order_number}: {this.state.heading}</h3>
       <p>{this.state.body}</p>
-      <button onClick={this.toggleDropDown}> ...</button>
+      <button onClick={this.toggleDropDown} id={`${this.state.id}`}> ...</button>
         <div
-          className='no-show'
-          className='step-edit-container'
+          className='step-no-show'
+          id={`step-edit-container-${this.state.id}`}
           onMouseLeave={this.hideDropDown}
           >
           {deleteButton}
