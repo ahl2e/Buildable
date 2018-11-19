@@ -6,6 +6,7 @@ class StepsIndexItem extends React.Component {
 
     super(props);
     this.state = props.step;
+    this.stepNumber = props.stepNumber;
   }
 
   delete(e){
@@ -22,8 +23,6 @@ class StepsIndexItem extends React.Component {
 
   render() {
 
-    // let deleteButton;
-    // let editButton;
     let editContainer;
       if (Object.values(this.props.currentUserId).length > 0 && Object.values(this.props.currentUserId)[0].id == this.state.user.id){
         editContainer = <div>
@@ -36,22 +35,19 @@ class StepsIndexItem extends React.Component {
                               <button value="Delete Step" className="delete-button" onClick={this.delete.bind(this)}>Delete Step</button>
                               <Link to={`/projects/${this.props.step.id}/${this.props.step}/edit`} id="step-edit">Edit Step</Link>
                           </div>
-                        </div>
-        // deleteButton = <button value="Delete Step" className="delete-button" onClick={this.delete.bind(this)}>Delete Step</button>;
-        // editButton = <Link to={`/projects/${this.props.step.id}/${this.props.step}/edit`} id="step-edit">Edit Step</Link>
+                        </div>;
       }
 
     const pic = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;
-    // const deleteButton = <button value="Delete Step" onClick={this.delete.bind(this)}>Delete</button>;
   return(
     <li>
       {pic}
-      <h3>Step {this.state.order_number}: {this.state.heading}</h3>
+      <h3>Step {this.stepNumber}: {this.state.heading}</h3>
       <p>{this.state.body}</p>
         {editContainer}
     </li>
-);
-}
+    );
+  }
 };
 
 export default StepsIndexItem;
