@@ -24,6 +24,36 @@
 .edit-container * {
   color: black;
   width: 50px;
+  height: 100%;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+  background-color: none;
+  border: none;
+  background-color: #eee;
+  transition: background-color .5s;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.step-edit-container{
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-around;
+  margin: auto;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  width: 400px;
+  // background-color: #eee;
+  padding: 10px;
+  // border-radius: 4px;
+  // border: 1px solid black;
+}
+
+.step-edit-container * {
+  color: black;
+  width: 50px;
+  height: 100%;
   text-align: center;
   font-size: 12px;
   text-decoration: none;
@@ -39,7 +69,7 @@
 .edit-container :hover {
   cursor: pointer;
   text-decoration: underline;
-  // border: 1px solid #DD6607;
+  border: 1px solid #DD6607;
   background-color: #ccc;
   border-radius: 4px;
 }
@@ -84,6 +114,7 @@
   transition: box-shadow .3s;
   text-decoration: none;
   font-size: 12px;
+  color: black;
 }
 
 .step-index-buttons{
@@ -107,4 +138,18 @@
   padding: 7px;
   box-shadow: 3px 3px #888888;
   cursor: pointer;
+}
+
+#drop-down {
+  background-color: white;
+  height: 180px;
+  width: 160px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  text-align:right;
+  // position: absolute;
+  // left: -117px;
+  // top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  // display: none;
 }

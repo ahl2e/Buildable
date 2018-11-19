@@ -17,9 +17,7 @@ constructor(props){
   }
 
   delete(e){
-    debugger
     localStorage.clear();
-    debugger
     this.props.deleteProject(this.props.project),this.props.history.push(`/`);
   }
 
