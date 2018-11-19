@@ -22,11 +22,23 @@ class StepsIndexItem extends React.Component {
 
   render() {
 
-    let deleteButton;
-    let editButton;
+    // let deleteButton;
+    // let editButton;
+    let editContainer;
       if (Object.values(this.props.currentUserId).length > 0 && Object.values(this.props.currentUserId)[0].id == this.state.user.id){
-        deleteButton = <button value="Delete Step" className="delete-button" onClick={this.delete.bind(this)}>Delete Step</button>;
-        editButton = <Link to={`/projects/${this.props.step.id}/${this.props.step}/edit`} id="step-edit">Edit Step</Link>
+        editContainer = <div>
+                          <button onClick={this.toggleDropDown} id={`${this.state.id}`}>...</button>
+                            <div
+                              className='step-no-show'
+                              id={`step-edit-container-${this.state.id}`}
+                              onMouseLeave={this.hideDropDown}
+                              >
+                              <button value="Delete Step" className="delete-button" onClick={this.delete.bind(this)}>Delete Step</button>
+                              <Link to={`/projects/${this.props.step.id}/${this.props.step}/edit`} id="step-edit">Edit Step</Link>
+                          </div>
+                        </div>
+        // deleteButton = <button value="Delete Step" className="delete-button" onClick={this.delete.bind(this)}>Delete Step</button>;
+        // editButton = <Link to={`/projects/${this.props.step.id}/${this.props.step}/edit`} id="step-edit">Edit Step</Link>
       }
 
     const pic = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;
@@ -36,15 +48,7 @@ class StepsIndexItem extends React.Component {
       {pic}
       <h3>Step {this.state.order_number}: {this.state.heading}</h3>
       <p>{this.state.body}</p>
-        <button onClick={this.toggleDropDown} id={`${this.state.id}`}>...</button>
-          <div
-            className='step-no-show'
-            id={`step-edit-container-${this.state.id}`}
-            onMouseLeave={this.hideDropDown}
-            >
-            {deleteButton}
-            {editButton}
-        </div>
+        {editContainer}
     </li>
 );
 }
