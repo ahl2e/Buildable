@@ -36,14 +36,14 @@ class StepsIndexItem extends React.Component {
       {pic}
       <h3>Step {this.state.order_number}: {this.state.heading}</h3>
       <p>{this.state.body}</p>
-      <button onClick={this.toggleDropDown} id={`${this.state.id}`}> ...</button>
-        <div
-          className='step-no-show'
-          id={`step-edit-container-${this.state.id}`}
-          onMouseLeave={this.hideDropDown}
-          >
-          {deleteButton}
-          {editButton}
+        <button onClick={this.toggleDropDown} id={`${this.state.id}`}>...</button>
+          <div
+            className='step-no-show'
+            id={`step-edit-container-${this.state.id}`}
+            onMouseLeave={this.hideDropDown}
+            >
+            {deleteButton}
+            {editButton}
         </div>
     </li>
 );
