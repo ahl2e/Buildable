@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchIndexItem from './search_index_item';
+import {Link} from 'react-router-dom';
 
 class SearchIndex extends React.Component {
   constructor(props){
@@ -27,7 +28,7 @@ class SearchIndex extends React.Component {
   return(
     <div>
       <h1>We don't have anything like that.</h1>
-      <h1>I guess you have to build it.</h1>
+      <Link to="/projects/:project_Id/steps" id="search-build-link">I guess you have to build it.</Link>
     </div>
   );
 }

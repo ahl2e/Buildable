@@ -40,6 +40,13 @@
   font-family: 'Montserrat', sans-serif;
   border-radius: 4px;
   border: 1px solid black;
+  padding: 2px;
+}
+
+.edit-container *:hover{
+  cursor: pointer;
+  background-color: #DD6607;
+  color: white;
 }
 
 [id^="step-edit-container"]{
@@ -128,6 +135,10 @@
 }
 #step-edit:hover{
   text-decoration: underline;;
+}
+
+.edit-drop{
+  cursor: pointer;
 }
 
 .step-index-buttons{

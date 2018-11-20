@@ -26,7 +26,7 @@ class StepsIndexItem extends React.Component {
     let editContainer;
       if (Object.values(this.props.currentUserId).length > 0 && Object.values(this.props.currentUserId)[0].id == this.state.user.id){
         editContainer = <div>
-                          <button onClick={this.toggleDropDown} id={`${this.state.id}`}>...</button>
+                          <button onClick={this.toggleDropDown} id={`${this.state.id}`} className='edit-drop'>edit this step</button>
                             <div
                               className='step-no-show'
                               id={`step-edit-container-${this.state.id}`}
