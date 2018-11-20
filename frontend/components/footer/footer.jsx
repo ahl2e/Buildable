@@ -18,11 +18,12 @@ const Footer = (props) => {
         </div>
         <div id="footer-links">
           <h4>My Sites</h4>
-            <Link to="http://www.adamhlong.com/">Personal Site</Link>
+
+            <a href="http://www.adamhlong.com/" target="_blank">Personal Site</a>
             <br/>
-            <Link to="https://github.com/ahl2e">Github</Link>
+            <a href="https://github.com/ahl2e" target="_blank">Github</a>
             <br/>
-            <Link to="https://www.linkedin.com/in/adam-long-7b379945/">LinkedIn</Link>
+            <a href="https://www.linkedin.com/in/adam-long-7b379945/" target="_blank">LinkedIn</a>
         </div>
       </div>
       <div id="line-box"></div>

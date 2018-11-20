@@ -28,7 +28,7 @@ constructor(props){
     let addLink;
     if (project.project){
       if(this.props.user === project.project.username){
-         deleteButton = <button value="Delete" onClick={this.delete.bind(this)}>Delete</button>;
+         deleteButton = <button value="Delete" onClick={this.delete.bind(this)}>Delete This Project</button>;
          editLink = <Link to={`/projects/${project.id}/edit/`}>Edit</Link>;
          addLink = <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>;
       }
