@@ -3,6 +3,8 @@ import * as ApiCommentUtil from '../util/comment_api_util';
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+
 
 
 const receiveComment = (comment) => {
@@ -26,6 +28,13 @@ const removeComment = (comment) => {
   };
 };
 
+export const receiveErrors = (errors) => {
+  return {
+    type: RECEIVE_ERRORS,
+    errors
+  };
+};
+
 export const fetchComment = (id) => dispatch => {
   return ApiCommentUtil.fetchComment(id).then((id)=> dispatch(receiveComment(step)));
 };
@@ -39,7 +48,8 @@ export const updateComment  = (comment) => dispatch => {
 };
 
 export const createComment = (comment) => dispatch => {
-  return ApiCommentUtil.createComment(comment).then((comment) => dispatch(receiveComment(comment)));
+  return ApiCommentUtil.createComment(comment).then((comment) => dispatch(receiveComment(comment)),
+  errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
 export const deleteComment = (comment) => dispatch => {
