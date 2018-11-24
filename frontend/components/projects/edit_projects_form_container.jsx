@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
   const project = state.entities.projects[ownProps.match.params.projectId] || defaultProject;
   const formType = 'Update Project';
   const method = "PATCH";
-  return { project, formType, method, user_id };
+  const errors = state.errors;
+  return { project, formType, method, user_id, errors };
 };
 
 const mapDispatchToProps = dispatch => {

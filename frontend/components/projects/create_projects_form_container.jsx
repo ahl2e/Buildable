@@ -6,8 +6,9 @@ const mapStateToProps = (state, ownProps) => {
     const project = { title: '', description: '', user_id: state.session.id, imageFile: null };
     const formType  = "Create Project";
     const method = "POST";
+    const errors = state.errors;
 
-  return {project, formType, method};
+  return {project, formType, method, errors};
 };
 
 const mapDispatchToProps = (dispatch) => {

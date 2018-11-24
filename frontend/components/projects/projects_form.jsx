@@ -31,7 +31,6 @@ handleSubmit(e){
  }
 
  if (this.props.formType == "Update Project"){
-   debugger
    this.props.action(this.state);
 
    // $.ajax({
@@ -43,14 +42,11 @@ handleSubmit(e){
    // }).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
 
  } else {
-
    var existingProjects = JSON.parse(localStorage.getItem('projects'));
    var lastProjectId = existingProjects[existingProjects.length -1 ].id;
    this.state = merge({}, this.state,{id:lastProjectId + 1});
    var newProjects = existingProjects.push(this.state);
    localStorage.setItem('projects', []);
-
-
 
    $.ajax({
      url: '/api/projects',
@@ -60,7 +56,6 @@ handleSubmit(e){
      processData: false
    }).then(() => this.props.history.push(`/`));
  }
-
 }
 
 handleFile(e) {
@@ -96,6 +91,7 @@ render(){
     } else {
       uploadButton = null;
     }
+    debugger
   return(
     <div className="projects-form">
       <section className="form-box">
@@ -131,7 +127,6 @@ render(){
                 <input className="submit" type="submit" value={this.props.formType}/>
               </div>
 
-              {this.props.errors}
             </div>
           </form>
         </div>

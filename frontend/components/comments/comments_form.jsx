@@ -20,7 +20,7 @@ class CommentsForm extends React.Component{
     e.preventDefault();
     const comment = Object.assign({}, {title: this.state.title, body: this.state.body, user_id: this.state.currentUserId, project_id: parseInt(this.state.match.params.projectId)});
     const project_id = parseInt(this.state.match.params.projectId);
-    this.props.create(comment).then(() => this.props.history.push(`/projects/${project_id}`),() => this.props.history.push(`/projects/${project_id}`));
+    this.props.create(comment).then(() => this.props.history.push(`/projects/${project_id}`));
     this.setState({
       title: "",
       body: ""

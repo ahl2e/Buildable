@@ -3,6 +3,7 @@ import * as ApiStepUtil from '../util/step_api_util';
 export const RECEIVE_STEP = "RECEIVE_STEP";
 export const RECEIVE_ALL_STEPS = "RECEIVE_ALL_STEPS";
 export const REMOVE_STEP = "REMOVE_STEP";
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 const receiveStep = (step) => {
   return{
@@ -24,6 +25,12 @@ const removeStep = (step) => {
     step
   };
 };
+export const receiveErrors = (errors) => {
+  return {
+    type: RECEIVE_ERRORS,
+    errors
+  };
+};
 
 export const fetchStep = (id) => dispatch => {
   return ApiStepUtil.fetchStep(id).then((id)=> dispatch(receiveStep(step)));
@@ -38,7 +45,8 @@ export const updateStep  = (step) => dispatch => {
 };
 
 export const createStep = (step) => dispatch => {
-  return ApiStepUtil.createStep(step).then((step) => dispatch(receiveStep(step)));
+  return ApiStepUtil.createStep(step).then((step) => dispatch(receiveStep(step)),
+  errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
 export const deleteStep = (step) => dispatch => {
