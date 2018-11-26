@@ -4,7 +4,6 @@ import {merge} from 'lodash';
 
 class CommentsForm extends React.Component{
   constructor(props){
-    // debugger
     super(props);
     this.state = this.props;
     this.handleSubmit = this.handleSubmit.bind(this);
