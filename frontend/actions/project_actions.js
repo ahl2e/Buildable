@@ -5,6 +5,7 @@ export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
 
@@ -22,7 +23,8 @@ export const fetchSearchResults = (query) => dispatch => {
 };
 
 export const createProject = (project) => dispatch => {
-  return ApiProjectUtil.createProject(project).then(project => dispatch(receiveProject(project)));
+  return ApiProjectUtil.createProject(project).then((project) => dispatch(receiveProject(project)),
+errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
 export const updateProject = (project) => dispatch => {
@@ -45,7 +47,7 @@ const receiveAllProjects = (projects) => {
   return{
   type: RECEIVE_ALL_PROJECTS,
   projects: projects
-};
+  };
 };
 
 const receiveSearchResults = (results) => {
@@ -59,5 +61,13 @@ const removeProject = (project) => {
   return{
     type: REMOVE_PROJECT,
     project: project
+  };
+};
+
+export const receiveErrors = (errors) => {
+  debugger
+  return {
+    type: RECEIVE_ERRORS,
+    errors
   };
 };

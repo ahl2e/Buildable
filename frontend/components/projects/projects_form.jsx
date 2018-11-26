@@ -46,7 +46,8 @@ handleSubmit(e){
    var lastProjectId = existingProjects[existingProjects.length -1 ].id;
    this.state = merge({}, this.state,{id:lastProjectId + 1});
    var newProjects = existingProjects.push(this.state);
-   localStorage.setItem('projects', []);
+   debugger
+   localStorage.clear();
 
    $.ajax({
      url: '/api/projects',
@@ -91,7 +92,25 @@ render(){
     } else {
       uploadButton = null;
     }
-    debugger
+
+
+    let errorRenders;
+    if (this.props.errors.session.length > 0) {
+      debugger
+      errorRenders =
+      <div className="comment-errors">
+      <ul>
+        {this.props.errors.session.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    </div>
+    } else {
+      errorRenders = null;
+    }
+
   return(
     <div className="projects-form">
       <section className="form-box">
@@ -126,7 +145,7 @@ render(){
               <div className="button-container">
                 <input className="submit" type="submit" value={this.props.formType}/>
               </div>
-
+              {errorRenders}
             </div>
           </form>
         </div>
