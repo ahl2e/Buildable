@@ -52,12 +52,18 @@ let username;
   if (project.project){
     username = project.project.username;
   }
+let category;
+  if (project.project && project.project.category != null){
+    category = <p>category: {project.project.category}</p>;
+  }
+
   return (
 
     <div className="project-show">
         <div className="show-header">
         <div className="title">{project.title}</div>
         <p className="author"> by: {username}</p>
+        {category}
           <div className="main-image-container">
             {picture}
           </div>

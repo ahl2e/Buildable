@@ -31,7 +31,7 @@ handleSubmit(e){
  }
 
  if (this.props.formType == "Update Project"){
-   this.props.action(this.state);
+   this.props.action(this.state).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));;
 
    // $.ajax({
    //   url: `/api/projects/${this.state.id}`,
@@ -46,7 +46,6 @@ handleSubmit(e){
    var lastProjectId = existingProjects[existingProjects.length -1 ].id;
    this.state = merge({}, this.state,{id:lastProjectId + 1});
    var newProjects = existingProjects.push(this.state);
-   debugger
    localStorage.clear();
 
    $.ajax({
@@ -92,25 +91,6 @@ render(){
     } else {
       uploadButton = null;
     }
-
-
-    let errorRenders;
-    if (this.props.errors.session.length > 0) {
-      debugger
-      errorRenders =
-      <div className="comment-errors">
-      <ul>
-        {this.props.errors.session.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    </div>
-    } else {
-      errorRenders = null;
-    }
-
   return(
     <div className="projects-form">
       <section className="form-box">
@@ -134,6 +114,18 @@ render(){
               cols="80"
               />
             <br/>
+              <select value={this.state.category} onChange={this.update('category')}>
+                <option value="" disabled>Choose a Category</option>
+                <option value="woodworking">Woodworking</option>
+                <option value="metal">Metal</option>
+                <option value="technology">Technology</option>
+                <option value="pottery">Pottery</option>
+                <option value="furniture">Furniture</option>
+                <option value="home">Home Improvement</option>
+                <option value="lighting">Lighting</option>
+                <option value="misc">misc</option>
+              </select>
+
             <div className="form-footer">
 
               {uploadButton}
@@ -145,7 +137,6 @@ render(){
               <div className="button-container">
                 <input className="submit" type="submit" value={this.props.formType}/>
               </div>
-              {errorRenders}
             </div>
           </form>
         </div>
