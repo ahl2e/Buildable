@@ -1,11 +1,13 @@
 import * as ApiProjectUtil from '../util/project_api_util';
 import * as ApiSearchUtil from '../util/search_api_util';
+import * as ApiCategoryUtil from '../util/category_api_util';
 
 export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_CATEGORY_PROJECTS = 'RECEIVE_CATEGORY_PROJECTS';
 
 
 
@@ -21,6 +23,10 @@ export const fetchProjects = () => dispatch => {
 export const fetchSearchResults = (query) => dispatch => {
   return ApiSearchUtil.search(query).then( results => dispatch(receiveSearchResults(results)));
 };
+
+export const fetchCategoryProjects = (query) => dispatch => {
+  return ApiCategoryUtil.fetch(query).then( result => dispatch(receiveCategoryResults(results)))
+}
 
 export const createProject = (project) => dispatch => {
   return ApiProjectUtil.createProject(project).then((project) => dispatch(receiveProject(project)),
@@ -53,6 +59,13 @@ const receiveAllProjects = (projects) => {
 const receiveSearchResults = (results) => {
   return{
     type: RECEIVE_SEARCH_RESULTS,
+    results
+  };
+};
+
+const receiveCategoryResults = (results) => {
+  return{
+    type: RECEIVE_CATEGORY_PROJECTS,
     results
   };
 };

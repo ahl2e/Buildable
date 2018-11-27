@@ -16,6 +16,7 @@ import SearchIndexContainer from'./search/search_index_container';
 import CreateCommentsFormContainer from './comments/create_comments_form_container';
 import CommentsIndexContainer from './comments/comments_index_container';
 import Footer from './footer/footer';
+import CategoriesIndexContainer from './categories/categories_index_container';
 
 const App = () => (
   <main className="app-container">
@@ -43,6 +44,7 @@ const App = () => (
     <Route exact path="/login" component={LoginFormContainer} />
     <Route exact path="/signup" component={SignupFormContainer} />
     <Route exact path="/projects/search" component={SearchIndexContainer} />
+    <Route exact path="/projects/categories/:category" component={CategoriesIndexContainer} />
     <ProtectedRoute exact path="/create" component={CreateProjectsFormContainer} />
     <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
     <Route exact path="/projects/:projectId" component={ProjectsShowContainer} />

@@ -4,10 +4,11 @@ import CommentsIndexItem from './comments_index_item';
 class CommentsIndex extends React.Component{
 
   constructor(props){
+    // debugger
     super(props);
     this.state = {
       comments: props.comments,
-      projectId: parseInt(props.match.params.project_Id)
+      projectId: parseInt(props.match.params.projectId)
     };
   }
 

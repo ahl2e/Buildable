@@ -15,7 +15,6 @@ Link to live app: (https://buildable.herokuapp.com)
 + jQuery Ajax - allows asynchronous calls to the backend database without interfering with the front end experience
 + React - Dynamically generates front-end experience allowing for fluid single-page apps.
 
-## Features
 
 #### Projects
 

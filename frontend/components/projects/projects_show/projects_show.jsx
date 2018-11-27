@@ -10,9 +10,15 @@ constructor(props){
 }
 
   componentDidMount(){
+    window.scrollTo(0,0);
     const projectId = parseInt(this.props.match.params.projectId);
     this.props.fetchProject(this.props.match.params.projectId);
     this.props.fetchAllSteps(projectId);
+    this.props.fetchAllComments(projectId);
+  }
+
+  componentWillUpdate(){
+    const projectId = parseInt(this.props.match.params.projectId);
     this.props.fetchAllComments(projectId);
   }
 

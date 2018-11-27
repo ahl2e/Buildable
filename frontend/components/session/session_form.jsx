@@ -11,6 +11,10 @@ class SessionForm extends React.Component {
     };
   }
 
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
 update(field) {
   return e => this.setState({
     [field]: e.currentTarget.value
