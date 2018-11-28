@@ -57,15 +57,18 @@ handleSubmit(e){
    var newProjects = existingProjects.push(this.state.project);
    // const newId = existingProjects[existingProjects.length - 1].id;
    localStorage.clear();
-   // this.props.action(projectData);
-   debugger
-   $.ajax({
-     url: '/api/projects',
-     method: `${this.props.method}`,
-     data: projectData,
-     contentType: false,
-     processData: false
-   }).then(localStorage.clear()).then(() => this.props.history.push(`/projects`));
+   this.props.action(projectData).then((response) => {
+     this.props.history.push('/projects/response.project.id');
+     console.log(response.project.id);
+}
+   );
+   // $.ajax({
+   //   url: '/api/projects',
+   //   method: `${this.props.method}`,
+   //   data: projectData,
+   //   contentType: false,
+   //   processData: false
+   // }).then(localStorage.clear()).then(() => this.props.history.push(`/projects`));
  }
 }
 

@@ -14,9 +14,11 @@ export const fetchProject = (id) => {
 
 export const createProject = (project) => {
   return $.ajax({
-    method: "POST",
-    url: "api/projects/",
-    data: { project }
+      url: '/api/projects',
+      method: "POST",
+      data: project,
+      contentType: false,
+      processData: false
   });
 };
 export const updateProject = (project) => {

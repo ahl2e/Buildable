@@ -25,12 +25,11 @@ export const fetchSearchResults = (query) => dispatch => {
 };
 
 export const fetchCategoryProjects = (query) => dispatch => {
-  return ApiCategoryUtil.fetch(query).then( result => dispatch(receiveCategoryResults(results)))
-}
+  return ApiCategoryUtil.fetch(query).then( result => dispatch(receiveCategoryResults(results)));
+};
 
 export const createProject = (project) => dispatch => {
-  return ApiProjectUtil.createProject(project).then((project) => dispatch(receiveProject(project)),
-errors => dispatch(receiveErrors(errors.responseJSON)));
+  return ApiProjectUtil.createProject(project).then((project) => dispatch(receiveProject(project)));
 };
 
 export const updateProject = (project) => dispatch => {
