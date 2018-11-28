@@ -42,13 +42,7 @@ return(
   <section id="landing-image">
     <div id="landing-text">
     <h1 id="changing-text">Let's Build a ________</h1>
-    <Link to={`/projects/categories/woodworking`}>Woodworking</Link>
-    <Link to={`/projects/categories/metal`}>Metal</Link>
-    <Link to={`/projects/categories/technology`}>Technology</Link>
-    <Link to={`/projects/categories/pottery`}>Pottery</Link>
-    <Link to={`/projects/categories/furniture`}>Furniture</Link>
-    <Link to={`/projects/categories/home`}>Home Improvement</Link>
-    <Link to={`/projects/categories/lighting`}>Home Improvement</Link>
+  
     </div>
   </section>
   <section className="projects-index-container">

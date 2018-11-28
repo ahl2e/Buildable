@@ -42,7 +42,7 @@ export const deleteProject = (project) => dispatch => {
 };
 
 
-const receiveProject = (project) => {
+export const receiveProject = (project) => {
   return{
   type: RECEIVE_PROJECT,
   project: project

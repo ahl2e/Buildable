@@ -11,6 +11,10 @@ class ProjectsForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
   update(field) {
     return (e) =>{
       this.setState({[field]: e.target.value});
@@ -19,42 +23,36 @@ class ProjectsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
-  const formData = new FormData();
-  formData.append('project[title]', this.state.title);
-  formData.append('project[description]', this.state.description);
-  formData.append('project[user_id]', this.state.user_id);
+  const projectData = new FormData();
+  projectData.append('project[title]', this.state.title);
+  projectData.append('project[description]', this.state.description);
+  projectData.append('project[user_id]', this.state.user_id);
   if (this.state.imageFile) {
-   formData.append('project[picture]', this.state.imageFile);
+   projectData.append('project[picture]', this.state.imageFile);
  }
   if (this.state.id) {
-   formData.append('project[id]', this.state.id);
+   projectData.append('project[id]', this.state.id);
  }
 
  if (this.props.formType == "Update Project"){
-   this.props.action(this.state).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));;
-
-   // $.ajax({
-   //   url: `/api/projects/${this.state.id}`,
-   //   method: `${this.props.method}`,
-   //   data: this.state,
-   //   contentType: false,
-   //   processData: false
-   // }).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
+   this.props.action(this.state).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
 
  } else {
    var existingProjects = JSON.parse(localStorage.getItem('projects'));
-   var lastProjectId = existingProjects[existingProjects.length -1 ].id;
-   this.state = merge({}, this.state,{id:lastProjectId + 1});
+   // var lastProjectId = existingProjects[existingProjects.length -1 ].id;
+   // this.state = merge({}, this.state,{id:lastProjectId + 1});
    var newProjects = existingProjects.push(this.state);
+   // const newId = existingProjects[existingProjects.length - 1].id;
    localStorage.clear();
-
-   $.ajax({
-     url: '/api/projects',
-     method: `${this.props.method}`,
-     data: formData,
-     contentType: false,
-     processData: false
-   }).then(() => this.props.history.push(`/`));
+   debugger
+   this.props.action(projectData);
+   // $.ajax({
+   //   url: '/api/projects',
+   //   method: `${this.props.method}`,
+   //   data: projectData,
+   //   contentType: false,
+   //   processData: false
+   // }).then(localStorage.clear()).then(() => this.props.history.push(`/projects`));
  }
 }
 

@@ -2,6 +2,7 @@ class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
       if @project.save
+        debugger
         render json: @project
       else
         render json: @project.errors.full_messages
