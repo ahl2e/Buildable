@@ -1,10 +1,14 @@
 class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
+
+    if @project.picture
+       @project.picture.attach(project_params[:picture])
+    end
       if @project.save
-        debugger
         render json: @project
       else
+        debugger
         render json: @project.errors.full_messages
       end
   end
