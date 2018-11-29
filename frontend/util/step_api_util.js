@@ -16,7 +16,9 @@ export const createStep = (step) => {
   return $.ajax({
     method: "POST",
     url: "/api/projects/:project_id/steps",
-    data: { step }
+    data: step,
+    contentType: false,
+    processData: false
   });
 };
 

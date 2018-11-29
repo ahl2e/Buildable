@@ -1,29 +1,34 @@
 import React from 'react';
 import {merge} from 'lodash';
 import { withRouter, Redirect} from 'react-router-dom';
+// import CreateStepsFormContainer from '../steps/steps_form';
 
 class ProjectsForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       project: props.project,
-      steps: [],
+      stepsFormData: {
+        heading:"",
+        body:"",
+        imageUrl:null,
+        imageFile:null
+      },
+      steps:[],
       image: {imageFile: null, imageUrl: "" }
     };
     this.state.project.userId = this.props.userId;
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleStepSubmit= this.handleStepSubmit.bind(this);
   }
 
   componentDidMount(){
     window.scrollTo(0,0);
   }
 
-  // update(field){
-  // 		return (e) => {
-  // 			this.setState({project: {[field]: e.target.value} });
-  // 		}
-  // 	}
+
+// FORM UPDATERS//
 
     updateProjectField(field){
       return (e) => {
@@ -31,7 +36,19 @@ class ProjectsForm extends React.Component {
         newProject[field] = e.target.value;
         this.setState({project: newProject});
       };
-    };
+    }
+
+    updateStepField(field){
+      return (e) => {
+        const newStep = this.state.stepsFormData;
+        newStep[field] = e.target.value;
+        this.setState({stepsFormData: newStep});
+      };
+    }
+
+// FORM UPDATERS//
+
+// HANDLERS//
 
     handleFile(e) {
       const reader = new FileReader();
@@ -42,6 +59,17 @@ class ProjectsForm extends React.Component {
         reader.readAsDataURL(file);
       } else {
         this.setState({image:{ [imageUrl]: "", [imageFile]: null }});
+      }
+    }
+    handleStepFile(e) {
+      const reader = new FileReader();
+      const file = e.currentTarget.files[0];
+      reader.onloadend = () =>
+      this.setState({stepsFormData: { imageUrl: reader.result, imageFile: file}});
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        this.setState({stepsFormData:{ [imageUrl]: "", [imageFile]: null }});
       }
     }
 
@@ -71,7 +99,22 @@ handleSubmit(e){
  }
 }
 
+handleStepSubmit(e){
+  e.preventDefault();
+  var allSteps = this.state.steps;
+  allSteps.push(this.state.stepsFormData);
+  this.setState({steps: allSteps});
+  this.setState({stepsFormData:{heading:"",body:"",imageUrl:null,imageFile:null}})
+}
+
+// HANDLERS//
+
+// HELPER RENDERS //
+
 renderUploadButton(){
+  if (this.props.formType == 'Update Project'){
+    return null;
+  }
   if (this.state.image.imageUrl){
     return(
       <div className='image-upload-contianer'>
@@ -99,6 +142,77 @@ renderUploadButton(){
     );
   }
 }
+renderStepUploadButton(){
+  if (this.props.formType == 'Update Project'){
+    return null;
+  }
+  if (this.state.stepsFormData.imageUrl){
+    return(
+      <div className='step-image-upload-contianer'>
+        <img src={this.state.stepsFormData.imageUrl} />
+
+      </div>
+    );
+  } else {
+    return(
+      <div className='step-image-upload-contianer'>
+        <label>Upload a Picture
+            <input
+              className='inputfile'
+              type="file"
+              onChange={this.handleStepFile.bind(this)}
+              />
+        </label>
+      </div>
+    );
+  }
+}
+
+renderStepForm(){
+  return(
+    <form onSubmit={this.handleStepSubmit} className='steps-editor-form'>
+      {this.renderStepUploadButton()}
+      <div className='steps-editor-form-text'>
+        <input
+          type='text'
+          onChange={this.updateStepField('heading')}
+          value={this.state.stepsFormData.heading}
+          placeholder="Step Heading">
+        </input>
+        <input
+          type='text'
+          onChange={this.updateStepField('body')}
+          value={this.state.stepsFormData.body}
+          placeholder="Step Body">
+        </input>
+      </div>
+      <input
+        type='submit'
+        value='Add Step'>
+      </input>
+    </form>
+  )
+}
+
+renderSteps(){
+  debugger
+  return(
+    <ul>
+      {this.state.steps.map((step,idx) => (
+        <li key={idx}>
+          <div className='step-form-index'>
+            <img src={step.imageUrl} />
+            <div className='step-form-index-text'>
+              <p>{step.heading}</p>
+              <p>{step.body}</p>
+            </div>
+          </div>
+        </li>
+  ))}
+  </ul>
+)}
+
+// HELPER RENDERS //
 
 
 render(){
@@ -117,6 +231,18 @@ render(){
               placeholder="Title"
               className="project-title"
               />
+            <select value={this.state.project.category} onChange={this.updateProjectField('category')}>
+              <option value="" disabled>Choose a Category</option>
+              <option value="woodworking">Woodworking</option>
+              <option value="metal">Metal</option>
+              <option value="technology">Technology</option>
+              <option value="pottery">Pottery</option>
+              <option value="furniture">Furniture</option>
+              <option value="home">Home Improvement</option>
+              <option value="lighting">Lighting</option>
+              <option value="misc">misc</option>
+            </select>
+            <input className="submit" type="submit" value={this.props.formType}/>
             <br/>
             <textarea
               value={this.state.project.description}
@@ -126,30 +252,10 @@ render(){
               cols="80"
               />
             <br/>
-              <select value={this.state.project.category} onChange={this.updateProjectField('category')}>
-                <option value="" disabled>Choose a Category</option>
-                <option value="woodworking">Woodworking</option>
-                <option value="metal">Metal</option>
-                <option value="technology">Technology</option>
-                <option value="pottery">Pottery</option>
-                <option value="furniture">Furniture</option>
-                <option value="home">Home Improvement</option>
-                <option value="lighting">Lighting</option>
-                <option value="misc">misc</option>
-              </select>
-
-            <div className="form-footer">
-
-
-              <div className="photo-preview-div">
-
-              </div>
-
-              <div className="buttoncontainer">
-                <input className="submit" type="submit" value={this.props.formType}/>
-              </div>
-            </div>
           </form>
+          {this.renderStepForm()}
+          <br/>
+          {this.renderSteps()}
         </div>
       </section>
     </div>

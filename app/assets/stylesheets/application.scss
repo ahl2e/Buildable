@@ -424,11 +424,13 @@ height: 30px;
 border-radius: 7px;
 width: 300px;
 font-size: 18px;
+background-color: #dfdfdf;
 }
 
 .inner-form-box textarea {
 font-size: 18px;
 border-radius: 7px;
+background-color: #dfdfdf;
 }
 
 .photo-preview-div {
@@ -451,8 +453,9 @@ img{
   z-index: -1;
 }
 
-label{
-  width: 85%;
+
+.image-upload-contianer label{
+  width: 80%;
   height: 100px;
   background-color: #dfdfdf;
   color:#595757;
@@ -470,36 +473,16 @@ label:hover{
 }
 
 .image-upload-contianer{
-  width: 100%;
+  width: 97%;
   height: 20%;
   display: flex;
   background-color: #dfdfdf;
   border-radius: 10px;
   border: 2px solid #595757;
   box-shadow: inset 0px 0px 3px .3px #595757;
-  // align-content: center;
+  align-content: center;
 }
 
-
-.button-container {
-  margin-top: 30px;
-  height: 45px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.button-container * {
-  height: 90%;
-  border-radius: 10px;
-  background-color: #DD6607;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 5px;
-  vertical-align: middle;
-  justify-content: space-around;
-}
 
 
 .show-header {

@@ -45,8 +45,7 @@ export const updateStep  = (step) => dispatch => {
 };
 
 export const createStep = (step) => dispatch => {
-  return ApiStepUtil.createStep(step).then((step) => dispatch(receiveStep(step)),
-  errors => dispatch(receiveErrors(errors.responseJSON)));
+  return ApiStepUtil.createStep(step).then((step) => dispatch(receiveStep(step)));
 };
 
 export const deleteStep = (step) => dispatch => {

@@ -30,15 +30,7 @@ handleSubmit(e){
  if (this.props.formType == "Edit Step") {
    this.props.action(this.state);
  } else {
-   this.props.action(formData);
- $.ajax({
-    url:`/api/projects/${this.props.match.params.project_Id}/steps`,
-    method: `${this.props.method}`,
-    data: formData,
-    contentType: false,
-    processData: false
-  }).then(() => this.props.history.push(`/projects/${this.props.match.params.project_Id}`));
-
+   this.props.action(formData).then(() => this.props.history.push(`/projects/${this.props.match.params.project_Id}`));
   }
 }
 
