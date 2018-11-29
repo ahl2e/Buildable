@@ -28,6 +28,7 @@ class ProjectsForm extends React.Component {
     this.handleStepSubmit = this.handleStepSubmit.bind(this);
     this.updateStepField = this.updateStepField.bind(this);
     this.renderStepForm = this.renderStepForm.bind(this);
+    this.handleStepFile = this.handleStepFile.bind(this);
   }
 
   componentDidMount(){
@@ -68,18 +69,23 @@ class ProjectsForm extends React.Component {
         this.setState({image:{ [imageUrl]: "", [imageFile]: null }});
       }
     }
-    handleStepFile(e) {
+
+    handleStepFile(idx) {
+      return (e) => {
       const reader = new FileReader();
-      debugger
       const file = e.currentTarget.files[0];
-      reader.onloadend = () =>
-      this.setState({stepsFormData: { imageUrl: reader.result, imageFile: file}});
+      var newSteps = this.state.steps;
+      reader.onloadend = () => {
+        newSteps[idx].imageUrl = reader.result;
+        newSteps[idx].imageFile = file;
+      this.setState({steps: newSteps});
+    }
       if (file) {
         reader.readAsDataURL(file);
       } else {
         this.setState({stepsFormData:{ [imageUrl]: "", [imageFile]: null }});
       }
-    }
+    }}
 
 handleSubmit(e){
   e.preventDefault();
@@ -169,7 +175,7 @@ renderStepUploadButton(step,idx){
             <input
               className='inputfile'
               type="file"
-              onChange={this.handleStepFile.bind(this)}
+              onChange={this.handleStepFile(idx)}
               />
         </label>
       </div>
@@ -207,7 +213,6 @@ renderSteps(){
   return(
     <ul>
       {this.state.steps.map((step,idx) => {
-        debugger
         return(
         <li key={idx}>
           {this.renderStepForm(step,idx)}
