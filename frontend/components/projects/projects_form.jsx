@@ -14,13 +14,20 @@ class ProjectsForm extends React.Component {
         imageUrl:null,
         imageFile:null
       },
-      steps:[],
+      steps:[{
+        heading:"",
+        body:"",
+        imageUrl:null,
+        imageFile:null
+      }],
       image: {imageFile: null, imageUrl: "" }
     };
     this.state.project.userId = this.props.userId;
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleStepSubmit= this.handleStepSubmit.bind(this);
+    this.handleStepSubmit = this.handleStepSubmit.bind(this);
+    this.updateStepField = this.updateStepField.bind(this);
+    this.renderStepForm = this.renderStepForm.bind(this);
   }
 
   componentDidMount(){
@@ -38,11 +45,11 @@ class ProjectsForm extends React.Component {
       };
     }
 
-    updateStepField(field){
+    updateStepField(field,idx){
       return (e) => {
-        const newStep = this.state.stepsFormData;
-        newStep[field] = e.target.value;
-        this.setState({stepsFormData: newStep});
+        const newSteps = this.state.steps;
+        newSteps[idx][field] = e.target.value;
+        this.setState({steps: newSteps});
       };
     }
 
@@ -63,6 +70,7 @@ class ProjectsForm extends React.Component {
     }
     handleStepFile(e) {
       const reader = new FileReader();
+      debugger
       const file = e.currentTarget.files[0];
       reader.onloadend = () =>
       this.setState({stepsFormData: { imageUrl: reader.result, imageFile: file}});
@@ -102,9 +110,10 @@ handleSubmit(e){
 handleStepSubmit(e){
   e.preventDefault();
   var allSteps = this.state.steps;
-  allSteps.push(this.state.stepsFormData);
+  const newStep = {heading:"",body:"",imageUrl:null,imageFile:null};
+  allSteps.push(newStep);
   this.setState({steps: allSteps});
-  this.setState({stepsFormData:{heading:"",body:"",imageUrl:null,imageFile:null}})
+  // this.setState({stepsFormData:{heading:"",body:"",imageUrl:null,imageFile:null}});
 }
 
 // HANDLERS//
@@ -142,14 +151,14 @@ renderUploadButton(){
     );
   }
 }
-renderStepUploadButton(){
+renderStepUploadButton(step,idx){
   if (this.props.formType == 'Update Project'){
     return null;
   }
-  if (this.state.stepsFormData.imageUrl){
+  if (step.imageUrl){
     return(
       <div className='step-image-upload-contianer'>
-        <img src={this.state.stepsFormData.imageUrl} />
+        <img src={step.imageUrl} />
 
       </div>
     );
@@ -168,21 +177,21 @@ renderStepUploadButton(){
   }
 }
 
-renderStepForm(){
+renderStepForm(step,idx){
   return(
     <form onSubmit={this.handleStepSubmit} className='steps-editor-form'>
-      {this.renderStepUploadButton()}
+      {this.renderStepUploadButton(step,idx)}
       <div className='steps-editor-form-text'>
         <input
           type='text'
-          onChange={this.updateStepField('heading')}
-          value={this.state.stepsFormData.heading}
+          onChange={this.updateStepField('heading',idx)}
+          value={step.heading}
           placeholder="Step Heading">
         </input>
         <input
           type='text'
-          onChange={this.updateStepField('body')}
-          value={this.state.stepsFormData.body}
+          onChange={this.updateStepField('body',idx)}
+          value={step.body}
           placeholder="Step Body">
         </input>
       </div>
@@ -195,20 +204,16 @@ renderStepForm(){
 }
 
 renderSteps(){
-  debugger
   return(
     <ul>
-      {this.state.steps.map((step,idx) => (
+      {this.state.steps.map((step,idx) => {
+        debugger
+        return(
         <li key={idx}>
-          <div className='step-form-index'>
-            <img src={step.imageUrl} />
-            <div className='step-form-index-text'>
-              <p>{step.heading}</p>
-              <p>{step.body}</p>
-            </div>
-          </div>
+          {this.renderStepForm(step,idx)}
         </li>
-  ))}
+      )
+  })}
   </ul>
 )}
 
@@ -222,7 +227,7 @@ render(){
       <section className="form-box">
         <div className="inner-form-box">
           <form onSubmit={this.handleSubmit}>
-            {this.renderUploadButton()}
+            {this.renderUploadButton(this.state.stepsFormData)}
             <br/>
             <input
               type="text"
@@ -253,11 +258,11 @@ render(){
               />
             <br/>
           </form>
-          {this.renderStepForm()}
-          <br/>
-          {this.renderSteps()}
         </div>
       </section>
+      <div>
+        {this.renderSteps()}
+      </div>
     </div>
   )
 }

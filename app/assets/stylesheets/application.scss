@@ -368,7 +368,8 @@ box-shadow: 2px 2px black;
   min-height: 800px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-content: center;
   box-shadow: inset 0px 3px 7px #ccc;
   padding-top: 50px;
 }
@@ -387,19 +388,21 @@ box-shadow: 2px 2px black;
 
 .form-box {
   width: 900px;
-  height: 550px;
+  height: 585px;
   background-color: white;
   border-radius: 20px;
   border: 1px solid #ccc;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 40px;
 }
 
 .inner-form-box {
-  height: 500px;
+  height: 1000px;
   width: 825px;
   background-color: #eee;
+  // background-color: blue;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
