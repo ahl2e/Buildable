@@ -24,7 +24,7 @@ update(field) {
 demoLogin(e) {
   e.preventDefault();
   const user = Object.assign({}, {username: "DemoUser", password: "demopassword"});
-  this.props.dispatchForm(user).then(() => this.props.history.push(`/`));
+  this.props.dispatchForm(user).then(() => this.props.history.goBack());
   this.setState({
     username: "",
     password: "",

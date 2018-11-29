@@ -33,6 +33,17 @@ class ProjectsForm extends React.Component {
       };
     };
 
+    handleFile(e) {
+      const reader = new FileReader();
+      const file = e.currentTarget.files[0];
+      reader.onloadend = () =>
+      this.setState({image: { imageUrl: reader.result, imageFile: file}});
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        this.setState({image:{ [imageUrl]: "", [imageFile]: null }});
+      }
+    }
 
 handleSubmit(e){
   e.preventDefault();
@@ -52,64 +63,53 @@ handleSubmit(e){
 
  } else {
    var existingProjects = JSON.parse(localStorage.getItem('projects'));
-   // var lastProjectId = existingProjects[existingProjects.length -1 ].id;
-   // this.state = merge({}, this.state,{id:lastProjectId + 1});
    var newProjects = existingProjects.push(this.state.project);
-   // const newId = existingProjects[existingProjects.length - 1].id;
    localStorage.clear();
    this.props.action(projectData).then((response) => {
-     this.props.history.push('/projects/response.project.id');
-     console.log(response.project.id);
-}
-   );
-   // $.ajax({
-   //   url: '/api/projects',
-   //   method: `${this.props.method}`,
-   //   data: projectData,
-   //   contentType: false,
-   //   processData: false
-   // }).then(localStorage.clear()).then(() => this.props.history.push(`/projects`));
+     this.props.history.push(`/projects/${response.project.id}`);
+     console.log(response.project.id);});
  }
 }
 
-handleFile(e) {
-  const reader = new FileReader();
-  const file = e.currentTarget.files[0];
-  reader.onloadend = () =>
-    this.setState({image: { imageUrl: reader.result, imageFile: file}});
-  if (file) {
-    reader.readAsDataURL(file);
+renderUploadButton(){
+  if (this.state.image.imageUrl){
+    return(
+      <div className='image-upload-contianer'>
+        <img src={this.state.image.imageUrl} />
+        <label>Change Picture
+            <input
+              className='inputfile'
+              type="file"
+              onChange={this.handleFile.bind(this)}
+              />
+            </label>
+      </div>
+    );
   } else {
-    this.setState({image:{ [imageUrl]: "", [imageFile]: null }});
+    return(
+      <div className='image-upload-contianer'>
+        <label>Upload a Picture
+            <input
+              className='inputfile'
+              type="file"
+              onChange={this.handleFile.bind(this)}
+              />
+        </label>
+      </div>
+    );
   }
 }
 
-render(){
-  var preview = this.state.image.imageUrl ? <img src={this.state.image.imageUrl} /> : null;
-  if (this.state.project){
-    preview = <img src={this.state.image.imageUrl} />;
-  }
 
-  let uploadButton;
-    if (this.props.formType == "Create Project"){
-      uploadButton = <div className="button-container">
-                        <label>Upload a Picture
-                        <input
-                          type="file"
-                          className="fileinput"
-                          onChange={this.handleFile.bind(this)}
-                          />
-                      </label>
-                    </div>;
-    } else {
-      uploadButton = null;
-    }
+render(){
+
   return(
     <div className="projects-form">
       <section className="form-box">
         <div className="inner-form-box">
           <form onSubmit={this.handleSubmit}>
-            <p>My Project is called:</p>
+            {this.renderUploadButton()}
+            <br/>
             <input
               type="text"
               value={this.state.project.title}
@@ -118,7 +118,6 @@ render(){
               className="project-title"
               />
             <br/>
-            <p>Add a brief description of your project</p>
             <textarea
               value={this.state.project.description}
               onChange={this.updateProjectField('description')}
@@ -141,13 +140,12 @@ render(){
 
             <div className="form-footer">
 
-              {uploadButton}
 
               <div className="photo-preview-div">
-                {preview}
+
               </div>
 
-              <div className="button-container">
+              <div className="buttoncontainer">
                 <input className="submit" type="submit" value={this.props.formType}/>
               </div>
             </div>
