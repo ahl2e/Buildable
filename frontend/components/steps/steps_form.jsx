@@ -28,7 +28,7 @@ handleSubmit(e){
  }
 
  if (this.props.formType == "Edit Step") {
-   this.props.action(this.state);
+   this.props.action(this.state).then(() => this.props.history.goBack());
  } else {
    this.props.action(formData).then(() => this.props.history.push(`/projects/${this.props.match.params.project_Id}`));
   }

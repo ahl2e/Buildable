@@ -1,7 +1,6 @@
 import React from 'react';
 import {merge} from 'lodash';
 import { withRouter, Redirect} from 'react-router-dom';
-// import CreateStepsFormContainer from '../steps/steps_form';
 
 class ProjectsForm extends React.Component {
   constructor(props){
@@ -79,16 +78,15 @@ class ProjectsForm extends React.Component {
         newSteps[idx].imageUrl = reader.result;
         newSteps[idx].imageFile = file;
       this.setState({steps: newSteps});
-    }
+    };
       if (file) {
         reader.readAsDataURL(file);
       } else {
         this.setState({stepsFormData:{ [imageUrl]: "", [imageFile]: null }});
       }
-    }}
+    };}
 
 handleSubmit(e){
-  // debugger
   e.preventDefault();
   const projectData = new FormData();
   projectData.append('project[title]', this.state.project.title);
@@ -108,9 +106,10 @@ handleSubmit(e){
    var existingProjects = JSON.parse(localStorage.getItem('projects'));
    var newProjects = existingProjects.push(this.state.project);
    localStorage.clear();
+   let projectId;
    this.props.action(projectData).then((response) => {
      this.state.steps.forEach((step) => {
-       debugger
+       projectId = response.project.id;
        const newStep = new FormData();
        newStep.append('step[project_id]',response.project.id);
        newStep.append('step[heading]',step.heading);
@@ -118,7 +117,7 @@ handleSubmit(e){
        newStep.append('step[picture]',step.imageFile);
        this.props.createStep(newStep);
      });
-   }).then(() => this.props.history.push(`/projects/${response.project.id}`));
+   }).then(() => this.props.history.push(`/`));
  }
 }
 
@@ -128,7 +127,6 @@ handleStepSubmit(e){
   const newStep = {heading:"",body:"",imageUrl:null,imageFile:null};
   allSteps.push(newStep);
   this.setState({steps: allSteps});
-  // this.setState({stepsFormData:{heading:"",body:"",imageUrl:null,imageFile:null}});
 }
 
 // HANDLERS//
