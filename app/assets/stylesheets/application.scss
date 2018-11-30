@@ -371,7 +371,7 @@ box-shadow: 2px 2px black;
   flex-direction: column;
   align-content: center;
   box-shadow: inset 0px 3px 7px #ccc;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .form-footer{
@@ -388,18 +388,19 @@ box-shadow: 2px 2px black;
 
 .form-box {
   width: 900px;
-  height: 585px;
+  height: 460px;
   background-color: white;
   border-radius: 20px;
   border: 1px solid #ccc;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 40px;
+  align-content: center;
+  margin: auto;
 }
 
 .inner-form-box {
-  height: 1000px;
+  height: 90%;
   width: 825px;
   background-color: #eee;
   // background-color: blue;
@@ -407,6 +408,7 @@ box-shadow: 2px 2px black;
   display: flex;
   flex-direction: column;
   align-content: center;
+  margin: auto;
 }
 
 .inner-form-box p {

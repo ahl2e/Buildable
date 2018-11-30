@@ -88,6 +88,7 @@ class ProjectsForm extends React.Component {
     }}
 
 handleSubmit(e){
+  // debugger
   e.preventDefault();
   const projectData = new FormData();
   projectData.append('project[title]', this.state.project.title);
@@ -108,8 +109,16 @@ handleSubmit(e){
    var newProjects = existingProjects.push(this.state.project);
    localStorage.clear();
    this.props.action(projectData).then((response) => {
-     this.props.history.push(`/projects/${response.project.id}`);
-     console.log(response.project.id);});
+     this.state.steps.forEach((step) => {
+       debugger
+       const newStep = new FormData();
+       newStep.append('step[project_id]',response.project.id);
+       newStep.append('step[heading]',step.heading);
+       newStep.append('step[body]',step.body);
+       newStep.append('step[picture]',step.imageFile);
+       this.props.createStep(newStep);
+     });
+   }).then(() => this.props.history.push(`/projects/${response.project.id}`));
  }
 }
 

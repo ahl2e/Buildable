@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import ProjectsForm from './projects_form';
 import {createProject, receiveProject} from '../../actions/project_actions';
+import {createStep} from '../../actions/step_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const project = { title: '', description: '', category: '', user_id: state.session.id, imageFile: null };
@@ -15,6 +16,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     action: (project) => dispatch(createProject(project)),
     receive: (project) => dispatch(receiveProject(project)),
+    createStep: (step) => dispatch(createStep(step)),
   };
 };
 
