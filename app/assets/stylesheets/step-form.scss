@@ -26,6 +26,21 @@
 .steps-editor-form{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 10px;
+  border: 2px solid #595757;
+  width: 65%;
+  margin: auto;
+}
+
+.steps-editor-form-text textarea {
+  font-size: 15px;
+  border-radius: 7px;
+  background-color: #dfdfdf;
+  color: #595757;
+  resize: none;
+  outline: none;
 }
 .steps-editor-form-text{
   display: flex;
@@ -43,4 +58,34 @@
 .step-form-index-text{
   display: flex;
   flex-direction: column;
+}
+
+#step-heading-field{
+  height: 30px;
+  border-radius: 7px;
+  width: 500px;
+  font-size: 18px;
+  background-color: #dfdfdf;
+  overflow-wrap: break-word;
+}
+//
+#step-body-field{
+  height: 50px;
+  border-radius: 7px;
+  width: 500px;
+  font-size: 15px;
+  background-color: #dfdfdf;
+  overflow-wrap: break-word;
+}
+
+.step-submit{
+  height: 35%;
+  background-color: #e86c00;
+  border: 1px solid #cf6000;
+  border-radius: 10px;
+  padding: .5rem .75rem;
+  font-size: 15px;
+  color: white;
+  margin-right: 3%;
+  margin-top: 10px;
 }

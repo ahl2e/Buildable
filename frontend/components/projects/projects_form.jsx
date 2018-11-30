@@ -195,22 +195,25 @@ renderStepForm(step,idx){
     <form onSubmit={this.handleStepSubmit} className='steps-editor-form'>
       {this.renderStepUploadButton(step,idx)}
       <div className='steps-editor-form-text'>
-        <input
-          type='text'
+        <textarea
           onChange={this.updateStepField('heading',idx)}
           value={step.heading}
-          placeholder="Step Heading">
-        </input>
-        <input
-          type='text'
+          placeholder="Step Heading"
+          id='step-heading-field'
+          rows="1"
+          cols="80"/>
+        <textarea
           onChange={this.updateStepField('body',idx)}
           value={step.body}
-          placeholder="Step Body">
-        </input>
+          placeholder="Step Body"
+          id='step-body-field'
+          rows="4"
+          cols="80"/>
       </div>
       <input
         type='submit'
-        value='Add Step'>
+        value='Add Step'
+        className='step-submit'>
       </input>
     </form>
   )
@@ -259,7 +262,7 @@ render(){
               <option value="lighting">Lighting</option>
               <option value="misc">misc</option>
             </select>
-            <input className="submit" type="submit" value={this.props.formType}/>
+            <input className="project-submit" type="submit" value={this.props.formType}/>
             <br/>
             <textarea
               value={this.state.project.description}

@@ -363,13 +363,14 @@ box-shadow: 2px 2px black;
 }
 
 .projects-form {
-  background-color: #D2E1E8;
+  // background-color: #D2E1E8;
   background-size: cover;
-  min-height: 800px;
+  min-height: 700px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
   box-shadow: inset 0px 3px 7px #ccc;
   padding-top: 20px;
 }
@@ -387,11 +388,11 @@ box-shadow: 2px 2px black;
 
 
 .form-box {
-  width: 900px;
+  width: 75%;
   height: 460px;
   background-color: white;
   border-radius: 20px;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -402,13 +403,22 @@ box-shadow: 2px 2px black;
 .inner-form-box {
   height: 90%;
   width: 825px;
-  background-color: #eee;
+  // background-color: #eee;
   // background-color: blue;
-  border-radius: 15px;
+  // border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-content: center;
   margin: auto;
+}
+
+.project-submit{
+  background-color: #e86c00;
+  border: 1px solid #cf6000;
+  border-radius: 10px;
+  padding: .5rem .75rem;
+  font-size: 20px;
+  color: white;
 }
 
 .inner-form-box p {
@@ -436,6 +446,7 @@ background-color: #dfdfdf;
 font-size: 18px;
 border-radius: 7px;
 background-color: #dfdfdf;
+color: #595757;
 }
 
 .photo-preview-div {
@@ -460,13 +471,12 @@ img{
 
 
 .image-upload-contianer label{
-  width: 80%;
+  width: 74%;
   height: 100px;
   background-color: #dfdfdf;
   color:#595757;
-  // color:#c8c8c8;
   margin: auto;
-  // border-radius: 10px;
+  border-radius: 10px;
   // border: 2px solid #595757;
   // box-shadow: inset 0px 0px 3px .3px #595757;
   font-size: 32px;

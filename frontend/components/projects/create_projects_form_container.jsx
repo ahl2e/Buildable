@@ -5,7 +5,7 @@ import {createStep} from '../../actions/step_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const project = { title: '', description: '', category: '', user_id: state.session.id, imageFile: null };
-    const formType  = "Create Project";
+    const formType  = "Publish Project";
     const method = "POST";
     const errors = state.errors;
 
