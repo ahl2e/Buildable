@@ -4,7 +4,6 @@ import CommentsIndexItem from './comments_index_item';
 class CommentsIndex extends React.Component{
 
   constructor(props){
-    // debugger
     super(props);
     this.state = {
       comments: props.comments,

@@ -114,10 +114,12 @@ handleSubmit(e){
        newStep.append('step[project_id]',response.project.id);
        newStep.append('step[heading]',step.heading);
        newStep.append('step[body]',step.body);
-       newStep.append('step[picture]',step.imageFile);
+       if(step.imageFile){
+         newStep.append('step[picture]',step.imageFile);
+       }
        this.props.createStep(newStep);
      });
-   }).then(() => this.props.history.push(`/`));
+   }).then(() => this.props.history.push(`/projects/${projectId}`));
  }
 }
 
