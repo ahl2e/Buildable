@@ -222,17 +222,19 @@ renderStepForm(step,idx){
 }
 
 renderSteps(){
-  return(
-    <ul>
-      {this.state.steps.map((step,idx) => {
-        return(
-        <li key={idx}>
-          {this.renderStepForm(step,idx)}
-        </li>
-      )
-  })}
-  </ul>
-)}
+  if (this.props.formType == "Publish Project"){  
+    return(
+      <ul>
+        {this.state.steps.map((step,idx) => {
+          return(
+          <li key={idx}>
+            {this.renderStepForm(step,idx)}
+          </li>
+        )
+    })}
+    </ul>
+  )}
+}
 
 // HELPER RENDERS //
 
