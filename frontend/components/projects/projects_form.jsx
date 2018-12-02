@@ -180,7 +180,7 @@ renderStepUploadButton(step,idx){
   } else {
     return(
       <div className='step-image-upload-contianer'>
-        <label>Upload a Picture
+        <label>Step Picture
             <input
               className='inputfile'
               type="file"
@@ -222,7 +222,7 @@ renderStepForm(step,idx){
 }
 
 renderSteps(){
-  if (this.props.formType == "Publish Project"){  
+  if (this.props.formType == "Publish Project"){
     return(
       <ul>
         {this.state.steps.map((step,idx) => {
