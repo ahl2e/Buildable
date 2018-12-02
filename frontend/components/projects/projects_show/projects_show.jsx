@@ -24,7 +24,7 @@ constructor(props){
 
   delete(e){
     localStorage.clear();
-    this.props.deleteProject(this.props.project).then(localStorage.clear()).then(this.props.history.push(`/`));
+    this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(localStorage.clear());
   }
 
   render (){
