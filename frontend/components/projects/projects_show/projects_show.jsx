@@ -61,7 +61,10 @@ let username;
   }
 let category;
   if (project.project && project.project.category != null){
-    category = <p>category: {project.project.category}</p>;
+    // category = <p>category: {project.project.category}</p>;
+    category = <Link
+      to={`/categories/${project.project.category}`}
+      className='show-category-link'>in: {project.project.category}</Link>
   }
 
   return (

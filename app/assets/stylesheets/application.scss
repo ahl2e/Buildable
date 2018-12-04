@@ -427,6 +427,16 @@ box-shadow: 2px 2px black;
   margin: auto;
 }
 
+.category-dropdown{
+  font-size: 20px;
+  padding: 4px;
+  background-color: #dfdfdf;
+}
+
+.category-dropdown hover{
+  display: block
+}
+
 .project-submit{
   background-color: #e86c00;
   border: 1px solid #cf6000;

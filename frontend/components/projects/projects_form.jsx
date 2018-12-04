@@ -257,7 +257,7 @@ render(){
               placeholder="Title"
               className="project-title"
               />
-            <select value={this.state.project.category} onChange={this.updateProjectField('category')}>
+            <select value={this.state.project.category} onChange={this.updateProjectField('category')} className='category-dropdown'>
               <option value="" disabled>Choose a Category</option>
               <option value="woodworking">Woodworking</option>
               <option value="metal">Metal</option>
