@@ -4,6 +4,15 @@ import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import ProjectsIndexContainer from './projects/projects_index_container';
+
+import FurnitureProjectsContainer from './projects/furniture_projects_container';
+import WoodworkingProjectsContainer from './projects/woodworking_projects_container';
+import TechnologyProjectsContainer from './projects/technology_projects_container';
+import PotteryProjectsContainer from './projects/pottery_projects_container';
+import HomeImprovementProjectsContainer from './projects/home_improvement_projects_container';
+import LightingProjectsContainer from './projects/lighting_projects_container';
+import MetalProjectsContainer from './projects/metal_projects_container';
+
 import CreateProjectsFormContainer from './projects/create_projects_form_container';
 import EditProjectsFormContainer from './projects/edit_projects_form_container';
 import {AuthRoute} from '../util/route_util';
@@ -16,7 +25,6 @@ import SearchIndexContainer from'./search/search_index_container';
 import CreateCommentsFormContainer from './comments/create_comments_form_container';
 import CommentsIndexContainer from './comments/comments_index_container';
 import Footer from './footer/footer';
-import CategoriesIndexContainer from './categories/categories_index_container';
 
 const App = () => (
   <main className="app-container">
@@ -44,13 +52,19 @@ const App = () => (
     <Route exact path="/login" component={LoginFormContainer} />
     <Route exact path="/signup" component={SignupFormContainer} />
     <Route exact path="/projects/search" component={SearchIndexContainer} />
-    <Route exact path="/projects/categories/:category" component={CategoriesIndexContainer} />
     <ProtectedRoute exact path="/create" component={CreateProjectsFormContainer} />
     <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
     <Route exact path="/projects/:projectId" component={ProjectsShowContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/steps" component={CreateStepsFormContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:step/edit" component={EditStepsFormContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:comment" component={CreateCommentsFormContainer} />
+    <ProtectedRoute exact path="/categories/furniture" component={FurnitureProjectsContainer} />
+    <ProtectedRoute exact path="/categories/woodworking" component={WoodworkingProjectsContainer} />
+    <ProtectedRoute exact path="/categories/technology" component={TechnologyProjectsContainer} />
+    <ProtectedRoute exact path="/categories/pottery" component={PotteryProjectsContainer} />
+    <ProtectedRoute exact path="/categories/home_improvement" component={HomeImprovementProjectsContainer} />
+    <ProtectedRoute exact path="/categories/lighting" component={LightingProjectsContainer} />
+    <ProtectedRoute exact path="/categories/metal" component={MetalProjectsContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 
     </Switch>

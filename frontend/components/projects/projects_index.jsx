@@ -41,8 +41,16 @@ return(
   <div>
   <section id="landing-image">
     <div id="landing-text">
-    <h1 id="changing-text">Let's Build a ________</h1>
-  
+    <h1>Let's Build a ________</h1>
+    </div>
+    <div className='category-links'>
+      <Link to="/categories/furniture">Woodworking</Link>
+      <Link to="/categories/metal">Metal</Link>
+      <Link to="/categories/technology">Technology</Link>
+      <Link to="/categories/pottery">Pottery</Link>
+      <Link to="/categories/furniture">Furniture</Link>
+      <Link to="/categories/home_improvement">Home Improvement</Link>
+      <Link to="/categories/lighting">Lighting</Link>
     </div>
   </section>
   <section className="projects-index-container">

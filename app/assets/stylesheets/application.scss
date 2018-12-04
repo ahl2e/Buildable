@@ -40,7 +40,7 @@ ul {
 
 #landing-text {
   color: white;
-  margin: 200px 320px;
+  margin: 200px 100px;
   position: absolute;
   display: flex;
   align-items: center;
@@ -48,7 +48,22 @@ ul {
 
 #landing-text h1 {
   font-size: 68px;
-  margin: auto;
+  // margin: auto;
+}
+
+.category-links a {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.category-links{
+  position: absolute;
+  left: 200px;
+  top: 200px;
 }
 
 .projects-index-list {
