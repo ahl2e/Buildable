@@ -28,7 +28,7 @@ class SearchIndex extends React.Component {
   return(
     <div>
       <h1>We don't have anything like that.</h1>
-      <Link to="/projects/:project_Id/steps" id="search-build-link">I guess you have to build it.</Link>
+      <Link to="/create" id="search-build-link">I guess you have to build it.</Link>
     </div>
   );
 }

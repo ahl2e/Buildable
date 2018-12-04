@@ -44,7 +44,7 @@ return(
     <h1>Let's Build a ________</h1>
     </div>
     <div className='category-links'>
-      <Link to="/categories/furniture">Woodworking</Link>
+      <Link to="/categories/woodworking">Woodworking</Link>
       <Link to="/categories/metal">Metal</Link>
       <Link to="/categories/technology">Technology</Link>
       <Link to="/categories/pottery">Pottery</Link>

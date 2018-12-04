@@ -4,16 +4,24 @@ import {Link} from 'react-router-dom';
 
 const CategoryIndex = (props) =>{
   // debugger
-  return props.projects.map((project,idx) => {
-    return (
+  if(props.projects.length > 1){
+    return props.projects.map((project,idx) => {
+      return (
+        <div>
+          <ul>
+            <CategoryIndexItem key={idx} project={project}/>
+          </ul>
+        </div>
+      )
+    })
+  }else{
+    return(
       <div>
-        <ul>
-          <CategoryIndexItem key={idx} project={project}/>
-        </ul>
+        <h1>We don't have anything in that category.</h1>
+        <Link to="/create" id="search-build-link">I guess you have to build it.</Link>
       </div>
     )
-
-  })
+  }
 };
 
 export default CategoryIndex;
