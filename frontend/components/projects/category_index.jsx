@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const CategoryIndex = (props) =>{
   // debugger
-  if(props.projects.length > 1){
+  if(props.projects.length > 0){
     return props.projects.map((project,idx) => {
       return (
         <div>
