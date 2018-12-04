@@ -109,15 +109,17 @@ handleSubmit(e){
    let projectId;
    this.props.action(projectData).then((response) => {
      this.state.steps.forEach((step) => {
-       projectId = response.project.id;
-       const newStep = new FormData();
-       newStep.append('step[project_id]',response.project.id);
-       newStep.append('step[heading]',step.heading);
-       newStep.append('step[body]',step.body);
-       if(step.imageFile){
-         newStep.append('step[picture]',step.imageFile);
+       if (step.heading != "" && step.body != ""){
+         projectId = response.project.id;
+         const newStep = new FormData();
+         newStep.append('step[project_id]',response.project.id);
+         newStep.append('step[heading]',step.heading);
+         newStep.append('step[body]',step.body);
+         if(step.imageFile){
+           newStep.append('step[picture]',step.imageFile);
+         }
+         this.props.createStep(newStep);
        }
-       this.props.createStep(newStep);
      });
    }).then(() => this.props.history.push(`/projects/${projectId}`));
  }

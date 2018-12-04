@@ -10,7 +10,7 @@
 #
 
 class Comment < ApplicationRecord
-  validates :project_id, :title, :body, :user_id, presence: true
+  validates :project_id, :body, :user_id, presence: true
 
   belongs_to :project,
   primary_key: :id,

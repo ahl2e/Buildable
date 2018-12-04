@@ -21,8 +21,8 @@ class CommentsIndexItem extends React.Component{
     return(
       <li id='comment-item'>
         <div id='left-side'>
-          <p id='comment-title'>{this.state.title} by:  {this.state.username}</p>
           <p id='comment-body'>{this.state.body}</p>
+          <p>by:  {this.state.username}</p>
         </div>
         <div id='strong-side'>
           {deleteButton}

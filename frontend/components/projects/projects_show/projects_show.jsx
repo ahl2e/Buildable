@@ -6,7 +6,7 @@ import CreateCommentsFormContainer from '../../comments/create_comments_form_con
 
 class ProjectShow extends React.Component {
 constructor(props){
-  super(props)
+  super(props);
 }
 
   componentDidMount(){
@@ -19,6 +19,7 @@ constructor(props){
 
   componentWillUpdate(){
     const projectId = parseInt(this.props.match.params.projectId);
+    this.props.fetchAllSteps(projectId);
     this.props.fetchAllComments(projectId);
   }
 
