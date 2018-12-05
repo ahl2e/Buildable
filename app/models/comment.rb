@@ -7,6 +7,7 @@
 #  title      :string
 #  body       :text
 #  project_id :integer
+#  username   :string
 #
 
 class Comment < ApplicationRecord
@@ -21,5 +22,10 @@ class Comment < ApplicationRecord
   primary_key: :id,
   foreign_key: :user_id,
   class_name: :User
+
+  has_many :replies,
+  primary_key: :id,
+  foreign_key: :comment_id,
+  className: :Reply
 
 end
