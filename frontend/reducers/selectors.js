@@ -12,6 +12,16 @@ export const selectAllSearches = (state) => {
   return values(state.entities.searches);
 };
 
+export const selectMyProjects = (state) => {
+  const myProjects = [];
+  const projects = JSON.parse(localStorage.projects);
+  projects.forEach((project) => {
+    if(project.username == Object.values(state.entities.users)[0].username){
+      myProjects.push(project);
+    }
+  });
+  return myProjects;
+};
 export const selectFurnitureProjects = (state) => {
   const furnitureProjects = [];
   const projects = JSON.parse(localStorage.projects);

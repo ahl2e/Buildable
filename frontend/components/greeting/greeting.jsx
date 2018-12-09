@@ -36,7 +36,10 @@ const Greeting = (props) => {
       <div id="drop-down-bottom">
       <Link
         to='/create'
-        onClick={hideDropDown}> Create a Project
+        onClick={hideDropDown}> Build a Project
+      </Link>
+      <Link
+        to='/my_projects'> My Projects
       </Link>
     </div>
     </div>

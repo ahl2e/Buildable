@@ -4,6 +4,7 @@ class Api::ProjectsController < ApplicationController
 
     if @project.picture
        @project.picture.attach(project_params[:picture])
+       
     end
       if @project.save
         render json: @project

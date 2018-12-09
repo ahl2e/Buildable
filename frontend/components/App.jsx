@@ -12,6 +12,7 @@ import PotteryProjectsContainer from './projects/pottery_projects_container';
 import HomeImprovementProjectsContainer from './projects/home_improvement_projects_container';
 import LightingProjectsContainer from './projects/lighting_projects_container';
 import MetalProjectsContainer from './projects/metal_projects_container';
+import MyProjectsContainer from './projects/my_projects_container';
 
 import CreateProjectsFormContainer from './projects/create_projects_form_container';
 import EditProjectsFormContainer from './projects/edit_projects_form_container';
@@ -55,6 +56,7 @@ const App = () => (
     <ProtectedRoute exact path="/create" component={CreateProjectsFormContainer} />
     <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectsFormContainer} />
     <Route exact path="/projects/:projectId" component={ProjectsShowContainer} />
+    <Route exact path="/my_projects/" component={MyProjectsContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/steps" component={CreateStepsFormContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:step/edit" component={EditStepsFormContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:comment" component={CreateCommentsFormContainer} />
