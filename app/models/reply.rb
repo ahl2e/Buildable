@@ -15,10 +15,10 @@ class Reply < ApplicationRecord
   belongs_to :comment,
   primary_key: :id,
   foreign_key: :comment_id,
-  className: :Comment
+  class_name: :Comment
 
   belongs_to : user,
   primary_key: :id,
   foreign_key: :user_id,
-  className: :User
+  class_name: :User
 end

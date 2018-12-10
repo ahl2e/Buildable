@@ -26,6 +26,6 @@ class Comment < ApplicationRecord
   has_many :replies,
   primary_key: :id,
   foreign_key: :comment_id,
-  className: :Reply
+  class_name: :Reply
 
 end
