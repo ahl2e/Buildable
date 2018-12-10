@@ -22,6 +22,7 @@ class Api::RepliesController < ApplicationController
       @reply.destroy
     else
       render json:["no such reply"], status: 400
+    end
   end
 
   def reply_params
