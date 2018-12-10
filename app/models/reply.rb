@@ -15,7 +15,7 @@ class Reply < ApplicationRecord
   belongs_to :comment,
   primary_key: :id,
   foreign_key: :comment_id,
-  className: :Comments
+  className: :Comment
 
   belongs_to : user,
   primary_key: :id,
