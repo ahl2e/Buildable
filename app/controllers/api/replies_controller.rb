@@ -6,6 +6,7 @@ class Api::RepliesController < ApplicationController
       render json:@reply
     else
       render json:@reply.errors.full_messages, status: 422
+    end
   end
 
   def show
@@ -28,4 +29,5 @@ class Api::RepliesController < ApplicationController
   def reply_params
     params.require(:reply).permit(:title, :body, :user_id, :comment_id, :username)
   end
+
 end
