@@ -60,13 +60,13 @@ const App = () => (
     <ProtectedRoute exact path="/projects/:project_Id/steps" component={CreateStepsFormContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:step/edit" component={EditStepsFormContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:comment" component={CreateCommentsFormContainer} />
-    <ProtectedRoute exact path="/categories/furniture" component={FurnitureProjectsContainer} />
-    <ProtectedRoute exact path="/categories/woodworking" component={WoodworkingProjectsContainer} />
-    <ProtectedRoute exact path="/categories/technology" component={TechnologyProjectsContainer} />
-    <ProtectedRoute exact path="/categories/pottery" component={PotteryProjectsContainer} />
-    <ProtectedRoute exact path="/categories/home_improvement" component={HomeImprovementProjectsContainer} />
-    <ProtectedRoute exact path="/categories/lighting" component={LightingProjectsContainer} />
-    <ProtectedRoute exact path="/categories/metal" component={MetalProjectsContainer} />
+    <Route exact path="/categories/furniture" component={FurnitureProjectsContainer} />
+    <Route exact path="/categories/woodworking" component={WoodworkingProjectsContainer} />
+    <Route exact path="/categories/technology" component={TechnologyProjectsContainer} />
+    <Route exact path="/categories/pottery" component={PotteryProjectsContainer} />
+    <Route exact path="/categories/home_improvement" component={HomeImprovementProjectsContainer} />
+    <Route exact path="/categories/lighting" component={LightingProjectsContainer} />
+    <Route exact path="/categories/metal" component={MetalProjectsContainer} />
     <Route path="/" component={ProjectsIndexContainer} />
 
     </Switch>
