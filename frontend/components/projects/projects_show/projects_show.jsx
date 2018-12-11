@@ -23,9 +23,15 @@ constructor(props){
     this.props.fetchAllComments(projectId);
   }
 
+  // componentWillReceiveProps(){
+  //   const projectId = parseInt(this.props.match.params.projectId);
+  //   this.props.fetchAllSteps(projectId);
+  //   location.reload();
+  // }
+
   delete(e){
     localStorage.clear();
-    this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(localStorage.clear());
+    this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(localStorage.clear()).then(location.reload());
   }
 
   render (){
