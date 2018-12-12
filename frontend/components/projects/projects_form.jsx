@@ -92,6 +92,7 @@ handleSubmit(e){
   projectData.append('project[title]', this.state.project.title);
   projectData.append('project[description]', this.state.project.description);
   projectData.append('project[user_id]', this.state.project.user_id);
+  projectData.append('project[category]', this.state.project.category);
   if (this.state.image.imageFile) {
    projectData.append('project[picture]', this.state.image.imageFile);
  }
@@ -103,9 +104,9 @@ handleSubmit(e){
    this.props.action(this.state.project).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
 
  } else {
-   var existingProjects = JSON.parse(localStorage.getItem('projects'));
+   var existingProjects = JSON.parse(sessionStorage.getItem('projects'));
    var newProjects = existingProjects.push(this.state.project);
-   localStorage.clear();
+   sessionStorage.clear();
    let projectId;
    this.props.action(projectData).then((response) => {
      this.state.steps.forEach((step) => {

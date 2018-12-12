@@ -1,10 +1,12 @@
 import React from 'react';
 import CommentsIndexItem from './comments_index_item';
+// import CommentsIndexItemContainer from './comments_index_item_container';
 
 class CommentsIndex extends React.Component{
 
   constructor(props){
     super(props);
+    // debugger
     this.state = {
       comments: props.comments,
       projectId: parseInt(props.match.params.projectId)

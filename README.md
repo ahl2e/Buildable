@@ -40,9 +40,9 @@ handleSubmit(e){
    this.props.action(this.state.project).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
 
  } else {
-   var existingProjects = JSON.parse(localStorage.getItem('projects'));
+   var existingProjects = JSON.parse(sessionStorage.getItem('projects'));
    var newProjects = existingProjects.push(this.state.project);
-   localStorage.clear();
+   sessionStorage.clear();
    let projectId;
    this.props.action(projectData).then((response) => {
      this.state.steps.forEach((step) => {
@@ -82,7 +82,7 @@ handleSubmit(e){
   ```javascript
   export const selectFurnitureProjects = (state) => {
     const furnitureProjects = [];
-    const projects = JSON.parse(localStorage.projects);
+    const projects = JSON.parse(sessionStorage.projects);
     projects.forEach((project) => {
       if(project.category == 'furniture'){
         furnitureProjects.push(project);

@@ -14,7 +14,7 @@ export const selectAllSearches = (state) => {
 
 export const selectMyProjects = (state) => {
   const myProjects = [];
-  const projects = JSON.parse(localStorage.projects);
+  const projects = JSON.parse(sessionStorage.projects);
   projects.forEach((project) => {
     if(project.username == Object.values(state.entities.users)[0].username){
       myProjects.push(project);
@@ -24,7 +24,7 @@ export const selectMyProjects = (state) => {
 };
 export const selectFurnitureProjects = (state) => {
   const furnitureProjects = [];
-  const projects = JSON.parse(localStorage.projects);
+  const projects = JSON.parse(sessionStorage.projects);
   projects.forEach((project) => {
     if(project.category == 'furniture'){
       furnitureProjects.push(project);
@@ -35,7 +35,7 @@ export const selectFurnitureProjects = (state) => {
 
 export const selectWoodworkingProjects = (state) => {
   const woodworkingProjects = [];
-  const projects = JSON.parse(localStorage.projects);
+  const projects = JSON.parse(sessionStorage.projects);
   projects.forEach((project) => {
     if(project.category == 'woodworking'){
       woodworkingProjects.push(project);
@@ -46,7 +46,7 @@ export const selectWoodworkingProjects = (state) => {
 
 export const selectMetalProjects = (state) => {
   const metalProjects = [];
-  const projects = JSON.parse(localStorage.projects);
+  const projects = JSON.parse(sessionStorage.projects);
   projects.forEach((project) => {
     if(project.category == 'metal'){
       metalProjects.push(project);
@@ -57,7 +57,7 @@ export const selectMetalProjects = (state) => {
 
 export const selectTechnologyProjects = (state) => {
   const technologyProjects = [];
-  const projects = JSON.parse(localStorage.projects);
+  const projects = JSON.parse(sessionStorage.projects);
   projects.forEach((project) => {
     if(project.category == 'technology'){
       technologyProjects.push(project);
@@ -68,7 +68,7 @@ export const selectTechnologyProjects = (state) => {
 
 export const selectPotteryProjects = (state) => {
   const potteryProjects = [];
-  const projects = JSON.parse(localStorage.projects);
+  const projects = JSON.parse(sessionStorage.projects);
   projects.forEach((project) => {
     if(project.category == 'pottery'){
       potteryProjects.push(project);
@@ -79,7 +79,7 @@ export const selectPotteryProjects = (state) => {
 
 export const selectHomeImprovementProjects = (state) => {
   const homeImprovementProjects = [];
-  const projects = JSON.parse(localStorage.projects);
+  const projects = JSON.parse(sessionStorage.projects);
   projects.forEach((project) => {
     if(project.category == 'home_improvement'){
       homeImprovementProjects.push(project);
@@ -90,7 +90,7 @@ export const selectHomeImprovementProjects = (state) => {
 
 export const selectLightingProjects = (state) => {
   const lightingProjects = [];
-  const projects = JSON.parse(localStorage.projects);
+  const projects = JSON.parse(sessionStorage.projects);
   projects.forEach((project) => {
     if(project.category == 'lighting'){
       lightingProjects.push(project);

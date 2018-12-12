@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 
 class StepsIndexItem extends React.Component {
   constructor(props) {
-
     super(props);
     this.state = props.step;
     this.stepNumber = props.stepNumber;
+  }
+
+  componentWillUpdate(nextProps){
+    if(nextProps.step.imageUrl && nextProps.step.imageUrl != this.props.step.imageUrl){
+      console.log('new image');
+      this.setState({imageUrl:nextProps.step.imageUrl});
+    }
   }
 
   delete(e){

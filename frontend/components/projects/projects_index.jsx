@@ -9,25 +9,25 @@ class ProjectsIndex extends React.Component {
   }
 
   componentWillMount() {
-    localStorage.getItem('projects') && this.setState({
-      projects: JSON.parse(localStorage.getItem('projects'))
+    sessionStorage.getItem('projects') && this.setState({
+      projects: JSON.parse(sessionStorage.getItem('projects'))
     });
   }
 
   componentDidMount() {
-    const cachedProjects = localStorage.getItem("projects");
+    const cachedProjects = sessionStorage.getItem("projects");
     if (!cachedProjects || cachedProjects.length < 2){
       this.props.fetchProjects();
     }else{
-      this.setState({projects: JSON.parse(localStorage.getItem('projects'))});
+      this.setState({projects: JSON.parse(sessionStorage.getItem('projects'))});
     }
   }
 
   componentWillUpdate(nextProps, nextState){
     if (nextState.projects){
-      localStorage.setItem('projects', JSON.stringify(nextState.projects));
+      sessionStorage.setItem('projects', JSON.stringify(nextState.projects));
     } else {
-      localStorage.setItem('projects', JSON.stringify(nextProps.projects));
+      sessionStorage.setItem('projects', JSON.stringify(nextProps.projects));
     }
   }
 

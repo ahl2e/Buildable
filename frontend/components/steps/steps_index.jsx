@@ -1,10 +1,12 @@
 import React from 'react';
 import StepsIndexItem from './steps_index_item';
+import StepsIndexItemContainer from './steps_index_item_container';
 
 class StepsIndex extends React.Component {
   constructor(props){
     super(props);
   }
+
 
 render() {
 
@@ -13,10 +15,15 @@ render() {
       return (
         <div>
           <ul className="steps-container">
-            <StepsIndexItem key={step.id} stepNumber={idx+1} step={step} delete={this.props.delete} currentUserId = {this.props.currentUserId} />
+            <StepsIndexItemContainer
+              key={step.id}
+              stepNumber={idx+1}
+              step={step}
+              delete={this.props.delete}
+              currentUserId = {this.props.currentUserId} />
           </ul>
         </div>
-      )
+      );
     });
   } else {
     return null;

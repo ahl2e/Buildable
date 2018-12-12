@@ -23,15 +23,15 @@ constructor(props){
     this.props.fetchAllComments(projectId);
   }
 
-  // componentWillReceiveProps(){
+  // componentWillReceiveProps(nextProps){
   //   const projectId = parseInt(this.props.match.params.projectId);
   //   this.props.fetchAllSteps(projectId);
   //   location.reload();
   // }
 
   delete(e){
-    localStorage.clear();
-    this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(localStorage.clear()).then(location.reload());
+    sessionStorage.clear();
+    this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(sessionStorage.clear()).then(location.reload());
   }
 
   render (){
@@ -79,7 +79,6 @@ let category;
         <div className="show-header">
         <div className="title">{project.title}</div>
         <p className="author"> by: {username}</p>
-        {category}
           <div className="main-image-container">
             {picture}
           </div>
