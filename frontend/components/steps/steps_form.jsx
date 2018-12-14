@@ -1,6 +1,7 @@
 import React from 'react';
 import {merge} from 'lodash';
 import { withRouter, Redirect} from 'react-router-dom';
+import ReactQuill from 'react-quill';
 
 class StepsForm extends React.Component {
   constructor(props){
@@ -16,10 +17,20 @@ class StepsForm extends React.Component {
     };
   }
 
+  updateStepQuillField(field){
+    return (e) => {
+      // debugger
+      const newStep = this.state;
+      newStep[field] = e;
+      this.setState({state: newStep});
+    };
+  }
+
 handleSubmit(e){
   e.preventDefault();
   const formData = new FormData();
   formData.append('step[heading]', this.state.heading);
+  formData.append('step[id]', this.state.id);
   formData.append('step[body]', this.state.body);
   formData.append('step[project_id]', this.state.project_id);
   formData.append('step[order_number]', this.state.order_number);
@@ -78,22 +89,16 @@ render(){
         <p>Add a step:</p>
 
         <br/>
-        <input
-          type="text"
-          value={this.state.heading}
-          onChange={this.update('heading')}
-          placeholder="Step Heading"
-          className="step-heading"
-          />
-        <br/>
-        <p>Describe this step</p>
-        <textarea
-          value={this.state.body}
-          onChange={this.update('body')}
-          placeholder="Body"
-          rows="7"
-          cols="80"
-          />
+          <textarea
+            onChange={this.update('heading')}
+            value={this.state.heading}
+            placeholder="Step Heading"
+            id='step-heading-field'
+            rows="1"
+            cols="80"/>
+          <ReactQuill
+            onChange={this.updateStepQuillField('body')}
+            value={this.state.body}/>
         <br/>
         <div className="form-footer">
           {photoButton}

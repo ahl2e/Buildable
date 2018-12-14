@@ -1,6 +1,7 @@
 class Api::StepsController < ApplicationController
   def create
     @step = Step.new(step_params)
+    debugger
     if @step.save
       render json:@step
     else
@@ -10,6 +11,7 @@ class Api::StepsController < ApplicationController
 
   def edit
     @step = Step.find(params[:id])
+    debugger
     if @step.update(step_params)
       render :show
     else
