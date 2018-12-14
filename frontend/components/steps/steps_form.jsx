@@ -19,7 +19,6 @@ class StepsForm extends React.Component {
 
   updateStepQuillField(field){
     return (e) => {
-      // debugger
       const newStep = this.state;
       newStep[field] = e;
       this.setState({state: newStep});

@@ -6,7 +6,6 @@ class CommentsIndex extends React.Component{
 
   constructor(props){
     super(props);
-    // debugger
     this.state = {
       comments: props.comments,
       projectId: parseInt(props.match.params.projectId)
