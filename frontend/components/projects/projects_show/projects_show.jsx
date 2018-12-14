@@ -84,7 +84,9 @@ let category;
           </div>
 
         <h3>About: {project.title}</h3>
-          <div className="description">{project.description}</div>
+          <div className="description"
+            dangerouslySetInnerHTML={{ __html: project.description }}>
+          </div>
             <div>
               <StepsIndexContainer/>
             </div>

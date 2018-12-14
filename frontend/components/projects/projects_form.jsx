@@ -1,6 +1,7 @@
 import React from 'react';
 import {merge} from 'lodash';
 import { withRouter, Redirect} from 'react-router-dom';
+import ReactQuill from 'react-quill';
 
 class ProjectsForm extends React.Component {
   constructor(props){
@@ -41,6 +42,13 @@ class ProjectsForm extends React.Component {
       return (e) => {
         const newProject = this.state.project;
         newProject[field] = e.target.value;
+        this.setState({project: newProject});
+      };
+    }
+    updateProjectQuillField(field){
+      return (e) => {
+        const newProject = this.state.project;
+        newProject[field] = e;
         this.setState({project: newProject});
       };
     }
@@ -271,13 +279,11 @@ render(){
             </select>
             <input className="project-submit" type="submit" value={this.props.formType}/>
             <br/>
-            <textarea
-              value={this.state.project.description}
-              onChange={this.updateProjectField('description')}
-              placeholder="Description"
-              rows="7"
-              cols="80"
-              />
+
+          <ReactQuill
+            value={this.state.project.description}
+            onChange={this.updateProjectQuillField('description')} />
+
             <br/>
           </form>
         </div>
