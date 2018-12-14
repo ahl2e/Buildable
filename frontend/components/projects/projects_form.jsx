@@ -116,7 +116,6 @@ handleSubmit(e){
  }
 
  if (this.props.formType == "Update Project"){
-   // this.props.action(this.state.project).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
    this.props.action(this.state.project).then(() => this.props.history.push(`/`));
 
  } else {
@@ -263,31 +262,35 @@ render(){
           <form onSubmit={this.handleSubmit}>
             {this.renderUploadButton(this.state.stepsFormData)}
             <br/>
-            <input
-              type="text"
-              value={this.state.project.title}
-              onChange={this.updateProjectField('title')}
-              placeholder="Title"
-              className="project-title"
-              />
-            <select value={this.state.project.category} onChange={this.updateProjectField('category')} className='category-dropdown'>
-              <option value="" disabled>Choose a Category</option>
-              <option value="woodworking">Woodworking</option>
-              <option value="metal">Metal</option>
-              <option value="technology">Technology</option>
-              <option value="pottery">Pottery</option>
-              <option value="furniture">Furniture</option>
-              <option value="home">Home Improvement</option>
-              <option value="lighting">Lighting</option>
-              <option value="misc">misc</option>
-            </select>
-            <input className="project-submit" type="submit" value={this.props.formType}/>
+            <div className='title-and-category'>
+              <input
+                type="text"
+                value={this.state.project.title}
+                onChange={this.updateProjectField('title')}
+                placeholder="Title"
+                className="project-title"
+                />
+              <select value={this.state.project.category} onChange={this.updateProjectField('category')} className='category-dropdown'>
+                <option value="" disabled>Choose a Category</option>
+                <option value="woodworking">Woodworking</option>
+                <option value="metal">Metal</option>
+                <option value="technology">Technology</option>
+                <option value="pottery">Pottery</option>
+                <option value="furniture">Furniture</option>
+                <option value="home">Home Improvement</option>
+                <option value="lighting">Lighting</option>
+                <option value="misc">misc</option>
+              </select>
+          </div>
             <br/>
-
-          <ReactQuill
-            value={this.state.project.description}
-            onChange={this.updateProjectQuillField('description')} />
-
+            <ReactQuill
+              value={this.state.project.description}
+              onChange={this.updateProjectQuillField('description')} />
+            <br/>
+            <div className='title-and-category'>
+              <input className="project-submit" type="submit" value={this.props.formType}/>
+              <p>Note: Add all your steps below before you publish!</p>
+            </div>
             <br/>
           </form>
         </div>

@@ -445,18 +445,21 @@ box-shadow: 2px 2px black;
   font-size: 20px;
   color: white;
 }
+.project-submit:hover{
+  cursor: pointer;
+}
 
 .inner-form-box p {
-  text-align: center;
+  // text-align: center;
   font-size: 19px;
 }
 
-.inner-form-box * {
-  margin: 10px;
+.title-and-category {
+  display: flex;
+  justify-content: space-around;
 }
 
 .inner-form-box form {
-text-align: center;
 }
 
 .inner-form-box .project-title {
@@ -467,12 +470,12 @@ font-size: 18px;
 background-color: #dfdfdf;
 }
 
-.inner-form-box textarea {
-font-size: 18px;
-border-radius: 7px;
-background-color: #dfdfdf;
-color: #595757;
-}
+// .inner-form-box textarea {
+// font-size: 18px;
+// border-radius: 7px;
+// background-color: #dfdfdf;
+// color: #595757;
+// }
 
 .photo-preview-div {
   width: 75%;
@@ -556,4 +559,8 @@ label:hover{
   width: 18%;
   height: 18%;
   color: black;
+}
+
+.ql-editor{
+  text-align: center;
 }
