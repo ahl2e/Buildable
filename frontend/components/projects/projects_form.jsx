@@ -60,6 +60,13 @@ class ProjectsForm extends React.Component {
         this.setState({steps: newSteps});
       };
     }
+    updateStepQuillField(field,idx){
+      return (e) => {
+        const newSteps = this.state.steps;
+        newSteps[idx][field] = e;
+        this.setState({steps: newSteps});
+      };
+    }
 
 // FORM UPDATERS//
 
@@ -109,7 +116,8 @@ handleSubmit(e){
  }
 
  if (this.props.formType == "Update Project"){
-   this.props.action(this.state.project).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
+   // this.props.action(this.state.project).then(() => this.props.history.push(`/projects/${this.props.match.params.projectId}`));
+   this.props.action(this.state.project).then(() => this.props.history.push(`/`));
 
  } else {
    var existingProjects = JSON.parse(sessionStorage.getItem('projects'));
@@ -215,13 +223,9 @@ renderStepForm(step,idx){
           id='step-heading-field'
           rows="1"
           cols="80"/>
-        <textarea
-          onChange={this.updateStepField('body',idx)}
-          value={step.body}
-          placeholder="Step Body"
-          id='step-body-field'
-          rows="4"
-          cols="80"/>
+        <ReactQuill
+          onChange={this.updateStepQuillField('body',idx)}
+          value={step.body}/>
       </div>
       <input
         type='submit'

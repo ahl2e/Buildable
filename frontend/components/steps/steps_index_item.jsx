@@ -51,7 +51,9 @@ class StepsIndexItem extends React.Component {
     <li>
       <h3>Step {this.stepNumber}: {this.state.heading}</h3>
       {pic}
-      <p>{this.state.body}</p>
+      <div className="body"
+        dangerouslySetInnerHTML={{ __html: this.state.body }}>
+      </div>
         {this.renderEditContainer()}
         <br/>
         <div id="line-box"></div>
