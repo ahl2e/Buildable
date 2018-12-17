@@ -14,6 +14,7 @@ Link to live app: (https://buildable.herokuapp.com)
 + Ruby on rails - A framework for building ruby based web apps using a Postgres Database
 + jQuery Ajax - allows asynchronous calls to the backend database without interfering with the front end experience
 + React - Dynamically generates front-end experience allowing for fluid single-page apps.
++ React-Quill - In-browser text editor.   
 
 
 #### Projects

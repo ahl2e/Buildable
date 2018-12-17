@@ -224,7 +224,11 @@ renderStepForm(step,idx){
           cols="80"/>
         <ReactQuill
           onChange={this.updateStepQuillField('body',idx)}
-          value={step.body}/>
+          value={step.body}
+          theme="snow"
+          placeholder="Step Body"
+          modules={ProjectsForm.modules}/>
+
       </div>
       <input
         type='submit'
@@ -254,6 +258,25 @@ renderSteps(){
 
 
 render(){
+
+  var formats = [
+      "background",
+      "bold",
+      "color",
+      "italic",
+      "link",
+      "size",
+      "strike",
+      "script",
+      "underline",
+      "header",
+      "indent",
+      "list",
+      "align",
+      "direction",
+      "image",
+      "video"
+    ];
 
   return(
     <div className="projects-form">
@@ -285,7 +308,11 @@ render(){
             <br/>
             <ReactQuill
               value={this.state.project.description}
-              onChange={this.updateProjectQuillField('description')} />
+              onChange={this.updateProjectQuillField('description')}
+              theme="snow"
+              placeholder="Describe this Project"
+              modules={ProjectsForm.modules}
+              formats={formats} />
             <br/>
             <div className='title-and-category'>
               <input className="project-submit" type="submit" value={this.props.formType}/>
@@ -302,5 +329,16 @@ render(){
   )
 }
 }
+ProjectsForm.modules= {
+  toolbar: [
+      [{ 'header': []}],
+      ['bold', 'italic',
+      'underline', 'strike'],
+      [{'list': 'ordered'}, {'list': 'bullet'}, {'align': []}],
+      ['link','blockquote','code-block'],
+      ['clean']
+    ],
+};
+
 
 export default withRouter(ProjectsForm);
