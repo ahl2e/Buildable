@@ -104,7 +104,9 @@ class ProjectsForm extends React.Component {
 handleSubmit(e){
   e.preventDefault();
   const projectData = new FormData();
+  var sanitizeHtml = require('sanitize-html');
   projectData.append('project[title]', this.state.project.title);
+  var cleanDescription = sanitizeHtml(this.state.project.description);
   projectData.append('project[description]', this.state.project.description);
   projectData.append('project[user_id]', this.state.project.user_id);
   projectData.append('project[category]', this.state.project.category);
@@ -137,7 +139,7 @@ handleSubmit(e){
          this.props.createStep(newStep);
        }
      });
-   }).then(() => this.props.history.push(`/projects/${projectId}`));
+   }).then(() => this.props.history.push(`/`));
  }
 }
 
@@ -211,7 +213,28 @@ renderStepUploadButton(step,idx){
 }
 
 renderStepForm(step,idx){
+  var formats = [
+    "background",
+    "bold",
+    "color",
+    "italic",
+    "link",
+    "size",
+    "strike",
+    "script",
+    "underline",
+    "header",
+    "indent",
+    "list",
+    "align",
+    "direction",
+    "image",
+    "video",
+    "blockquote",
+    "code-block"
+  ];
   return(
+
     <form onSubmit={this.handleStepSubmit} className='steps-editor-form'>
       {this.renderStepUploadButton(step,idx)}
       <div className='steps-editor-form-text'>
@@ -275,7 +298,9 @@ render(){
       "align",
       "direction",
       "image",
-      "video"
+      "video",
+      "blockquote",
+      "code-block"
     ];
 
   return(
@@ -334,8 +359,8 @@ ProjectsForm.modules= {
       [{ 'header': []}],
       ['bold', 'italic',
       'underline', 'strike',{'script': 'sub'}, {'script': 'super'}],
-      [{'list': 'ordered'}, {'list': 'bullet'}],
       ['link','blockquote','code-block'],
+      [{'list': 'bullet'}],
       ['clean']
     ],
 };
