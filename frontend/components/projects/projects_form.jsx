@@ -214,25 +214,17 @@ renderStepUploadButton(step,idx){
 
 renderStepForm(step,idx){
   var formats = [
-    "background",
-    "bold",
-    "color",
-    "italic",
-    "link",
-    "size",
-    "strike",
-    "script",
-    "underline",
-    "header",
-    "indent",
-    "list",
-    "align",
-    "direction",
-    "image",
-    "video",
-    "blockquote",
-    "code-block"
-  ];
+      "bold",
+      "italic",
+      "link",
+      "strike",
+      "script",
+      "underline",
+      "header",
+      "list",
+      "blockquote",
+      "code-block"
+    ];
   return(
 
     <form onSubmit={this.handleStepSubmit} className='steps-editor-form'>
@@ -283,22 +275,14 @@ renderSteps(){
 render(){
 
   var formats = [
-      "background",
       "bold",
-      "color",
       "italic",
       "link",
-      "size",
       "strike",
       "script",
       "underline",
       "header",
-      "indent",
       "list",
-      "align",
-      "direction",
-      "image",
-      "video",
       "blockquote",
       "code-block"
     ];
