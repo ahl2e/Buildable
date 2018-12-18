@@ -85,7 +85,7 @@ render(){
       <section className="form-box">
         <div className="inner-form-box">
       <form onSubmit={this.handleSubmit}>
-        <p>Add a step:</p>
+        <p>Add a step: (Title and Body)</p>
 
         <br/>
           <textarea
@@ -97,6 +97,7 @@ render(){
             cols="80"/>
           <ReactQuill
             onChange={this.updateStepQuillField('body')}
+            modules={StepsForm.modules}
             value={this.state.body}/>
         <br/>
         <div className="form-footer">
@@ -117,5 +118,15 @@ render(){
   )
 }
 }
+StepsForm.modules= {
+  toolbar: [
+      [{ 'header': []}],
+      ['bold', 'italic',
+      'underline', 'strike',{'script': 'sub'}, {'script': 'super'}],
+      [{'list': 'ordered'}, {'list': 'bullet'}],
+      ['link','blockquote','code-block'],
+      ['clean']
+    ],
+};
 
 export default withRouter(StepsForm);

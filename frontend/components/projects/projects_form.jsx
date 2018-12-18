@@ -333,8 +333,8 @@ ProjectsForm.modules= {
   toolbar: [
       [{ 'header': []}],
       ['bold', 'italic',
-      'underline', 'strike'],
-      [{'list': 'ordered'}, {'list': 'bullet'}, {'align': []}],
+      'underline', 'strike',{'script': 'sub'}, {'script': 'super'}],
+      [{'list': 'ordered'}, {'list': 'bullet'}],
       ['link','blockquote','code-block'],
       ['clean']
     ],
