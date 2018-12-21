@@ -23,7 +23,6 @@ export const createStep = (step) => {
 };
 
 export const updateStep = (step, info) => {
-  debugger
   return $.ajax({
     method: "GET",
     url: `/api/projects/${info.project_id}/steps/${info.id}/edit`,
