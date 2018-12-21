@@ -28,21 +28,21 @@ class StepsForm extends React.Component {
 handleSubmit(e){
   e.preventDefault();
   var sanitizeHtml = require('sanitize-html');
-  const formData = new FormData();
-  formData.append('step[heading]', this.state.heading);
-  formData.append('step[id]', this.state.id);
+  const newStep = new FormData();
+  newStep.append('step[heading]', this.state.heading);
+  newStep.append('step[id]', this.state.id);
   var cleanBody = sanitizeHtml(this.state.body);
-  formData.append('step[body]', cleanBody);
-  formData.append('step[project_id]', this.state.project_id);
-  formData.append('step[order_number]', this.state.order_number);
+  newStep.append('step[body]', this.state.body);
+  newStep.append('step[project_id]', this.state.project_id);
   if (this.state.imageFile) {
-   formData.append('step[picture]', this.state.imageFile);
+   newStep.append('step[picture]', this.state.imageFile);
  }
 
  if (this.props.formType == "Edit Step") {
-   this.props.action(this.state).then(() => this.props.history.goBack());
+   var info = this.state;
+   this.props.action(this.state, info).then(() => this.props.history.goBack());
  } else {
-   this.props.action(formData).then(() => this.props.history.goBack());
+   this.props.action(newStep).then(() => this.props.history.goBack());
   }
 }
 

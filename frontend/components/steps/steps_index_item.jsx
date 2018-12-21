@@ -38,7 +38,7 @@ class StepsIndexItem extends React.Component {
             onMouseLeave={this.hideDropDown}
             >
             <button value="Delete Step" className="delete-button" onClick={this.delete.bind(this)}>Delete Step</button>
-            <Link to={`/projects/${this.props.step.id}/${this.props.step}/edit`} id="step-edit">Edit Step</Link>
+            <Link to={`/projects/${this.state.project_id}/${this.state.id}/edit`} id="step-edit">Edit Step</Link>
         </div>
       </div>
     )};
@@ -51,7 +51,7 @@ class StepsIndexItem extends React.Component {
     <li>
       <h3>Step {this.stepNumber}: {this.state.heading}</h3>
       {pic}
-      <div className="body"
+      <div className="step-index-body"
         dangerouslySetInnerHTML={{ __html: this.state.body }}>
       </div>
         {this.renderEditContainer()}

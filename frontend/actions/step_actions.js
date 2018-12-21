@@ -40,8 +40,8 @@ export const fetchAllSteps = (project_id) => dispatch => {
   return ApiStepUtil.fetchAllSteps(project_id).then(steps => dispatch(receiveAllSteps(steps)));
 };
 
-export const updateStep  = (step) => dispatch => {
-  return ApiStepUtil.updateStep(step).then((step) => dispatch(receiveStep(step)));
+export const updateStep  = (step, info) => dispatch => {
+  return ApiStepUtil.updateStep(step,info).then((step) => dispatch(receiveStep(step)));
 };
 
 export const createStep = (step) => dispatch => {

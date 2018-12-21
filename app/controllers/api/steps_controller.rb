@@ -10,6 +10,7 @@ class Api::StepsController < ApplicationController
 
   def edit
     @step = Step.find(params[:id])
+    debugger
     if @step.update(step_params)
       render :show
     else
