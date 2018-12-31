@@ -9,6 +9,7 @@ class StepsForm extends React.Component {
     this.state = this.props.step;
     this.state = merge({}, this.state,{redirect:false});
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.errors = this.props.errors;
   }
 
   update(field) {
@@ -38,12 +39,12 @@ handleSubmit(e){
    newStep.append('step[picture]', this.state.imageFile);
  }
 
- if (this.props.formType == "Edit Step") {
-   var info = this.state;
-   this.props.action(this.state, info).then(() => this.props.history.goBack());
- } else {
-   this.props.action(newStep).then(() => this.props.history.goBack());
-  }
+   if (this.props.formType == "Edit Step") {
+     var info = this.state;
+     this.props.action(this.state, info).then(() => this.props.history.goBack());
+   } else {
+     this.props.action(newStep).then(() => this.props.history.goBack());
+    }
 }
 
 handleFile(e) {
@@ -58,7 +59,6 @@ handleFile(e) {
     this.setState({ imageUrl: "", imageFile: null });
   }
 }
-
 
 
 render(){
@@ -81,6 +81,30 @@ render(){
                 }else{
                   photoButton = null;
                 }
+
+   let errorRenders;
+
+    if (this.props.errors.length > 0) {
+      debugger
+      errorRenders =
+      <div className="session-errors">
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    </div>
+    } else {
+      errorRenders = <div className="no-show"></div>
+    }
+
+
+   if (!this.props.errors){
+    document.getElementById("session-errors").className.add('no-show');
+   }
+
 
   return(
     <div className="projects-form">
@@ -114,6 +138,7 @@ render(){
         </div>
 
       </form>
+      {errorRenders}
         </div>
       </section>
     </div>

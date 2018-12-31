@@ -4,7 +4,7 @@ class Api::StepsController < ApplicationController
     if @step.save
       render json:@step
     else
-      render json: @step.errors.full_messages
+      render json: @step.errors.full_messages, status: 422
     end
   end
 

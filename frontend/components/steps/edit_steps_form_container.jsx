@@ -9,8 +9,9 @@ const mapStateToProps = (state, ownProps) => {
     const step = state.entities.steps[ownProps.match.params.step] || defaultStep;
     const formType  = "Edit Step";
     const method = "GET";
+    const errors = state.errors;
 
-  return {step, formType, method};
+  return {step, formType, method, errors};
 };
 
 const mapDispatchToProps = (dispatch) => {
