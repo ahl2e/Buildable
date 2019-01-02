@@ -10,7 +10,7 @@
 #
 
 class Step < ApplicationRecord
-  validates :heading,:body, presence: true
+  validates :body, presence: true
 
   belongs_to :project,
   primary_key: :id,
