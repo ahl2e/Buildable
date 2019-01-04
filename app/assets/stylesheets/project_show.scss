@@ -185,3 +185,27 @@
   // top: 10px;
   // display: none;
 }
+.project-no-show{
+  display: none;
+}
+
+#project-edit-container *{
+  padding: 3px;
+  color: black;
+  border: none;
+  background-color: white;
+  text-decoration: none;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+#project-edit-container *:hover{
+  text-decoration: underline;
+}
+#project-edit-container {
+  // border: 1px solid black;
+  // border-radius: 4px;
+  // width: 15%;
+}

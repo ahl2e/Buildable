@@ -34,18 +34,37 @@ constructor(props){
     this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(sessionStorage.clear()).then(location.reload());
   }
 
-  render (){
+  toggleDropDown(e){
+    $("#project-edit-container").toggleClass("project-no-show");
+  }
+
+  hideDropDown(e){
+    $("#project-edit-container").addClass("project-no-show");
+  }
+
+  renderEditContainer(){
     const project = this.props.project || {title: "", description: "", id: this.props.match.params.projectId};
-    let deleteButton;
-    let editLink;
-    let addLink;
-    if (project.project){
+    if(project.project){
       if(this.props.user === project.project.username){
-         deleteButton = <button value="Delete" onClick={this.delete.bind(this)}>Delete This Project</button>;
-         editLink = <Link to={`/projects/${project.id}/edit/`}>Edit</Link>;
-         addLink = <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>;
+        return(
+          <div>
+            <button onClick={this.toggleDropDown}  className='edit-drop'>edit your project</button>
+            <div
+              id="project-edit-container"
+              className="project-no-show"
+              >
+                <button value="Delete" onClick={this.delete.bind(this)}>Delete This Project</button>
+                <Link to={`/projects/${project.id}/edit/`}>Edit</Link>
+                <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>
+            </div>
+        </div>
+        )
       }
     }
+  }
+
+  render (){
+    const project = this.props.project || {title: "", description: "", id: this.props.match.params.projectId};
 
     let picture;
     if (project.project){
@@ -90,13 +109,8 @@ let category;
             <div>
               <StepsIndexContainer/>
             </div>
-            <div className="edit-container">
-              {addLink}
-              <br/>
-              {editLink}
-              <br/>
-              {deleteButton}
-            </div>
+            {this.renderEditContainer()}
+
             {commentForm}
             <CommentsIndexContainer/>
             <br/>
