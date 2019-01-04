@@ -196,16 +196,22 @@
   background-color: white;
   text-decoration: none;
   font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
+  display: block;
+  margin: 2px;
+  text-align: left;
+  // flex-direction: column;
+  // margin: auto;
 }
 
 #project-edit-container *:hover{
   text-decoration: underline;
 }
 #project-edit-container {
-  // border: 1px solid black;
-  // border-radius: 4px;
-  // width: 15%;
+  margin-top: 10px;
+  position: relative;
+  top: -28px;
+  left: 390px;
+  border: 1px solid black;
+  border-radius: 6px;
+  width: 15%;
 }
