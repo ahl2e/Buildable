@@ -52,10 +52,11 @@ constructor(props){
             <div
               id="project-edit-container"
               className="project-no-show"
+              onMouseLeave={this.hideDropDown}
               >
-                <button value="Delete" onClick={this.delete.bind(this)}>Delete This Project</button>
                 <Link to={`/projects/${project.id}/edit/`}>Edit</Link>
                 <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>
+                <button value="Delete" onClick={this.delete.bind(this)}>Delete This Project</button>
             </div>
         </div>
         )
