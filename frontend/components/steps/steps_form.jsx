@@ -85,7 +85,6 @@ render(){
    let errorRenders;
 
     if (this.props.errors.length > 0) {
-      debugger
       errorRenders =
       <div className="session-errors">
       <ul>

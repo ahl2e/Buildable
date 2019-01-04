@@ -203,14 +203,17 @@
   // margin: auto;
 }
 
+.project-edit-drop{
+  cursor: pointer;
+}
+
 #project-edit-container *:hover{
   text-decoration: underline;
 }
 #project-edit-container {
   margin-top: 10px;
   position: relative;
-  top: -28px;
-  left: 390px;
+  left: 500px;
   border: 1px solid black;
   border-radius: 6px;
   width: 15%;

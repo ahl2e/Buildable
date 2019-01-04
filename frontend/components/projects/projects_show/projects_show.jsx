@@ -36,10 +36,12 @@ constructor(props){
 
   toggleDropDown(e){
     $("#project-edit-container").toggleClass("project-no-show");
+    $(".project-edit-drop").toggleClass("project-no-show");
   }
 
   hideDropDown(e){
     $("#project-edit-container").addClass("project-no-show");
+    $(".project-edit-drop").toggleClass("project-no-show");
   }
 
   renderEditContainer(){
@@ -48,7 +50,7 @@ constructor(props){
       if(this.props.user === project.project.username){
         return(
           <div>
-            <button onClick={this.toggleDropDown}  className='edit-drop'>edit your project</button>
+            <button onClick={this.toggleDropDown}  className='project-edit-drop'>edit your project</button>
             <div
               id="project-edit-container"
               className="project-no-show"
