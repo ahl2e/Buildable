@@ -28,6 +28,7 @@ class StepsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
+  var container = $('.editor').get(0);
   var sanitizeHtml = require('sanitize-html');
   const newStep = new FormData();
   newStep.append('step[heading]', this.state.heading);

@@ -66,6 +66,16 @@ constructor(props){
     }
   }
 
+  renderCategory(){
+    if (this.props.project && this.props.project.project.category){
+      return (
+        <Link to={`/categories/${this.props.project.project.category}/`}>in: {this.props.project.project.category}</Link>
+      );
+    }else{
+      return null;
+    }
+  }
+
   render (){
     const project = this.props.project || {title: "", description: "", id: this.props.match.params.projectId};
 
@@ -101,6 +111,7 @@ let category;
         <div className="show-header">
         <div className="title">{project.title}</div>
         <p className="author"> by: {username}</p>
+        {this.renderCategory()}
           <div className="main-image-container">
             {picture}
           </div>
