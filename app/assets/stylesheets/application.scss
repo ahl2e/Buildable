@@ -60,6 +60,10 @@ a:hover{
   align-items: center;
 }
 
+#landing-text h1{
+  cursor:default;
+}
+
 #landing-text h1 {
   font-size: 68px;
   // margin: auto;
@@ -72,6 +76,10 @@ a:hover{
   font-size: 24px;
   text-decoration: none;
   cursor: pointer;
+}
+
+.category-links a:hover {
+  text-decoration: underline;
 }
 
 .category-links{
