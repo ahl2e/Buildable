@@ -5,7 +5,9 @@ import {withRouter} from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   const step = state.entities.steps[ownProps.step.id];
-  return step;
+  const key = ownProps.stepNumber;
+  debugger
+  return {step, key};
 };
 
 const mapDispatchToProps = dispatch => {

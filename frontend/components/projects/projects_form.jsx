@@ -127,7 +127,7 @@ handleSubmit(e){
    let projectId;
    this.props.action(projectData).then((response) => {
      this.state.steps.forEach((step) => {
-       if (step.heading != "" && step.body != ""){
+       if (step.body != ""){
          projectId = response.project.id;
          const newStep = new FormData();
          newStep.append('step[project_id]',response.project.id);
