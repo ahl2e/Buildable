@@ -2,6 +2,7 @@ import React from 'react';
 import {merge} from 'lodash';
 import { withRouter, Redirect} from 'react-router-dom';
 import ReactQuill from 'react-quill';
+import LoadingIcon from './projects_show/loading_icon';
 
 class ProjectsForm extends React.Component {
   constructor(props){
@@ -103,6 +104,7 @@ class ProjectsForm extends React.Component {
 
 handleSubmit(e){
   e.preventDefault();
+  let projectId;
   const projectData = new FormData();
   var sanitizeHtml = require('sanitize-html');
   projectData.append('project[title]', this.state.project.title);
@@ -124,11 +126,10 @@ handleSubmit(e){
    var existingProjects = JSON.parse(sessionStorage.getItem('projects'));
    var newProjects = existingProjects.push(this.state.project);
    sessionStorage.clear();
-   let projectId;
    this.props.action(projectData).then((response) => {
+     projectId = response.project.id;
      this.state.steps.forEach((step) => {
        if (step.body != ""){
-         projectId = response.project.id;
          const newStep = new FormData();
          newStep.append('step[project_id]',response.project.id);
          newStep.append('step[heading]',step.heading);
@@ -138,8 +139,10 @@ handleSubmit(e){
          }
          this.props.createStep(newStep);
        }
+       setTimeout(this.props.history.push(`/projects/${projectId}`), 1000);
      });
-   }).then(() => this.props.history.push(`/`));
+     // setTimeout(location.reload(), 0);
+   });
  }
 }
 
@@ -273,6 +276,9 @@ renderSteps(){
 
 
 render(){
+  if (this.props.loading.detailLoading){
+    return <LoadingIcon/>;
+  }
 
   var formats = [
       "bold",

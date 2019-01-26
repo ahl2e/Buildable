@@ -8,8 +8,9 @@ const mapStateToProps = (state, ownProps) => {
     const formType  = "Publish Project";
     const method = "POST";
     const errors = state.errors;
+    const loading = state.detailLoading;
 
-  return {project, formType, method, errors};
+  return {project, formType, method, errors, loading};
 };
 
 const mapDispatchToProps = (dispatch) => {

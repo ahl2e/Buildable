@@ -4,6 +4,7 @@ export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const START_LOADING_COMMENTS = 'START_LOADING_COMMENTS';
 
 
 
@@ -35,11 +36,18 @@ export const receiveErrors = (errors) => {
   };
 };
 
+export const startLoadingComments = () => {
+  return {
+    type: START_LOADING_COMMENTS
+  };
+};
+
 export const fetchComment = (id) => dispatch => {
   return ApiCommentUtil.fetchComment(id).then((id)=> dispatch(receiveComment(step)));
 };
 
 export const fetchAllComments = (project_id) => dispatch => {
+  dispatch(startLoadingComments());
   return ApiCommentUtil.fetchAllComments(project_id).then(comments => dispatch(receiveAllComments(comments)));
 };
 

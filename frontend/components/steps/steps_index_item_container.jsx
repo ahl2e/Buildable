@@ -6,7 +6,6 @@ import {withRouter} from 'react-router';
 const mapStateToProps = (state, ownProps) => {
   const step = state.entities.steps[ownProps.step.id];
   const key = ownProps.stepNumber;
-  debugger
   return {step, key};
 };
 

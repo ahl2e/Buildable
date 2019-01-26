@@ -54,6 +54,7 @@ return(
     </div>
   </section>
   <section className="projects-index-container">
+    <h2 id='featured-projects'>Featured Projects</h2>
     <ul className="projects-index-list">
       {proj}
     </ul>

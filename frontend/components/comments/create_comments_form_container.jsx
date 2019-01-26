@@ -4,7 +4,7 @@ import {selectAllComments} from '../../reducers/selectors';
 import {createComment} from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const step = {
+  const comment = {
     heading: '',
     body: '',
     // project_id: parseInt(ownProps.match.params.project_Id),
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   const username = Object.values(state.entities.users)[0]["username"];
   const currentUserId = state.session.id;
   const errors = state.errors;
-  return{step, currentUserId, errors, username};
+  return{comment, currentUserId, errors, username};
 };
 
 const mapDispatchToProps = (dispatch) => {

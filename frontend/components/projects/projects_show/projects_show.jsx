@@ -3,11 +3,13 @@ import { Link, Route } from 'react-router-dom';
 import StepsIndexContainer from '../../steps/steps_index_container';
 import CommentsIndexContainer from '../../comments/comments_index_container';
 import CreateCommentsFormContainer from '../../comments/create_comments_form_container';
+import LoadingIcon from './loading_icon';
 
 class ProjectShow extends React.Component {
 constructor(props){
   super(props);
 }
+
 
   componentDidMount(){
     window.scrollTo(0,0);
@@ -16,10 +18,10 @@ constructor(props){
     this.props.fetchAllSteps(projectId);
     this.props.fetchAllComments(projectId);
   }
-
+  //
   componentWillUpdate(){
     const projectId = parseInt(this.props.match.params.projectId);
-    this.props.fetchAllSteps(projectId);
+    // this.props.fetchAllSteps(projectId);
     this.props.fetchAllComments(projectId);
   }
 
@@ -76,7 +78,16 @@ constructor(props){
     }
   }
 
+  backToIndex(e){
+    setTimeout(window.scrollTo(0,830),0);
+    this.props.history.push('/');
+  }
+
   render (){
+    if (this.props.loading.detailLoading){
+      return <LoadingIcon/>;
+    }
+
     const project = this.props.project || {title: "", description: "", id: this.props.match.params.projectId};
 
     let picture;
@@ -130,7 +141,7 @@ let category;
             <br/>
           </div>
       <div className="project-show-links">
-        <Link to={"/"} id="all-projects">back to all projects </Link>
+        <button id='back-button' onClick={this.backToIndex.bind(this)}>back to all projects</button>
         <br/>
       </div>
     </div>

@@ -16,8 +16,9 @@
 
 .projects-index-container {
   height: 100%;
-  width: 94%;
+  width: 100%;
   margin: auto;
+  background-color: #F6F6F6;
 }
 .projects-index-container > ul :hover{
   box-shadow: 1px 1px 1px black;
@@ -32,7 +33,12 @@ ul {
 
 .step-index-body{
   text-align: left;
+  width: 70%;
+  margin-left: 15%;
 }
+
+// .step-item{
+// }
 
 a {
   background-color: none;
@@ -95,6 +101,7 @@ a:hover{
   padding: 5px;
   list-style: none;
   flex-wrap: wrap;
+  background-color: #F6F6F6;
 }
 
 #category-label{
@@ -113,6 +120,7 @@ a:hover{
   margin-top: 25px;
   box-shadow: 1px 1px 1px #ddd;
   font-family: 'Montserrat', sans-serif;
+  background-color: white;
   .title{
     font-size: 15px;
   }
@@ -589,4 +597,8 @@ label:hover{
 
 .ql-editor{
   text-align: center;
+}
+
+#featured-projects{
+  margin-left: 40px;
 }

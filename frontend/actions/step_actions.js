@@ -4,6 +4,8 @@ export const RECEIVE_STEP = "RECEIVE_STEP";
 export const RECEIVE_ALL_STEPS = "RECEIVE_ALL_STEPS";
 export const REMOVE_STEP = "REMOVE_STEP";
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const START_LOADING_STEPS = 'START_LOADING_STEPS';
+
 
 const receiveStep = (step) => {
   return{
@@ -32,6 +34,13 @@ export const receiveErrors = (errors) => {
   };
 };
 
+export const startLoadingSteps = () => {
+  return {
+    type: START_LOADING_STEPS
+  };
+};
+
+
 export const fetchStep = (id) => dispatch => {
   return ApiStepUtil.fetchStep(id).then((id)=> dispatch(receiveStep(step)));
 };
@@ -45,6 +54,7 @@ export const updateStep  = (step, info) => dispatch => {
 };
 
 export const createStep = (step) => dispatch => {
+  dispatch(startLoadingSteps());
   return ApiStepUtil.createStep(step).then((step) => dispatch(receiveStep(step)));
 };
 

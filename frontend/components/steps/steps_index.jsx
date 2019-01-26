@@ -10,21 +10,16 @@ class StepsIndex extends React.Component {
 
 render() {
 
+  var steps = this.props.steps.map((step,idx) => <StepsIndexItemContainer key={idx} stepNumber={idx+1} step={step} delete={this.props.delete} currentUserId = {this.props.currentUserId} className='step-item'/>);
+
   if (this.props.steps.length > 0){
-    return this.props.steps.map((step,idx) => {
-      return (
-        <div>
-          <ul className="steps-container">
-            <StepsIndexItemContainer
-              key={step.id}
-              stepNumber={idx+1}
-              step={step}
-              delete={this.props.delete}
-              currentUserId = {this.props.currentUserId} />
-          </ul>
-        </div>
-      );
-    });
+    return (
+      <div>
+        <ul>
+          {steps}
+        </ul>
+      </div>
+    )
   } else {
     return null;
   }

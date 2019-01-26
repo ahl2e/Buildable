@@ -18,16 +18,15 @@ class CommentsIndex extends React.Component{
   }
 
   render() {
+
+    var comments = this.props.comments.map((comment,idx) => <CommentsIndexItem key={idx} comment={comment} delete={this.props.deleteComment} currentUser={this.props.currentUserId}/> );
+
     if (this.props.comments.length > 0){
-      return this.props.comments.map((comment,idx) => {
-        return (
-          <div>
-            <ul>
-              <CommentsIndexItem key={idx} comment={comment} delete={this.props.deleteComment} currentUser={this.props.currentUserId}/>
-            </ul>
-          </div>
-        )
-      });
+      return (
+          <ul>
+            {comments}
+          </ul>
+      )
     } else {
       return null;
     }

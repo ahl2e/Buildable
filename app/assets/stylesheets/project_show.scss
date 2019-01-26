@@ -218,3 +218,21 @@
   border-radius: 6px;
   width: 15%;
 }
+
+
+#back-button{
+  background-color: #DD6607;
+  height: 60px;
+  width: 80px;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  transition: box-shadow .5s;
+  margin-bottom: 20px;
+}
+
+#back-button:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  box-shadow: 2px 2px #888888;
+}

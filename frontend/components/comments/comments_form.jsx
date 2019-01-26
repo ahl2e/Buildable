@@ -5,7 +5,7 @@ import {merge} from 'lodash';
 class CommentsForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props;
+    this.state = props.comment;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -17,9 +17,9 @@ class CommentsForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    const comment = Object.assign({}, {title: this.state.title, body: this.state.body, user_id: this.state.currentUserId, project_id: parseInt(this.state.match.params.projectId), username: this.state.username});
-    const project_id = parseInt(this.state.match.params.projectId);
-    this.props.create(comment).then(() => this.props.history.push(`/projects/${project_id}`));
+    const comment = Object.assign({}, {title: this.state.title, body: this.state.body, user_id: this.props.currentUserId, project_id: parseInt(this.props.match.params.projectId), username: this.props.username});
+    const project_id = parseInt(this.props.match.params.projectId);
+    this.props.create(comment);
     this.setState({
       title: "",
       body: ""
@@ -52,7 +52,7 @@ class CommentsForm extends React.Component{
         <section className="comments-form-box">
           <div className="comments-inner-form-box">
         <form onSubmit={this.handleSubmit}>
-        
+
           <textarea
             value={this.state.body}
             onChange={this.update('body')}
