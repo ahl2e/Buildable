@@ -13,14 +13,13 @@ class CommentsIndex extends React.Component{
   }
 
   componentDidMount(){
-    const projectId = parseInt(this.props.match.params.project_Id);
+    const projectId = parseInt(this.props.match.params.projectId);
     this.props.fetchAllComments(projectId);
   }
 
   render() {
 
     var comments = this.props.comments.map((comment,idx) => <CommentsIndexItem key={idx} comment={comment} delete={this.props.deleteComment} currentUser={this.props.currentUserId}/> );
-
     if (this.props.comments.length > 0){
       return (
           <ul>

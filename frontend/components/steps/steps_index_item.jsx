@@ -5,7 +5,7 @@ class StepsIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.step;
-    this.stepNumber = props.stepNumber;
+    this.stepNumber = props.step.order_number;
   }
 
   componentWillUpdate(nextProps){

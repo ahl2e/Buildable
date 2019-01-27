@@ -128,12 +128,13 @@ handleSubmit(e){
    sessionStorage.clear();
    this.props.action(projectData).then((response) => {
      projectId = response.project.id;
-     this.state.steps.forEach((step) => {
+     this.state.steps.map((step,idx) => {
        if (step.body != ""){
          const newStep = new FormData();
          newStep.append('step[project_id]',response.project.id);
          newStep.append('step[heading]',step.heading);
          newStep.append('step[body]',step.body);
+         newStep.append('step[order_number]',idx+1);
          if(step.imageFile){
            newStep.append('step[picture]',step.imageFile);
          }

@@ -16,13 +16,13 @@ constructor(props){
     const projectId = parseInt(this.props.match.params.projectId);
     this.props.fetchProject(this.props.match.params.projectId);
     this.props.fetchAllSteps(projectId);
-    this.props.fetchAllComments(projectId);
+    // this.props.fetchAllComments(projectId);
   }
   //
   componentWillUpdate(){
     const projectId = parseInt(this.props.match.params.projectId);
     // this.props.fetchAllSteps(projectId);
-    this.props.fetchAllComments(projectId);
+    // this.props.fetchAllComments(projectId);
   }
 
   // componentWillReceiveProps(nextProps){
@@ -33,7 +33,7 @@ constructor(props){
 
   delete(e){
     sessionStorage.clear();
-    this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(sessionStorage.clear()).then(location.reload());
+    this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(sessionStorage.clear()).then(location.reload());;
   }
 
   toggleDropDown(e){

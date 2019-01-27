@@ -9,8 +9,11 @@ class StepsIndex extends React.Component {
 
 
 render() {
+  const sortedSteps = this.props.steps.sort(function(a, b) {
+    return parseFloat(a.order_number) - parseFloat(b.order_number);
+});
 
-  var steps = this.props.steps.map((step,idx) => <StepsIndexItemContainer key={idx} stepNumber={idx+1} step={step} delete={this.props.delete} currentUserId = {this.props.currentUserId} className='step-item'/>);
+  var steps = sortedSteps.map((step,idx) => <StepsIndexItemContainer key={idx} stepNumber={idx+1} step={step} delete={this.props.delete} currentUserId = {this.props.currentUserId} className='step-item'/>);
 
   if (this.props.steps.length > 0){
     return (
