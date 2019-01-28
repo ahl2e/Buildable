@@ -199,12 +199,20 @@
   display: block;
   margin: 2px;
   text-align: left;
+  background-color: #eee;
   // flex-direction: column;
   // margin: auto;
 }
 
+#project-edit-container{
+  background-color: #eee;
+}
+
 .project-edit-drop{
   cursor: pointer;
+  font-size: 14px;
+  background-color: #eee;
+  border-radius: 4px;
 }
 
 #project-edit-container *:hover{
@@ -271,4 +279,13 @@
     cursor: pointer;
     box-shadow: 2px 2px #888888;
   }
+}
+
+#step-line-box{
+  background-color: #eee;
+  width: 10%;
+  height: 4px;
+  margin-left: 45%;
+  align-self: center;
+  border: .5px solid #888888;
 }

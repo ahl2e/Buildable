@@ -56,7 +56,7 @@ class StepsIndexItem extends React.Component {
       </div>
         {this.renderEditContainer()}
         <br/>
-        <div id="line-box"></div>
+        <div id="step-line-box"></div>
     </li>
     );
   }

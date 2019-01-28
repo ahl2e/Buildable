@@ -67,7 +67,7 @@ constructor(props){
   }
 
   backToIndex(e){
-    setTimeout(window.scrollTo(0,830),0);
+    setTimeout(window.scrollTo(0,825),0);
     this.props.history.push('/');
   }
 
