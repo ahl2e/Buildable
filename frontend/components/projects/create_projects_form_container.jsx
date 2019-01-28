@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     const formType  = "Publish Project";
     const method = "POST";
     const errors = state.errors;
-    const loading = state.detailLoading;
+    const loading = state.ui.loading.detailLoading;
 
   return {project, formType, method, errors, loading};
 };

@@ -236,3 +236,39 @@
   text-decoration: underline;
   box-shadow: 2px 2px #888888;
 }
+
+#project-thanks {
+  display: flex;
+  justify-content: space-around;
+}
+#project-thanks {
+  text-align: center;
+  height: 800px;
+  background-image: asset-url('finished.jpg');
+  background-size: cover;
+}
+
+#thanks-box{
+  margin-top: 8%;
+  width: 45%;
+  height: 30%;
+  background: transparent;
+  border-radius: 6px;
+  h1{
+    color: white;
+  }
+  button{
+    background-color: #DD6607;
+    height: 60px;
+    width: 100px;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    transition: box-shadow .5s;
+    margin-bottom: 20px;
+  }
+  button:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px #888888;
+  }
+}

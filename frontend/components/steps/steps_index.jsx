@@ -7,6 +7,11 @@ class StepsIndex extends React.Component {
     super(props);
   }
 
+  // componentDidMount(){
+  //   // Fetch steps in here and not project show
+  //   this.props.fetchAllSteps();
+  // }
+
 
 render() {
   const sortedSteps = this.props.steps.sort(function(a, b) {

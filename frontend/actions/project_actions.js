@@ -9,6 +9,8 @@ export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const RECEIVE_CATEGORY_PROJECTS = 'RECEIVE_CATEGORY_PROJECTS';
 export const START_LOADING_PROJECT = 'START_LOADING_PROJECT';
+export const BUILD_PROJECT = 'BUILD_PROJECT';
+export const REVEAL_PROJECT = 'REVEAL_PROJECT';
 
 
 
@@ -32,6 +34,7 @@ export const fetchCategoryProjects = (query) => dispatch => {
 
 export const createProject = (project) => dispatch => {
   dispatch(startLoadingProject());
+  dispatch(buildProject());
   return ApiProjectUtil.createProject(project).then((project) => dispatch(receiveProject(project)));
 };
 
@@ -41,6 +44,10 @@ export const updateProject = (project) => dispatch => {
 
 export const deleteProject = (project) => dispatch => {
   return ApiProjectUtil.deleteProject(project).then(project => dispatch(removeProject(project)));
+};
+
+export const revealThisProject = () => dispatch => {
+  dispatch(revealProject());
 };
 
 
@@ -89,5 +96,17 @@ export const receiveErrors = (errors) => {
 export const startLoadingProject = () => {
   return{
     type: START_LOADING_PROJECT,
+  };
+};
+
+export const buildProject = () => {
+  return{
+    type: BUILD_PROJECT,
+  };
+};
+
+export const revealProject = () => {
+  return{
+    type: REVEAL_PROJECT,
   };
 };

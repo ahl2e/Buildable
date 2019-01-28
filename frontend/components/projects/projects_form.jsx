@@ -142,7 +142,6 @@ handleSubmit(e){
        }
        setTimeout(this.props.history.push(`/projects/${projectId}`), 1000);
      });
-     // setTimeout(location.reload(), 0);
    });
  }
 }

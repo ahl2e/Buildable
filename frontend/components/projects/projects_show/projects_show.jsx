@@ -16,20 +16,8 @@ constructor(props){
     const projectId = parseInt(this.props.match.params.projectId);
     this.props.fetchProject(this.props.match.params.projectId);
     this.props.fetchAllSteps(projectId);
-    // this.props.fetchAllComments(projectId);
-  }
-  //
-  componentWillUpdate(){
-    const projectId = parseInt(this.props.match.params.projectId);
-    // this.props.fetchAllSteps(projectId);
-    // this.props.fetchAllComments(projectId);
   }
 
-  // componentWillReceiveProps(nextProps){
-  //   const projectId = parseInt(this.props.match.params.projectId);
-  //   this.props.fetchAllSteps(projectId);
-  //   location.reload();
-  // }
 
   delete(e){
     sessionStorage.clear();
@@ -83,10 +71,25 @@ constructor(props){
     this.props.history.push('/');
   }
 
+  revealNewProject(){
+    this.props.revealProject();
+    location.reload();
+  }
+
   render (){
     if (this.props.loading.detailLoading){
       return <LoadingIcon/>;
     }
+
+    if (this.props.building.justBuilt){
+      return (
+        <div id='project-thanks'>
+          <div id='thanks-box'>
+            <h1>Thanks for Adding your Project to Buidable</h1>
+            <button onClick={this.revealNewProject.bind(this)}>Click Here to See Your Project</button>
+        </div>
+        </div>
+      )}
 
     const project = this.props.project || {title: "", description: "", id: this.props.match.params.projectId};
 
