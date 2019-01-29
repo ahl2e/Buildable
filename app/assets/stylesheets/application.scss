@@ -452,13 +452,22 @@ box-shadow: 2px 2px black;
 .inner-form-box {
   height: 90%;
   width: 825px;
-  // background-color: #eee;
+  background-color: #f6f6f6;
   // background-color: blue;
   // border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
   margin: auto;
+  padding:20px;
+  border-radius: 6px;
+  border: 1px solid #dfdfdf;
+}
+
+.quill {
+  background-color: white;
+  border-radius: 4px;
 }
 
 .category-dropdown{
@@ -481,6 +490,8 @@ box-shadow: 2px 2px black;
 }
 .project-submit:hover{
   cursor: pointer;
+  after:{content:"Hi"}
+  before:{content:"Submiteth"}
 }
 
 .inner-form-box p {
