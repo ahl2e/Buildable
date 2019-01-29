@@ -1,8 +1,8 @@
 .step-image-upload-contianer{
-  width: 15%;
+  width: 25%;
   height: 20%;
   display: flex;
-  background-color: #dfdfdf;
+  background-color: white;
   border-radius: 10px;
   border: 2px solid #595757;
   box-shadow: inset 0px 0px 3px .3px #595757;
@@ -10,15 +10,13 @@
 }
 
 .step-image-upload-contianer label{
-  width: 14%;
-  height: 100px;
-  background-color: #dfdfdf;
-  color:#595757;
+  width: 95%;
+  height: 95px;
+  background-color: white;
+  border-radius: 10px;
+  color:#aaa;
   // color:#c8c8c8;
   text-align: center;
-  // border-radius: 10px;
-  // border: 2px solid #595757;
-  // box-shadow: inset 0px 0px 3px .3px #595757;
   font-size: 24px;
   padding: .5rem 1rem;
 }
@@ -26,13 +24,13 @@
 .steps-editor-form{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #eee;
   border-radius: 10px;
-  border: 2px solid #595757;
+  border: .5px solid #aaa;
   width: 58%;
-  padding: 5px;
-  margin: auto;
+  padding: 10px;
+  margin: 12px auto;
 }
 
 .steps-editor-form-text textarea {
@@ -81,12 +79,14 @@
 
 .step-submit{
   height: 35%;
-  background-color: #e86c00;
-  border: 1px solid #cf6000;
+  width: 18%;
+  background-color: #eee;
+  border: 1px solid #dfdfdf;
   border-radius: 10px;
   padding: .5rem .75rem;
   font-size: 15px;
-  color: white;
-  margin-right: 3%;
+  color: black;
   margin-top: 10px;
+  margin-left: 41%;
+  margin-bottom: 10px;
 }

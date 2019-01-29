@@ -16,7 +16,7 @@ class ProjectsForm extends React.Component {
         imageFile:null
       },
       steps:[{
-        heading:"",
+        heading:`Intro`,
         body:"",
         imageUrl:null,
         imageFile:null
@@ -248,11 +248,7 @@ renderStepForm(step,idx){
           modules={ProjectsForm.modules}/>
 
       </div>
-      <input
-        type='submit'
-        value='Add Step'
-        className='step-submit'>
-      </input>
+
     </form>
   )
 }
@@ -340,6 +336,7 @@ render(){
       <div>
         {this.renderSteps()}
       </div>
+      <button onClick={this.handleStepSubmit} className='step-submit'>Add Step</button>
     </div>
   )
 }
