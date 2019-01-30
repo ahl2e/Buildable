@@ -3,6 +3,9 @@ import {merge} from 'lodash';
 import { withRouter, Redirect} from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import LoadingIcon from './projects_show/loading_icon';
+import ProjectTitleContainer from './project_title_container';
+import {closeModal} from '../../actions/modal_actions';
+import ModalContainer from '../modal/modal_container';
 
 class ProjectsForm extends React.Component {
   constructor(props){
@@ -24,7 +27,7 @@ class ProjectsForm extends React.Component {
       image: {imageFile: null, imageUrl: "" }
     };
     this.state.project.userId = this.props.userId;
-
+    this.titleModal = <ProjectTitleContainer/>;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleStepSubmit = this.handleStepSubmit.bind(this);
     this.updateStepField = this.updateStepField.bind(this);
@@ -34,6 +37,7 @@ class ProjectsForm extends React.Component {
 
   componentDidMount(){
     window.scrollTo(0,0);
+    this.props.openModal(this.titleModal);
   }
 
 
@@ -276,6 +280,8 @@ render(){
     return <LoadingIcon/>;
   }
 
+
+
   var formats = [
       "bold",
       "italic",
@@ -291,6 +297,7 @@ render(){
 
   return(
     <div className="projects-form">
+      <ModalContainer/>
       <section className="form-box">
         <div className="inner-form-box">
           <form onSubmit={this.handleSubmit}>

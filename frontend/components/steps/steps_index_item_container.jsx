@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(StepsIndexItem)
+export default connect(mapStateToProps, mapDispatchToProps)(StepsIndexItem);
