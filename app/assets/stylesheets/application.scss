@@ -426,7 +426,7 @@ box-shadow: 2px 2px black;
 }
 
 .form-footer{
-  height: 120px;
+  height: 200px;
   display: flex;
   justify-content: space-around;
 }
@@ -482,6 +482,24 @@ box-shadow: 2px 2px black;
   font-size: 18px;
   background-color: #dfdfdf;
 }
+
+.inner-add-form-box {
+  height: 280px;
+  width: 90%;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+  padding:40px 20px 20px 20px;
+  border-radius: 10px;
+  border: 1px solid #dfdfdf;
+  bottom: 10px;
+  box-shadow: 0px 1px 8px 2px #dfdfdf
+}
+
+
 
 #steps-form-buffer{
   height: 14px;
@@ -584,6 +602,7 @@ img{
   font-size: 32px;
   padding: .75rem 15rem;
 }
+
 .image-upload-contianer{
   img{
     max-height: 110px;

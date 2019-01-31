@@ -12,6 +12,10 @@ class StepsForm extends React.Component {
     this.errors = this.props.errors;
   }
 
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
   update(field) {
     return (e) =>{
       this.setState({[field]: e.target.value});
@@ -61,6 +65,36 @@ handleFile(e) {
   }
 }
 
+renderStepUploadButton(step,idx){
+  if (this.props.formType == 'Update Project'){
+    return null;
+  }
+  if (this.state.imageUrl){
+    return(
+      <div className='add-step-image-upload-contianer'>
+        <img src={this.state.imageUrl} />
+
+      </div>
+    );
+  } else {
+    return(
+      <div className='add-step-image-upload-contianer'>
+        <label>Step Picture
+            <input
+              className='inputfile'
+              type="file"
+              onChange={this.handleFile.bind(this)}
+              />
+        </label>
+      </div>
+    );
+  }
+}
+
+
+
+
+
 
 render(){
   const preview = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;
@@ -109,11 +143,8 @@ render(){
   return(
     <div className="projects-form">
       <section className="form-box">
-        <div className="inner-form-box">
+        <div className="inner-add-form-box">
       <form onSubmit={this.handleSubmit}>
-        <p>Add a step: (Title and Body)</p>
-
-        <br/>
           <textarea
             onChange={this.update('heading')}
             value={this.state.heading}
@@ -127,13 +158,9 @@ render(){
             value={this.state.body}/>
         <br/>
         <div className="form-footer">
-          {photoButton}
-
-          <div className="photo-preview-div">
-            {preview}
-          </div>
+          {this.renderStepUploadButton()}
           <div className="button-container">
-            <input className="submit" type="submit" value={this.props.formType}/>
+            <input className="add-step-submit" type="submit" value={this.props.formType}/>
           </div>
         </div>
 
