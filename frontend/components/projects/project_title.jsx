@@ -5,7 +5,7 @@ class ProjectTitleForm extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {title:""};
+    this.state = {title:"", category: null, imageFile: null, userId: this.props.userId};
   }
 
   updateTitle(){

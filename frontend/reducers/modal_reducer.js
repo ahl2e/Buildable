@@ -1,18 +1,18 @@
+import {merge} from 'lodash';
 import { OPEN_MODAL, CLOSE_MODAL, CARRY_PAYLOAD, CLEAR_PAYLOAD } from '../actions/modal_actions';
 
-const ModalReducer = (state = { component: null, payload: null }, action) => {
+const ModalReducer = (oldState = {}, action) => {
   switch(action.type) {
     case OPEN_MODAL:
-      return { component: action.component };
+      return merge({}, oldState, {component:action.component});
     case CLOSE_MODAL:
-      return { component: null };
+      return merge({}, oldState, {component:null});
     case CARRY_PAYLOAD:
-    debugger
-      return { payload: action.payload };
+      return merge({}, oldState, {payload:action.payload});
     case CLEAR_PAYLOAD:
-      return { payload: null };
+      return merge({}, oldState, {payload:null});
     default:
-      return state;
+      return oldState;
   }
 };
 

@@ -11,7 +11,7 @@ class ProjectsForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      project: (props.formType == "Publish Project") ? props.payload : props.project,
+      project: props.project,
       stepsFormData: {
         heading:"",
         body:"",
@@ -19,14 +19,14 @@ class ProjectsForm extends React.Component {
         imageFile:null
       },
       steps:[{
-        heading: "Intro:",
+        heading:`Intro`,
         body:"",
         imageUrl:null,
         imageFile:null
       }],
       image: {imageFile: null, imageUrl: "" }
     };
-    this.userId = this.props.userId;
+    this.state.project.userId = this.props.userId;
     this.titleModal = <ProjectTitleContainer/>;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleStepSubmit = this.handleStepSubmit.bind(this);
@@ -37,18 +37,7 @@ class ProjectsForm extends React.Component {
 
   componentDidMount(){
     window.scrollTo(0,0);
-    if (this.props.formType == "Publish Project"){
-      // this.props.openModal(this.titleModal);
-    }
-  }
-
-
-  componentDidUpdate(){
-
-    if (this.props.payload){
-      this.setState({project: this.props.payload});
-      this.props.clearPayload();
-    }
+    this.props.openModal(this.titleModal);
   }
 
 
@@ -125,13 +114,12 @@ handleSubmit(e){
   projectData.append('project[title]', this.state.project.title);
   var cleanDescription = sanitizeHtml(this.state.project.description);
   projectData.append('project[description]', this.state.project.description);
-  projectData.append('project[user_id]', this.state.project.userId);
+  projectData.append('project[user_id]', this.state.project.user_id);
   projectData.append('project[category]', this.state.project.category);
   if (this.state.image.imageFile) {
    projectData.append('project[picture]', this.state.image.imageFile);
  }
   if (this.state.id) {
-    debugger
    projectData.append('project[id]', this.state.project.id);
  }
 
@@ -286,14 +274,6 @@ renderSteps(){
 
 // HELPER RENDERS //
 
-renderTitle(){
-  if(this.state.project){
-    return this.state.project.title;
-  }else{
-    return null;
-  }
-}
-
 
 render(){
   if (this.props.loading.detailLoading){
@@ -320,13 +300,18 @@ render(){
       <ModalContainer/>
       <section className="form-box">
         <div className="inner-form-box">
-          {this.renderTitle()}
           <form onSubmit={this.handleSubmit}>
             {this.renderUploadButton(this.state.stepsFormData)}
             <br/>
-            <br/>
             <div className='title-and-category'>
-              <select value={this.state.category} onChange={this.updateProjectField('category')} className='category-dropdown'>
+              <input
+                type="text"
+                value={this.state.project.title}
+                onChange={this.updateProjectField('title')}
+                placeholder="Title"
+                className="project-title"
+                />
+              <select value={this.state.project.category} onChange={this.updateProjectField('category')} className='category-dropdown'>
                 <option value="" disabled>Choose a Category</option>
                 <option value="woodworking">Woodworking</option>
                 <option value="metal">Metal</option>
@@ -337,17 +322,28 @@ render(){
                 <option value="lighting">Lighting</option>
                 <option value="misc">misc</option>
               </select>
-              <p>Note: Add all your steps below before you publish!</p>
+          </div>
+            <br/>
+            <ReactQuill
+              value={this.state.project.description}
+              onChange={this.updateProjectQuillField('description')}
+              theme="snow"
+              placeholder="Describe this Project"
+              modules={ProjectsForm.modules}
+              formats={formats} />
+            <br/>
+            <div className='title-and-category'>
               <input className="project-submit" type="submit" value={this.props.formType}/>
+              <p>Note: Add all your steps below before you publish!</p>
             </div>
             <br/>
           </form>
         </div>
-        <div id='form-step-wrapper'>
-          {this.renderSteps()}
-          <button onClick={this.handleStepSubmit} className='step-submit'>Add Step</button>
-        </div>
       </section>
+      <div>
+        {this.renderSteps()}
+      </div>
+      <button onClick={this.handleStepSubmit} className='step-submit'>Add Step</button>
     </div>
   )
 }

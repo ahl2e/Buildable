@@ -415,11 +415,12 @@ box-shadow: 2px 2px black;
   // background-color: #D2E1E8;
   background-size: cover;
   min-height: 700px;
+  overflow: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
   box-shadow: inset 0px 3px 7px #ccc;
   padding-top: 20px;
 }
@@ -438,20 +439,20 @@ box-shadow: 2px 2px black;
 
 .form-box {
   width: 75%;
-  height: 460px;
+  height: 400px;
   background-color: white;
   border-radius: 20px;
   // border: 1px solid #ccc;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-around;
+  display: block;
+  // flex-direction: column;
+  // justify-content:space-around;
   align-content: center;
   margin: auto;
 }
 
 .inner-form-box {
-  height: 90%;
-  width: 825px;
+  height: 200px;
+  width: 90%;
   background-color: #f6f6f6;
   // background-color: blue;
   // border-radius: 15px;
@@ -460,9 +461,51 @@ box-shadow: 2px 2px black;
   align-content: center;
   justify-content: center;
   margin: auto;
-  padding:20px;
-  border-radius: 6px;
+  padding:0px 20px 20px 20px;
+  border-radius: 10px 10px 0px 0px;
   border: 1px solid #dfdfdf;
+  bottom: 10px;
+}
+
+.inner-form-box p {
+  // text-align: center;
+  font-size: 19px;
+}
+
+.inner-form-box form {
+  height: 100%;
+}
+
+.inner-form-box .project-title {
+  height: 30px;
+  border-radius: 7px;
+  width: 300px;
+  font-size: 18px;
+  background-color: #dfdfdf;
+}
+
+// .inner-form-box textarea {
+// font-size: 18px;
+// border-radius: 7px;
+// background-color: #dfdfdf;
+// color: #595757;
+// }
+
+#form-step-wrapper{
+  border: 1px solid #dfdfdf;
+  border-top: none;
+  width: 93.5%;
+  margin-left: 3.25%;
+  overflow:visible;
+  align-self: center;
+  border-radius: 0px 0px 10px 10px;
+  display: block;
+  // flex-direction: column;
+  // justify-content: flex-start;
+    ul{
+      padding-left: 5%;
+      margin-top: 10px;
+    }
 }
 
 .quill {
@@ -472,8 +515,9 @@ box-shadow: 2px 2px black;
 
 .category-dropdown{
   font-size: 20px;
-  padding: 4px;
+  padding: 1px;
   background-color: #dfdfdf;
+  height: 80%;
 }
 
 .category-dropdown hover{
@@ -484,9 +528,12 @@ box-shadow: 2px 2px black;
   background-color: #e86c00;
   border: 1px solid #cf6000;
   border-radius: 10px;
-  padding: .5rem .75rem;
+  // padding: .25rem .5rem;
   font-size: 20px;
   color: white;
+  padding: 5px 10px;
+  height: 80%;
+
 }
 .project-submit:hover{
   cursor: pointer;
@@ -494,33 +541,13 @@ box-shadow: 2px 2px black;
   before:{content:"Submiteth"}
 }
 
-.inner-form-box p {
-  // text-align: center;
-  font-size: 19px;
-}
-
 .title-and-category {
   display: flex;
   justify-content: space-around;
+  align-content: center;
+  p{margin-top: .25em}
 }
 
-.inner-form-box form {
-}
-
-.inner-form-box .project-title {
-height: 30px;
-border-radius: 7px;
-width: 300px;
-font-size: 18px;
-background-color: #dfdfdf;
-}
-
-// .inner-form-box textarea {
-// font-size: 18px;
-// border-radius: 7px;
-// background-color: #dfdfdf;
-// color: #595757;
-// }
 
 .photo-preview-div {
   width: 75%;
@@ -544,7 +571,7 @@ img{
 
 
 .image-upload-contianer label{
-  width: 74%;
+  width: 70%;
   height: 100px;
   background-color: #dfdfdf;
   color:#595757;
@@ -562,13 +589,13 @@ label:hover{
 
 .image-upload-contianer{
   width: 97%;
-  height: 20%;
   display: flex;
   background-color: #dfdfdf;
   border-radius: 10px;
   border: 2px solid #595757;
   box-shadow: inset 0px 0px 3px .3px #595757;
   align-content: center;
+  margin-top: 15px;
 }
 
 

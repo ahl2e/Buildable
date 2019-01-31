@@ -3,7 +3,8 @@ import ProjectTitleForm from './project_title';
 import {closeModal, carryPayload, clearPayload} from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
-  return {title:""};
+  const userId = state.session.id;
+  return {title:"", userId: userId};
 };
 
 const mapDispatchToProps = dispatch => {

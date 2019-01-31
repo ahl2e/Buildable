@@ -13,7 +13,7 @@
 #
 
 class Project < ApplicationRecord
-validates :title, :description, :user_id, presence: true
+validates :title, :user_id, presence: true
 validate :ensure_picture
 
 belongs_to :user,

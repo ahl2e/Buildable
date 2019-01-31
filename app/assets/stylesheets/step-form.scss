@@ -28,9 +28,13 @@
   background-color: #eee;
   border-radius: 10px;
   border: .5px solid #aaa;
-  width: 58%;
+  width: 90%;
   padding: 10px;
-  margin: 12px auto;
+  margin-bottom: 12px;
+  .quill{
+    margin-left: 10px;
+    margin-top: 10px;
+  }
 }
 
 .steps-editor-form-text textarea {
@@ -66,6 +70,7 @@
   font-size: 18px;
   background-color: #dfdfdf;
   overflow-wrap: break-word;
+  margin-left: 10px;
 }
 //
 #step-body-field{
