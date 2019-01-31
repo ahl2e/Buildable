@@ -38,7 +38,7 @@ class ProjectsForm extends React.Component {
   componentDidMount(){
     window.scrollTo(0,0);
     if (this.props.formType == "Publish Project"){
-      // this.props.openModal(this.titleModal);
+      this.props.openModal(this.titleModal);
     }
   }
 
@@ -194,7 +194,7 @@ renderUploadButton(){
   } else {
     return(
       <div className='image-upload-contianer'>
-        <label>Upload a Picture
+        <label>Click to Add a Picture
             <input
               className='inputfile'
               type="file"
@@ -286,13 +286,13 @@ renderSteps(){
 
 // HELPER RENDERS //
 
-renderTitle(){
-  if(this.state.project){
-    return this.state.project.title;
-  }else{
-    return null;
-  }
-}
+// renderTitle(){
+//   if(this.state.project){
+//     return this.state.project.title;
+//   }else{
+//     return null;
+//   }
+// }
 
 
 render(){
@@ -320,29 +320,18 @@ render(){
       <ModalContainer/>
       <section className="form-box">
         <div className="inner-form-box">
-          {this.renderTitle()}
           <form onSubmit={this.handleSubmit}>
             {this.renderUploadButton(this.state.stepsFormData)}
             <br/>
             <br/>
             <div className='title-and-category'>
-              <select value={this.state.category} onChange={this.updateProjectField('category')} className='category-dropdown'>
-                <option value="" disabled>Choose a Category</option>
-                <option value="woodworking">Woodworking</option>
-                <option value="metal">Metal</option>
-                <option value="technology">Technology</option>
-                <option value="pottery">Pottery</option>
-                <option value="furniture">Furniture</option>
-                <option value="home">Home Improvement</option>
-                <option value="lighting">Lighting</option>
-                <option value="misc">misc</option>
-              </select>
               <p>Note: Add all your steps below before you publish!</p>
               <input className="project-submit" type="submit" value={this.props.formType}/>
             </div>
             <br/>
           </form>
         </div>
+        <div id='steps-form-buffer'></div>
         <div id='form-step-wrapper'>
           {this.renderSteps()}
           <button onClick={this.handleStepSubmit} className='step-submit'>Add Step</button>

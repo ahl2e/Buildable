@@ -40,13 +40,12 @@ constructor(props){
       if(this.props.user === project.project.username){
         return(
           <div>
-            <button onClick={this.toggleDropDown}  className='project-edit-drop'>edit your project</button>
+            <button onClick={this.toggleDropDown}  className='project-edit-drop'>Project Options</button>
             <div
               id="project-edit-container"
               className="project-no-show"
               onMouseLeave={this.hideDropDown}
               >
-                <Link to={`/projects/${project.id}/edit/`}>Edit</Link>
                 <Link to={`/projects/${project.id}/steps`}>Add a Step</Link>
                 <button value="Delete" onClick={this.delete.bind(this)}>Delete This Project</button>
             </div>
@@ -130,10 +129,6 @@ let category;
             {picture}
           </div>
 
-        <h3>About: {project.title}</h3>
-          <div className="description"
-            dangerouslySetInnerHTML={{ __html: project.description }}>
-          </div>
             <div>
               <StepsIndexContainer/>
             </div>

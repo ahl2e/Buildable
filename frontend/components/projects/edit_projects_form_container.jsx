@@ -32,7 +32,7 @@ const mapDispatchToProps = dispatch => {
 class EditProjectForm extends React.Component {
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
-    // this.props.fetchAllSteps(this.props.match.params.projectId);
+    this.props.fetchAllSteps(this.props.match.params.projectId);
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -69,11 +69,10 @@ updateStepQuillField(field,idx){
       return(<LoadingIcon/>)
     }
 
-    // if(this.props.steps.length > 0){
-    //   var steps = this.props.steps.map((step,idx) => <EditStepsFormContainer step={step}/>);
-    // }
+    if(this.props.steps.length > 0){
+      var steps = this.props.steps.map((step,idx) => <EditStepsFormContainer step={step}/>);
+    }
     const { action, formType, project, method, user_id, loading } = this.props;
-    debugger
     return (
       <ProjectForm
         action={action}

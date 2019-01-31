@@ -31,6 +31,7 @@
   width: 90%;
   padding: 10px;
   margin-bottom: 12px;
+  // margin-top: 6px;
   .quill{
     margin-left: 10px;
     margin-top: 10px;
@@ -94,4 +95,9 @@
   margin-top: 10px;
   margin-left: 41%;
   margin-bottom: 10px;
+  outline: none;
+}
+
+.step-submit:hover{
+  cursor: pointer;
 }
