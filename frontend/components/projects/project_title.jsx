@@ -45,9 +45,7 @@ class ProjectTitleForm extends React.Component {
               <option value="woodworking">Woodworking</option>
               <option value="metal">Metal</option>
               <option value="technology">Technology</option>
-              <option value="pottery">Pottery</option>
               <option value="furniture">Furniture</option>
-              <option value="home">Home Improvement</option>
               <option value="lighting">Lighting</option>
               <option value="misc">misc</option>
             </select>
