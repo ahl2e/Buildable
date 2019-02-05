@@ -1,0 +1,22 @@
+#add-picture-modal{
+  background-color: white;
+  height:200px;
+  width:300px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  button{
+    height: 50px;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #DD6607;
+    color: white;
+    font-size: 18px;
+    transition: box-shadow .5s;
+    transition: border .5s;
+  }
+}

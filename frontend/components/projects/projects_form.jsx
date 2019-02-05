@@ -6,6 +6,7 @@ import LoadingIcon from './projects_show/loading_icon';
 import ProjectTitleContainer from './project_title_container';
 import {closeModal} from '../../actions/modal_actions';
 import ModalContainer from '../modal/modal_container';
+import AddPictureModalContainer from '../ui/add_picture_modal_container';
 
 class ProjectsForm extends React.Component {
   constructor(props){
@@ -28,6 +29,7 @@ class ProjectsForm extends React.Component {
     };
     this.userId = this.props.userId;
     this.titleModal = <ProjectTitleContainer/>;
+    this.addPictureModal = <AddPictureModalContainer/>;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleStepSubmit = this.handleStepSubmit.bind(this);
     this.updateStepField = this.updateStepField.bind(this);
@@ -129,6 +131,9 @@ handleSubmit(e){
   projectData.append('project[category]', this.state.project.category);
   if (this.state.image.imageFile) {
    projectData.append('project[picture]', this.state.image.imageFile);
+ } else {
+   this.props.openModal(this.addPictureModal);
+   return;
  }
   if (this.state.id) {
    projectData.append('project[id]', this.state.project.id);
