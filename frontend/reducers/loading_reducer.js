@@ -13,7 +13,6 @@ const LoadingReducer = (oldState = initialState ,action) => {
     case START_LOADING_PROJECT:
       return merge({}, oldState, { detailLoading: true });
     // case START_LOADING_COMMENTS:
-    // debugger
     //   return merge({}, oldState, { detailLoading: true });
     case RECEIVE_PROJECT:
       return merge({}, oldState, { detailLoading: false});

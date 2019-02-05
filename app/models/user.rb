@@ -32,7 +32,17 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :ensure_photo
+
+  def ensure_photo
+  unless self.photo.attached?
+    self.photo.attach(
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'user2.png')),
+      filename: 'user2.png',
+      content_type: 'image/png'
+    )
+  end
+end
 
 
   def self.find_by_credentials(username, password)

@@ -14,6 +14,7 @@ import LightingProjectsContainer from './projects/lighting_projects_container';
 import MetalProjectsContainer from './projects/metal_projects_container';
 import MyProjectsContainer from './projects/my_projects_container';
 
+import UserPageContainer from './ui/user_page_container';
 import CreateProjectsFormContainer from './projects/create_projects_form_container';
 import EditProjectsFormContainer from './projects/edit_projects_form_container';
 import {AuthRoute} from '../util/route_util';
@@ -60,6 +61,7 @@ const App = () => (
     <ProtectedRoute exact path="/projects/:project_Id/steps" component={CreateStepsFormContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:step/edit" component={EditStepsFormContainer} />
     <ProtectedRoute exact path="/projects/:project_Id/:comment" component={CreateCommentsFormContainer} />
+    <ProtectedRoute exact path="/current_user" component={UserPageContainer} />
     <Route exact path="/categories/furniture" component={FurnitureProjectsContainer} />
     <Route exact path="/categories/woodworking" component={WoodworkingProjectsContainer} />
     <Route exact path="/categories/technology" component={TechnologyProjectsContainer} />

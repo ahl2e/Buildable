@@ -3,6 +3,7 @@ import * as ApiSessionUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const UPDATE_USER = 'UPDATE_USER';
 
 
 export const login = (user) => dispatch => {
@@ -17,6 +18,13 @@ export const signup = (user) => dispatch => (
 
 export const logout = () => dispatch => {
   return ApiSessionUtil.logout().then(userId => dispatch(logoutCurrentUser()));
+};
+
+export const editImage = (id, formData) => dispatch => {
+  return ApiSessionUtil.editImage(id, formData).then((user) => dispatch(receiveCurrentUser(user)));
+};
+export const edit = (id,formData) => dispatch => {
+  return ApiSessionUtil.edit(id,formData).then((user) => dispatch(receiveCurrentUser(user)));
 };
 
 export const receiveErrors = (errors) => {

@@ -9,14 +9,14 @@ const Greeting = (props) => {
   );
   const toggleDropDown = (event) => {
     event.stopPropagation();
-    $('#drop-down').toggleClass('no-show'), ()=>{
+    $('#drop-down-whole').toggleClass('no-show'), ()=>{
       setTimeout(this.hideDropDown.bind(this),0);
     };
 
 
   }
   const hideDropDown = (event) => {
-    $('#drop-down').addClass('no-show');
+    $('#drop-down-whole').addClass('no-show');
   }
 
   const welcome = () => (
@@ -25,21 +25,22 @@ const Greeting = (props) => {
         <button className="user-photo" onClick={toggleDropDown}>
         </button>
     </div>
-    <div id="drop-down"
+    <div id="drop-down-whole"
       className="no-show"
       onMouseLeave={hideDropDown}
        >
       <div id="drop-down-top">
-        <p>{props.currentUser.username}</p>
-        <button id="logout-button" onClick={props.logout}>LOG OUT</button>
+        <div id="drop-down-top-left">
+          <p>{props.currentUser.username}</p>
+          <Link to='/my_projects'> My Projects</Link>
+        </div>
+        <button id="logout-button" onClick={props.logout}>Log out</button>
       </div>
       <div id="drop-down-bottom">
       <Link
         to='/create'
+        id='dropdown-build-link'
         onClick={hideDropDown}> Build a Project
-      </Link>
-      <Link
-        to='/my_projects'> My Projects
       </Link>
     </div>
     </div>

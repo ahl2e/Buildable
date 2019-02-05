@@ -6,9 +6,12 @@ const CategoryIndex = (props) =>{
   var projects = props.projects.map(project => {
     return (<CategoryIndexItem key={project.id} project={project}/>);
   });
-
   if(props.projects.length > 0){
-    var label = parseHistory(props.history.location.pathname);
+    if (props.history){
+      var label = parseHistory(props.history.location.pathname);
+    } else {
+      var label = "My Projects";
+    }
       return (
         <div>
           <div id='category-label-container'>

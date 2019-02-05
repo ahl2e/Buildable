@@ -6,6 +6,7 @@
   border-radius: 20px;
   margin-right: 100px;
   margin-top: 15px;
+  outline: none;
 }
 
 .user-photo:hover{
@@ -23,10 +24,10 @@
   margin-right: 15px;
 }
 
-.greeting-container a{
-  text-decoration: none;
-  color: #777;
-}
+// .greeting-container a{
+//   text-decoration: none;
+//   color: #777;
+// }
 .greeting-container a:hover{
   color: black;
 }
@@ -39,6 +40,20 @@
 #greeting-box {
   position :relative;
   font-family: 'Montserrat', sans-serif;
+}
+
+#drop-down-whole {
+  background-color: white;
+  height: 180px;
+  width: 240px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  text-align:right;
+  position: absolute;
+  left: -130px;
+  top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  // display: none;
 }
 
 #drop-down {
@@ -58,9 +73,9 @@
 
 }
 
-#drop-down a {
-  height: 40px;
-  width: 100px;
+#dropdown-build-link {
+  height: 30px;
+  width: 80%;
   background-color: #DD6607;
   color: white;
   border-radius: 5px;
@@ -68,8 +83,8 @@
   text-align: center;
   margin: 10px;
   text-decoration: none;
-  padding: 5px;
-  font-size: 15px;
+  padding-top: 8px;
+  font-size: 18px;
 }
 
 #drop-down a:hover {
@@ -78,32 +93,43 @@
 
 
 #drop-down-top {
+  display: flex;
+  justify-content: space-around;
   height: 90px;
   border-bottom: 2px solid #ddd;
-
+  margin-top: 15px;
 }
 
 #drop-down-top * {
   height: 25px;
-  margin: 10px;
+  margin: 0px;
   // border-radius: 5px;
   // background-color: #eee;
   text-align: left;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  // flex-direction: column;
 }
 
-#drop-down-top p {
-  padding-top: 8px;
-  cursor: default;
+#drop-down-top-left {
+  height: 100%;
+  display: block;
+}
+
+#drop-down-top-left *{
+  color: #777;
+  font-size: 14px;
+  padding-top: 4px;
 }
 
 #logout-button{
-  border: none;
+  background-color: #f6f6f6;
+  border-radius: 3px;
+  border: .5px solid #dedede;
+  font-size: 14px;
 }
 #logout-button:hover{
   cursor: pointer;
-  text-decoration: underline;
+  background-color: #c8c8c8;
 }
 
 #drop-down-bottom {

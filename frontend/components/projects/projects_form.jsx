@@ -131,7 +131,6 @@ handleSubmit(e){
    projectData.append('project[picture]', this.state.image.imageFile);
  }
   if (this.state.id) {
-    debugger
    projectData.append('project[id]', this.state.project.id);
  }
 

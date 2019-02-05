@@ -20,3 +20,23 @@ export const logout = () => {
     url: 'api/session',
   });
 };
+
+export const edit = (id,updatedUser) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `api/users/${id}`,
+    data: updatedUser,
+    contentType:false,
+    processData:false
+  });
+};
+
+export const editImage = (id, formData) => {
+    return $.ajax({
+    method: 'PATCH',
+    url: `api/users/${id}`,
+    data: formData,
+    contentType: false,
+    processData: false
+  });
+};

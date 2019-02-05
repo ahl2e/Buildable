@@ -7,7 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
-user1 = User.create!({ username: 'Adam615', password: 'password', email: 'adamlong1066@gmail.com' })
+user1 = User.new({
+  username: 'Adam615',
+  password: 'password',
+  email: 'adamlong1066@gmail.com' })
+  file = EzDownload.open('https://s3.amazonaws.com/buildable-dev/bookshelf_finished_copy.jpg')
+  user1.photo.attach(io: file, filename: 'bookshelf_finished_copy.jpg')
+  user1.save!
+
 user2 = User.create!({ username: 'BVila', password: 'oldhouse', email: 'bvilla@thisoldhouse.com' })
 user3 = User.create!({ username: 'DemoUser', password: 'demopassword', email: 'demo@demo.com' })
 
@@ -89,14 +96,8 @@ Step.delete_all
 
 Comment.delete_all
   comment1 = Comment.create!({
-<<<<<<< HEAD
     user_id: User.find_by(username: 'Adam615').id,
     title: "You suck",
     body: "Damn, do you really suck" ,
-=======
-    body: "This looks stupid.  Do better.",
-    title: "You suck!",
-    user_id: User.find_by(username: 'Adam615').id }),
->>>>>>> comments
     project_id: Project.find_by(title: 'Brooklyn Bookshelf').id
     })
