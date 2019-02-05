@@ -47,9 +47,7 @@ return(
       <Link to="/categories/woodworking">Woodworking</Link>
       <Link to="/categories/metal">Metal</Link>
       <Link to="/categories/technology">Technology</Link>
-      <Link to="/categories/pottery">Pottery</Link>
       <Link to="/categories/furniture">Furniture</Link>
-      <Link to="/categories/home_improvement">Home Improvement</Link>
       <Link to="/categories/lighting">Lighting</Link>
     </div>
   </section>
