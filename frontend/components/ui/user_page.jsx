@@ -57,7 +57,6 @@ class UserPage extends React.Component {
     formData.append('user[photo]', image);
     formData.append('user[id]', this.state.id);
     formData.append('user[username]', this.state.username);
-    debugger
 
     this.props.edit(id,formData);
   }

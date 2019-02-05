@@ -1,7 +1,6 @@
 class Api::StepsController < ApplicationController
   def create
     @step = Step.new(step_params)
-    debugger
     if @step.save
       render json:@step
     else

@@ -56,7 +56,6 @@ constructor(props){
   }
 
   renderCategory(){
-    debugger
     if (this.props.project && this.props.project.project && this.props.project.project.category){
       return (
         <Link to={`/categories/${this.props.project.project.category}/`}>in: {this.props.project.project.category}</Link>
