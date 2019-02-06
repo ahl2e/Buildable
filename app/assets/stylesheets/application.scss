@@ -586,15 +586,15 @@ img{
 
 .image-upload-contianer label{
   width: 70%;
-  height: 100px;
-  background-color: #dfdfdf;
-  color:#595757;
+  height: 30px;
+  background-color: #eee;
+  color:#aaa;
   margin: auto;
   border-radius: 10px;
-  // border: 2px solid #595757;
-  // box-shadow: inset 0px 0px 3px .3px #595757;
-  font-size: 32px;
-  padding: .75rem 15rem;
+  // border: 2px solid #aaa;
+  box-shadow: inset 0px 0px 3px .3px #aaa;
+  font-size: 24px;
+  padding: 2.75rem 0rem 3rem 23rem;
 }
 
 .image-upload-contianer{
@@ -612,9 +612,9 @@ label:hover{
 .image-upload-contianer{
   width: 97%;
   display: flex;
-  background-color: #dfdfdf;
+  background-color: #eee;
   border-radius: 10px;
-  border: 2px solid #595757;
+  border: 2px solid #aaa;
   box-shadow: inset 0px 0px 3px .3px #595757;
   align-content: center;
   margin-top: 15px;

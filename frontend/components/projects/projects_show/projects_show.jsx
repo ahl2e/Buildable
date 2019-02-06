@@ -4,10 +4,12 @@ import StepsIndexContainer from '../../steps/steps_index_container';
 import CommentsIndexContainer from '../../comments/comments_index_container';
 import CreateCommentsFormContainer from '../../comments/create_comments_form_container';
 import LoadingIcon from './loading_icon';
+import DeleteModalContainer from '../../ui/delete_modal_container';
 
 class ProjectShow extends React.Component {
 constructor(props){
   super(props);
+  this.deleteModal = <DeleteModalContainer/>;
 }
 
 
@@ -22,6 +24,8 @@ constructor(props){
   delete(e){
     sessionStorage.clear();
     this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(sessionStorage.clear()).then(location.reload());;
+    // debugger
+    // this.props.openModal(this.deleteModal);
   }
 
   toggleDropDown(e){

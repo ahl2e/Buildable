@@ -5,6 +5,7 @@ import { revealProject } from '../../../actions/project_actions';
 import {fetchAllSteps} from '../../../actions/step_actions';
 import {fetchAllComments} from '../../../actions/comment_actions';
 import { selectProject } from '../../../reducers/selectors';
+import {openModal, clearPayload} from '../../../actions/modal_actions';
 import ProjectShow from './projects_show';
 
 const mapStateToProps = (state, {match}) => {
@@ -38,7 +39,8 @@ const mapDispatchToProps = (dispatch) => {
     deleteProject: (project) =>dispatch(deleteProject(project)),
     fetchAllSteps: (projectId) => dispatch(fetchAllSteps(projectId)),
     fetchAllComments: (projectId) => dispatch(fetchAllComments(projectId)),
-    revealProject: () => dispatch(revealProject())
+    revealProject: () => dispatch(revealProject()),
+    openModal: (component) => dispatch(openModal(component))
   };
 };
 

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :projects, only: [:create, :destroy, :edit, :show, :index]
       resources :projects do
-        resources :steps, only: [:create, :edit, :show, :index, :destroy]
+        resources :steps, only: [:create, :update, :show, :index, :destroy]
         resources :comments, only: [:create, :edit, :destroy, :show, :index]
           resources :comments do
             resources :replies, only: [:create, :show, :index, :destroy]

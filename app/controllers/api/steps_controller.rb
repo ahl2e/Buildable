@@ -8,7 +8,7 @@ class Api::StepsController < ApplicationController
     end
   end
 
-  def edit
+  def update
     @step = Step.find(params[:id])
     if @step.update(step_params)
       render :show

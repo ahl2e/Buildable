@@ -198,7 +198,7 @@ renderUploadButton(){
   } else {
     return(
       <div className='image-upload-contianer'>
-        <label>Click to Add a Picture
+        <label>  Click to Add a Picture
             <input
               className='inputfile'
               type="file"

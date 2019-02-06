@@ -24,8 +24,8 @@ export const createStep = (step) => {
 
 export const updateStep = (step, info) => {
   return $.ajax({
-    method: "GET",
-    url: `/api/projects/${info.project_id}/steps/${info.id}/edit`,
+    method: "PATCH",
+    url: `/api/projects/${info.project_id}/steps/${info.id}`,
     data: {step}
   });
 };
