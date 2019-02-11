@@ -5,6 +5,8 @@ import CommentsIndexContainer from '../../comments/comments_index_container';
 import CreateCommentsFormContainer from '../../comments/create_comments_form_container';
 import LoadingIcon from './loading_icon';
 import DeleteModalContainer from '../../ui/delete_modal_container';
+import ModalContainer from '../../modal/modal_container';
+
 
 class ProjectShow extends React.Component {
 constructor(props){
@@ -22,10 +24,9 @@ constructor(props){
 
 
   delete(e){
-    sessionStorage.clear();
-    this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(sessionStorage.clear()).then(location.reload());;
-    // debugger
-    // this.props.openModal(this.deleteModal);
+    // sessionStorage.clear();
+    // this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(sessionStorage.clear()).then(location.reload());;
+    this.props.openModal(this.deleteModal);
   }
 
   toggleDropDown(e){
@@ -125,6 +126,7 @@ let category;
   return (
 
     <div className="project-show">
+      <ModalContainer/>
         <div className="show-header">
         <div className="title">{project.title}</div>
         <p className="author"> by: {username}</p>

@@ -1,5 +1,5 @@
 .step-image-upload-contianer{
-  width: 25%;
+  width: 100%;
   height: 20%;
   display: flex;
   background-color: white;
@@ -7,6 +7,11 @@
   border: 2px solid #595757;
   box-shadow: inset 0px 0px 3px .3px #595757;
   align-content: center;
+    img{
+      padding-left: 30px;
+      padding-top: 10px;
+      min-height: 100px;
+    }
 }
 
 .step-image-upload-contianer label{
@@ -31,7 +36,6 @@
   box-shadow: inset 0px 0px 3px .3px #595757;
   align-content: center;
     img{
-      height: 110px;
       padding-left: 30px;
       padding-top: 10px;
     }
@@ -52,19 +56,60 @@
 .steps-editor-form{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   background-color: #eee;
   border-radius: 10px;
   border: .5px solid #aaa;
   width: 90%;
+  // height: 120px;
   padding: 10px;
   margin-bottom: 12px;
   // margin-top: 6px;
+  color:black;
   .quill{
-    margin-left: 10px;
-    margin-top: 10px;
+    width:90%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+  h2{
+    padding-left: 20px;
+    margin-top: 45px;
   }
 }
+
+.steps-editor-modal-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 4%;
+  background-color: #eee;
+  border-radius: 10px;
+  border: .5px solid #aaa;
+  width: 90%;
+  height: 680px;
+  padding: 10px;
+  margin-bottom: 12px;
+  margin-top: 5%;
+  // margin-top: 6px;
+  color:black;
+  .quill{
+    width:90%;
+    height: 385px;
+    margin-left: 5%;
+    margin-top: 2%;
+    border: none;
+  }
+  h2{
+    padding-left: 20px;
+    margin-top: 45px;
+  }
+}
+
+#quill-body .ql-container{
+  border: none;
+  padding-bottom: 40px;
+}
+
 
 .steps-editor-form-text textarea {
   font-size: 15px;
@@ -77,6 +122,7 @@
 .steps-editor-form-text{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .step-form-index{
@@ -95,11 +141,11 @@
 #step-heading-field{
   height: 30px;
   border-radius: 7px;
-  width: 500px;
+  width: 90%;
+  margin-left: 5%;
   font-size: 18px;
-  background-color: #dfdfdf;
+  background-color: white;
   overflow-wrap: break-word;
-  margin-left: 10px;
 }
 //
 #step-body-field{

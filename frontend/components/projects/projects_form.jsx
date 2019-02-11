@@ -7,6 +7,7 @@ import ProjectTitleContainer from './project_title_container';
 import {closeModal} from '../../actions/modal_actions';
 import ModalContainer from '../modal/modal_container';
 import AddPictureModalContainer from '../ui/add_picture_modal_container';
+import StepFormModalContainer from '../steps/step_form_modal_container';
 
 class ProjectsForm extends React.Component {
   constructor(props){
@@ -28,12 +29,13 @@ class ProjectsForm extends React.Component {
       image: {imageFile: null, imageUrl: "" }
     };
     this.userId = this.props.userId;
+    this.openStepEditor = this.openStepEditor.bind(this);
     this.titleModal = <ProjectTitleContainer/>;
     this.addPictureModal = <AddPictureModalContainer/>;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleStepSubmit = this.handleStepSubmit.bind(this);
     this.updateStepField = this.updateStepField.bind(this);
-    this.renderStepForm = this.renderStepForm.bind(this);
+    // this.renderStepForm = this.renderStepForm.bind(this);
     this.handleStepFile = this.handleStepFile.bind(this);
   }
 
@@ -47,8 +49,17 @@ class ProjectsForm extends React.Component {
 
   componentDidUpdate(){
 
-    if (this.props.payload){
-      this.setState({project: this.props.payload});
+    if (this.props.payload && this.props.payload.project){
+      this.setState({project:this.props.payload.project});
+      var newIntro = {heading: `Intro: ${this.props.payload.project.title}`, body:"", imageUrl:null,imageFile:null};
+      this.setState({steps:[newIntro]});
+      this.props.clearPayload();
+    }
+
+    if (this.props.payload && this.props.payload.step){
+      var newSteps = this.state;
+      newSteps.steps[this.props.payload.idx]= this.props.payload.step;
+      this.setState({newSteps});
       this.props.clearPayload();
     }
   }
@@ -84,6 +95,11 @@ class ProjectsForm extends React.Component {
         newSteps[idx][field] = e;
         this.setState({steps: newSteps});
       };
+    }
+
+    openStepEditor(idx){
+
+      this.props.openModal(<StepFormModalContainer step={this.state.steps[idx]}/>)
     }
 
 // FORM UPDATERS//
@@ -223,7 +239,7 @@ renderStepUploadButton(step,idx){
   } else {
     return(
       <div className='step-image-upload-contianer'>
-        <label>Step Picture
+        <label>Add Step Picture Here
             <input
               className='inputfile'
               type="file"
@@ -236,41 +252,27 @@ renderStepUploadButton(step,idx){
 }
 
 renderStepForm(step,idx){
-  var formats = [
-      "bold",
-      "italic",
-      "link",
-      "strike",
-      "script",
-      "underline",
-      "header",
-      "list",
-      "blockquote",
-      "code-block"
-    ];
-  return(
-
-    <form onSubmit={this.handleStepSubmit} className='steps-editor-form'>
-      {this.renderStepUploadButton(step,idx)}
-      <div className='steps-editor-form-text'>
-        <textarea
-          onChange={this.updateStepField('heading',idx)}
-          value={step.heading}
-          placeholder="Step Heading"
-          id='step-heading-field'
-          rows="1"
-          cols="80"/>
-        <ReactQuill
-          onChange={this.updateStepQuillField('body',idx)}
-          value={step.body}
-          theme="snow"
-          placeholder="Step Body"
-          modules={ProjectsForm.modules}/>
-
+  var heading = step.heading
+  if (idx < 1){
+    return(
+      <div className='steps-editor-form'>
+        {this.renderStepUploadButton(step,idx)}
+        <button id={idx} onClick={this.openStepEditor.bind(this)} className='edit-step-button'>{heading}</button>
       </div>
-
-    </form>
+    )
+  }else{
+  return(
+    <div className='steps-editor-form'>
+      {this.renderStepUploadButton(step,idx)}
+      <button id={idx} onClick={this.openStepEditor.bind(this)} className='edit-step-button'> Step {idx}: {heading}</button>
+    </div>
   )
+};
+}
+
+openStepEditor(e){
+  var idx = parseInt(e.currentTarget.id);
+  this.props.openModal(<StepFormModalContainer step={this.state.steps[idx]} idx={idx}/>);
 }
 
 renderSteps(){

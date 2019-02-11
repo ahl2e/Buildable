@@ -26,7 +26,7 @@ class ProjectTitleForm extends React.Component {
 
   handleTitle(e){
     e.preventDefault();
-    this.props.carryPayload(this.state);
+    this.props.carryPayload({project:this.state});
     this.props.closeModal();
   }
 
