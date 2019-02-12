@@ -10,7 +10,8 @@ class DeleteModal extends React.Component {
 
   delete(e){
     sessionStorage.clear();
-    this.props.deleteProject(this.props.project).then(this.props.history.push(`/`)).then(sessionStorage.clear()).then(location.reload());
+    var projId = parseInt(this.props.match.params.projectId);
+    this.props.deleteProject(projId).then(this.props.history.push(`/`)).then(sessionStorage.clear()).then(location.reload());
   }
 
   render(){

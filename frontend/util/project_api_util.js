@@ -32,6 +32,6 @@ export const updateProject = (project) => {
 export const deleteProject = (project) => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/projects/${project.id}/`
+    url: `/api/projects/${project}/`
   });
 };

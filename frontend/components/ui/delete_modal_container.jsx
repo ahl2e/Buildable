@@ -4,7 +4,7 @@ import {closeModal} from '../../actions/modal_actions';
 import { deleteProject } from '../../actions/project_actions';
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   const project = Object.values(state.entities.projects)[0];
   const id = state.session.id;
   return {id, project};
