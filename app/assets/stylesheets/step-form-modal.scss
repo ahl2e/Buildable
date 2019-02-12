@@ -1,7 +1,7 @@
 #step-form-modal{
   background-color: white;
   height: 800px;
-  width: 1000px;
+  width: 1300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -26,7 +26,8 @@
 #step-modal-button{
   width: 10%;
   margin-left: 45%;
-  margin-top: 15px;
+  margin-top: 0px;
+  margin-bottom: 15px;
   background-color: #DD6607;
   height: 40px;
   // width: 80px;
@@ -34,4 +35,38 @@
   color: white;
   font-size: 18px;
   transition: box-shadow .5s;
+}
+
+#step-modal-button:hover{
+  cursor: pointer;
+}
+
+.step-modal-image-upload-contianer{
+  width: 90%;
+  height: 17%;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid #595757;
+  box-shadow: inset 0px 0px 3px .3px #595757;
+  align-content: center;
+  // margin-top: 20px;
+  // margin-left: 5%;
+  margin: 20px 5%;
+    img{
+      padding-left: 30px;
+      padding-top: 10px;
+      min-height: 100px;
+    }
+    label {
+      width: 95%;
+      height: 75px;
+      background-color: white;
+      border-radius: 10px;
+      color:#aaa;
+      // color:#c8c8c8;
+      text-align: center;
+      font-size: 24px;
+      padding: 2.4rem 1rem 0rem 1rem;
+    }
 }

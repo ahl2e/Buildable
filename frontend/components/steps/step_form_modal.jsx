@@ -42,6 +42,8 @@ class StepFormModal extends React.Component{
 
       <form onSubmit={this.handleStepSubmit} className='steps-editor-modal-form'>
         <div className='steps-editor-form-text'>
+          {this.renderStepUploadButton(this.state)}
+
           <textarea
             onChange={this.updateStepField('heading')}
             value={step.step.heading}
@@ -70,20 +72,19 @@ class StepFormModal extends React.Component{
 
   renderStepUploadButton(step){
     if (step.step.imageUrl){
-      debugger
       return(
-        <div className='step-image-upload-contianer'>
+        <div className='step-modal-image-upload-contianer'>
           <img src={step.step.imageUrl} />
         </div>
       );
     } else {
       return(
-        <div className='step-image-upload-contianer'>
+        <div className='step-modal-image-upload-contianer'>
           <label>Add Step Picture Here
               <input
                 className='inputfile'
                 type="file"
-                onChange={this.handleStepFile}
+                onChange={this.handleStepFile.bind(this)}
                 />
           </label>
         </div>
@@ -96,14 +97,14 @@ class StepFormModal extends React.Component{
     const file = e.currentTarget.files[0];
     var newStep = {step:this.state.step};
     reader.onloadend = () => {
-      newStep.imageUrl = reader.result;
-      newStep.imageFile = file;
-    this.setState({step: newStep});
+      newStep.step.imageUrl = reader.result;
+      newStep.step.imageFile = file;
+    this.setState({step: newStep.step});
   };
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      var blankStep = {step:{ [imageUrl]: "", [imageFile]: null }};
+      var blankStep = {step:{ [imageUrl]: "", [imageFile]: null, heading:"", body:"" }};
       this.setState({step: blankStep});
     }
   }
