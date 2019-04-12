@@ -143,13 +143,13 @@ render(){
   return(
     <div className="projects-form">
       <section className="form-box">
-        <div className="inner-add-form-box">
+        <div className="inner-edit-form-box">
       <form onSubmit={this.handleSubmit}>
           <textarea
             onChange={this.update('heading')}
             value={this.state.heading}
             placeholder="Step Heading"
-            id='step-heading-field'
+            id='edit-step-heading-field'
             rows="1"
             cols="80"/>
           <ReactQuill
