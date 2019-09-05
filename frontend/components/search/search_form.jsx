@@ -31,7 +31,7 @@ render(){
         type="text"
         value={this.state.query}
         onChange={this.update("query")}
-        placeholder="Let's build a...     ex: bench"
+        placeholder="Let's build a...     ex: sailboat"
          />
        <button
          onClick={this.handleSubmit.bind(this)}
